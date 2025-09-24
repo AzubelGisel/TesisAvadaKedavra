@@ -2,69 +2,63 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Avada Kedavra - Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Avada Kedavra</title>
 
   <!-- Bootstrap + Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
-  <!-- Fonts similar to Canva design -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
   <style>
-    /* ---------- Base ---------- */
+    /* --- Variables y base --- */
     :root{
-      --bg-matte: #0f1112;           /* fondo general, menos negro */
-      --panel: #151617;              /* tarjetas */
+      --bg-matte: #0f1112;        /* fondo general, menos negro */
+      --panel: #151617;
       --muted-gold: #b6922f;
-      --subtitle-red: #7b1f1f;       /* bordo rojizo */
-      --btn-blue: #112334;           /* azul oscuro mate */
+      --subtitle-red: #7b1f1f;
+      --btn-blue: #112334;
       --btn-blue-hover: #1b3d5a;
-      --glass: rgba(255,255,255,0.03);
       --text: #e9e9e9;
+      --membrete-height: 1.5cm;   /* altura requerida */
     }
 
-    html,body{
-      height:100%;
-      margin:0;
-      background: var(--bg-matte);
-      color:var(--text);
-      font-family: "Roboto", sans-serif;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
+    html { scroll-behavior: smooth; }
+    html,body { height:100%; margin:0; background:var(--bg-matte); color:var(--text); font-family:"Roboto", sans-serif; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
 
-    a{ text-decoration:none; }
+    a { text-decoration: none; color: inherit; }
 
-    /* ---------- NAVBAR / membrete ---------- */
-    .navbar-custom{
-      height: 1.5cm; /* tu requerimiento */
+    /* --- NAVBAR / membrete --- */
+    .navbar-custom {
+      height: var(--membrete-height);
       background: #080808;
+      display: flex;
+      align-items: center;
       border-bottom: 1px solid rgba(255,255,255,0.03);
       padding-left: 28px;
       padding-right: 28px;
     }
-    .brand-wrap{ display:flex; align-items:center; gap:10px; }
-    .brand-star{
+
+    .brand-wrap { display:flex; align-items:center; gap:10px; }
+    .brand-star {
       color: #f0c941;
       font-size: 1.35rem;
       line-height:1;
       filter: drop-shadow(0 0 6px rgba(240,201,65,0.12));
     }
-    .brand-title{
-      color:white;
-      font-weight:700;
-      font-size:1.05rem;
-      letter-spacing:0.2px;
-    }
-    .nav-link.custom{
+    .brand-title { color:white; font-weight:700; font-size:1.05rem; letter-spacing:0.2px; font-family:"Cinzel", serif; }
+
+    .nav-link.custom {
       color: var(--muted-gold) !important;
       margin-left: 12px;
       margin-right: 12px;
       font-weight:500;
     }
-    .cart-btn{
+    .nav-link.custom:hover { color: #fff !important; text-shadow:0 0 8px rgba(182,146,47,0.8); }
+
+    .cart-btn {
       color: white;
       border:1px solid rgba(255,255,255,0.16);
       padding:6px 12px;
@@ -72,9 +66,12 @@
       background:transparent;
     }
 
-    /* ---------- HERO (imitando la imagen) ---------- */
-    .hero{
-      min-height: calc(100vh - 1.5cm);
+    /* When using anchors, ensure sections are visible below the membrete */
+    section { scroll-margin-top: calc(var(--membrete-height) + 12px); }
+
+    /* --- HERO --- */
+    .hero {
+      min-height: calc(100vh - var(--membrete-height));
       display:flex;
       align-items:center;
       justify-content:center;
@@ -82,127 +79,56 @@
       padding: 80px 20px;
       overflow:hidden;
     }
-
-    /* subtle textured background - using CSS radial pattern */
-    .hero::before{
+    .hero::before {
       content:"";
       position:absolute;
       inset:0;
       background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.02) 0.5%, transparent 2%),
+        radial-gradient(circle at 20% 20%, rgba(255,215,0,0.02) 0.5%, transparent 2%),
         radial-gradient(circle at 80% 80%, rgba(255,255,255,0.01) 0.5%, transparent 2%),
-        linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.0));
+        linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0));
       mix-blend-mode: overlay;
       z-index:0;
       pointer-events:none;
     }
 
-    .hero-inner{
-      max-width:1100px;
-      z-index:2;
-      text-align:center;
-      width:100%;
-    }
+    .hero-inner { max-width:1100px; z-index:2; text-align:center; width:100%; }
+    .hero h1 { font-family:"Cinzel", serif; font-weight:800; font-size:4.0rem; margin:0 0 20px; color:#fff; letter-spacing:2px; text-transform:uppercase; line-height:1.02; text-shadow: 0 2px 8px rgba(0,0,0,0.7); }
+    .hero p.subtitle { font-size:1.25rem; color:var(--subtitle-red); margin:0 auto 36px; max-width:780px; line-height:1.65; font-weight:400; }
 
-    /* Title: font similar to the sample (Cinzel) */
-    .hero h1{
-      font-family: "Cinzel", serif;
-      font-weight:800;
-      font-size:4.3rem;        /* big like image */
-      margin:0 0 20px;
-      color:#fff;
-      letter-spacing:2px;
-      text-transform:uppercase;
-      line-height:1.02;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
-    }
-
-    /* Subtitle: limit width & force line breaks to control words per line */
-    .hero p.subtitle{
-      font-size:1.25rem;
-      color:var(--subtitle-red);
-      margin:0 auto 36px;
-      max-width:780px;
-      line-height:1.7;
-      font-weight:400;
-    }
-
-    /* Buttons: azul mate y ancho/espaciado como en la captura */
     .hero .btn {
       border-radius:10px;
       padding:12px 30px;
       font-weight:600;
       letter-spacing:0.2px;
-      box-shadow:none;
       transition: transform .18s ease, box-shadow .18s ease;
       border: 1px solid rgba(255,255,255,0.04);
+      margin: 0 8px;
     }
-    .btn-matte {
-      background: var(--btn-blue);
-      color: #f1f5f9;
-    }
-    .btn-matte:hover{
-      background: var(--btn-blue-hover);
-      transform: translateY(-3px);
-      box-shadow: 0 6px 22px rgba(17,35,52,0.35);
-    }
-    .btn-outline-soft{
-      background:transparent;
-      border:1.6px solid rgba(255,255,255,0.08);
-      color: #f3f6f8;
-    }
-    .btn-outline-soft:hover{
-      background: rgba(255,255,255,0.02);
-      transform: translateY(-3px);
-    }
+    .btn-matte { background: var(--btn-blue); color: #f1f5f9; }
+    .btn-matte:hover { background: var(--btn-blue-hover); transform: translateY(-3px); box-shadow: 0 6px 22px rgba(17,35,52,0.35); }
+    .btn-outline-soft { background:transparent; border:1.6px solid rgba(255,255,255,0.08); color: #f3f6f8; }
+    .btn-outline-soft:hover { background: rgba(255,255,255,0.02); transform: translateY(-3px); }
 
-    /* small kicker line below hero for promo (like in sample) */
-    .promo-strip{
-      width:100%;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      padding:10px 0;
-      margin-top:28px;
-      color: #e6e6e6;
-      font-size:0.95rem;
-    }
+    .promo-strip{ width:100%; display:flex; justify-content:center; align-items:center; padding:10px 0; margin-top:28px; color:#e6e6e6; font-size:0.95rem; }
 
-    /* ---------- Main sections: Productos, Casas, Quiz, Suscripción, Footer ---------- */
-    main{ padding-bottom:60px; }
+    /* --- Sections / Cards --- */
+    main { padding-bottom:60px; }
+    .section-title { font-family:"Cinzel", serif; color:#f3f3f3; font-size:2rem; margin-bottom:14px; text-align:center; letter-spacing:1px; }
+    .section-sub { text-align:center; color:#c7c7c7; margin-bottom:28px; }
 
-    .section-title{
-      font-family:"Cinzel", serif;
-      color:#f3f3f3;
-      font-size:2rem;
-      margin-bottom:18px;
-      text-align:center;
-      letter-spacing:1px;
-    }
-    .section-sub{
-      text-align:center;
-      color: #c7c7c7;
-      margin-bottom:28px;
-    }
-
-    .card-product{
+    .card-product {
       background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
       border-radius:10px;
       padding:22px;
       border: 1px solid rgba(255,255,255,0.03);
       transition: transform .18s ease, box-shadow .18s ease;
+      color: var(--text);
     }
-    .card-product:hover{
-      transform: translateY(-6px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-    }
-    .price{
-      font-weight:700;
-      font-size:1.1rem;
-      color:#fff;
-    }
+    .card-product:hover { transform: translateY(-6px); box-shadow: 0 8px 30px rgba(0,0,0,0.6); }
+    .price { font-weight:700; font-size:1.1rem; color:#fff; }
 
-    .house-card{
+    .house-card {
       background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.05));
       padding:18px;
       border-radius:10px;
@@ -210,127 +136,113 @@
       border:1px solid rgba(255,255,255,0.03);
       transition: transform .18s ease, box-shadow .18s ease;
     }
-    .house-card:hover{
-      transform: translateY(-6px);
-      box-shadow: 0 10px 28px rgba(0,0,0,0.6);
-    }
+    .house-card:hover { transform: translateY(-6px); box-shadow: 0 10px 28px rgba(0,0,0,0.6); }
     .house-title{ font-family:"Cinzel", serif; color:var(--muted-gold); font-size:1.15rem; }
 
-    /* QUIZ (radio list) */
-    .quiz-wrap{
-      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.04));
-      border-radius:12px;
-      padding:22px;
-      border:1px solid rgba(255,255,255,0.03);
+    /* --- Quiz (radio list) --- */
+    .quiz-wrap { background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.04)); border-radius:12px; padding:22px; border:1px solid rgba(255,255,255,0.03); }
+    .quiz-question { margin-bottom:16px; }
+    .quiz-question p { font-weight:600; margin-bottom:10px; }
+    .quiz-option {
+      display:flex; align-items:center; gap:12px; padding:10px 12px; border-radius:8px; cursor:pointer;
+      border:1px solid rgba(255,255,255,0.02); margin-bottom:8px; transition: background .12s ease, box-shadow .12s ease; background: rgba(255,255,255,0.005);
     }
-    .quiz-question{ margin-bottom:16px; }
-    .quiz-question p{ font-weight:600; margin-bottom:10px; }
-    .quiz-option{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      padding:10px 12px;
-      border-radius:8px;
-      cursor:pointer;
-      border:1px solid rgba(255,255,255,0.02);
-      margin-bottom:8px;
-      transition: background .12s ease, box-shadow .12s ease;
-      background: rgba(255,255,255,0.005);
-    }
-    .quiz-option:hover{ background: rgba(255,255,255,0.02); box-shadow: 0 6px 18px rgba(0,0,0,0.6); }
-    .quiz-option input[type="radio"]{ transform:scale(1.05); }
+    .quiz-option:hover { background: rgba(255,255,255,0.02); box-shadow: 0 6px 18px rgba(0,0,0,0.6); }
+    .quiz-option input[type="radio"] { transform:scale(1.05); }
 
-    /* subscribe area */
-    .subscribe-wrap{
-      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.06));
-      padding:28px;
-      border-radius:10px;
-      border:1px solid rgba(255,255,255,0.03);
+    /* --- Subscribe area --- */
+    .subscribe-wrap { background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.06)); padding:28px; border-radius:10px; border:1px solid rgba(255,255,255,0.03); }
+
+    /* --- Footer --- */
+    footer { margin-top:36px; background:transparent; color:#cfcfcf; padding:36px 20px; border-top:1px solid rgba(255,255,255,0.03); }
+    footer a { color: #dcdcdc; text-decoration:none; }
+    footer a:hover { color:var(--muted-gold); }
+
+    /* --- Responsive tweaks --- */
+    @media (max-width:991px) {
+      .hero h1 { font-size:3rem; }
+      .hero p.subtitle { font-size:1.05rem; }
+    }
+    @media (max-width:576px) {
+      .hero h1 { font-size:2.1rem; letter-spacing:1px; }
+      .hero p.subtitle { max-width:92%; line-height:1.4; }
     }
 
-    /* footer */
-    footer{
-      margin-top:36px;
-      background:transparent;
-      color:#cfcfcf;
-      padding:36px 20px;
-      border-top:1px solid rgba(255,255,255,0.03);
-    }
-    footer a{ color: #dcdcdc; text-decoration:none; }
-    footer a:hover{ color:var(--muted-gold); }
+    /* --- Particles canvas --- */
+    #particles-canvas { position:absolute; inset:0; z-index:0; pointer-events:none; }
 
-    /* Responsive tweaks */
-    @media (max-width:991px){
-      .hero h1{ font-size:3rem; }
-      .hero p.subtitle{ font-size:1.05rem; }
-    }
-    @media (max-width:576px){
-      .hero h1{ font-size:2.1rem; letter-spacing:1px; }
-      .hero p.subtitle{ max-width:92%; line-height:1.4; }
-    }
-
-    /* ---------- Particles canvas styling ---------- */
-    #particles-canvas{
-      position:absolute;
-      inset:0;
-      z-index:0;
-      pointer-events:none;
-    }
-
-    /* small visual helpers */
     .muted { color:#bdbdbd; }
-    .gap-xy{ gap:20px; display:flex; flex-wrap:wrap; }
+    
+    /* --- Estilos personalizados para modales por casa --- */
+.modal-content.gryffindor-bg {
+  background-color: #800000; /* escarlata */
+  color: #FFD700;            /* dorado */
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.modal-content.slytherin-bg {
+  background-color: #1A472A; /* verde esmeralda */
+  color: #C0C0C0;            /* plata */
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.modal-content.ravenclaw-bg {
+  background-color: #0E1A40; /* azul profundo */
+  color: #B08D57;            /* bronce */
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.modal-content.hufflepuff-bg {
+  background-color: #ECB939; /* amarillo cálido */
+  color: #000000;            /* negro */
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+  <!-- NAVBAR / membrete (1.5cm) -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
     <div class="container-fluid">
-      <a class="brand-wrap navbar-brand" href="#">
-        <span class="brand-star">★</span>
-        <span class="brand-title">Avada Kedavra</span>
-      </a>
+      <a class="brand-wrap navbar-brand" href="#inicio"><span class="brand-star">★</span><span class="brand-title">Avada Kedavra</span></a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse" aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <div class="collapse navbar-collapse justify-content-end" id="navCollapse">
         <ul class="navbar-nav align-items-center me-3">
           <li class="nav-item"><a class="nav-link custom" href="#inicio">Inicio</a></li>
           <li class="nav-item"><a class="nav-link custom" href="#productos">Productos</a></li>
           <li class="nav-item"><a class="nav-link custom" href="#casas">Casas</a></li>
-          <li class="nav-item"><a class="nav-link custom" href="#nosotros">Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link custom" href="#contacto">Contacto</a></li>
+          <!-- Sombrero Seleccionador como enlace de menú -->
+          <li class="nav-item"><a class="nav-link custom" href="#trivia">Sombrero Seleccionador</a></li>
+          <li class="nav-item"><a class="nav-link custom" href="#subscribe">Nosotros</a></li>
         </ul>
 
         <div class="d-flex align-items-center">
-          <button class="cart-btn cart-btn-sm cart-btn"> <i class="bi bi-cart3"></i>&nbsp; Carrito (0)</button>
+          <button class="cart-btn cart"><i class="bi bi-cart3"></i>&nbsp; Carrito (0)</button>
         </div>
       </div>
     </div>
   </nav>
 
   <!-- HERO -->
-  <header class="hero" id="inicio" aria-hidden="false">
+  <header class="hero" id="inicio">
     <canvas id="particles-canvas"></canvas>
-
     <div class="hero-inner">
       <h1>Bienvenido al Mundo Mágico</h1>
-
-      <!-- Para controlar la cantidad palabras por renglón, dividimos manualmente igual a tu referencia -->
       <p class="subtitle">
         Descubre nuestra colección exclusiva de vestimenta, accesorios y<br>
         artículos de Harry Potter para todas las casas de Hogwarts.
       </p>
-
-      <div class="d-flex justify-content-center align-items-center" style="gap:18px;">
-        <a class="btn btn-matte" href="#productos">Ver Productos</a>
+      <div class="mt-4">
+        <a class="btn btn-matte me-3" href="#productos">Ver Productos</a>
         <a class="btn btn-outline-soft" href="#casas">Explorar Casas</a>
       </div>
 
-      <div class="promo-strip">
+      <div class="promo-strip mt-4">
         <span style="background: rgba(255,255,255,0.02); padding:8px 14px; border-radius:8px; display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(255,255,255,0.02);">
           <span style="color:var(--muted-gold); font-weight:700;">★</span>
           <span class="muted">¡Oferta especial! 15% de descuento en productos por tiempo limitado</span>
@@ -339,13 +251,13 @@
     </div>
   </header>
 
-  <!-- MAIN -->
-  <main class="container mt-5">
+  <!-- MAIN CONTENT -->
+  <main class="container my-5" id="main-content">
 
     <!-- PRODUCTOS DESTACADOS -->
     <section id="productos" class="mb-5">
       <div class="text-center mb-4">
-        <h2 class="section-title">Productos Destacados</h2>
+        <h2 class="section-title">PRODUCTOS DESTACADOS</h2>
         <p class="section-sub">Artículos mágicos seleccionados especialmente para ti</p>
       </div>
 
@@ -420,42 +332,138 @@
           <div class="house-card">
             <div style="height:120px; display:flex; align-items:center; justify-content:center; font-size:44px; color:rgba(255,255,255,0.06)">🦁</div>
             <div class="house-title">Gryffindor</div>
-            <p class="muted">Valor, fuerza y determinación. Encuentra productos en escarlata y dorado.</p>
-            <div class="text-start mt-2"><a class="btn btn-outline-soft btn-sm" href="#!">Ver Detalles</a></div>
+            <p class="muted">Valor, fuerza y determinación.</p>
+            <div class="text-start mt-2"><a class="btn btn-outline-soft btn-sm" data-bs-toggle="modal" data-bs-target="#gryffindorModal">Ver Detalles</a></div>
           </div>
         </div>
+
+        <div class="modal fade" id="gryffindorModal" tabindex="-1" aria-labelledby="gryffindorModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content gryffindor-bg">
+  <div class="modal-header">
+    <h5 class="modal-title">Gryffindor 🦁 – Donde habitan los valientes</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+  </div>
+  <div class="modal-body">
+    <p><strong>Fundador:</strong> Godric Gryffindor</p>
+    <p><strong>Valores:</strong> Coraje, valentía y determinación</p>
+    <p><strong>Sala común:</strong> Torre de Gryffindor, custodiada por la Dama Gorda</p>
+    <p><strong>Elemento:</strong> Fuego 🔥</p>
+    <p><strong>Reliquia:</strong> Espada de Godric Gryffindor</p>
+    <p><strong>Miembros famosos:</strong> Harry Potter, Hermione Granger, Ron Weasley</p>
+    <p><strong>Curiosidad:</strong> Rivalidad histórica con Slytherin desde los tiempos fundacionales</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+  </div>
+</div>
+  </div>
+</div>
+
 
         <div class="col-md-3">
           <div class="house-card">
             <div style="height:120px; display:flex; align-items:center; justify-content:center; font-size:44px; color:rgba(255,255,255,0.06)">🦡</div>
             <div class="house-title">Hufflepuff</div>
             <p class="muted">Lealtad, paciencia y trabajo duro. Descubre artículos en amarillo y negro.</p>
-            <div class="text-start mt-2"><a class="btn btn-outline-soft btn-sm" href="#!">Ver Detalles</a></div>
+            <div class="text-start mt-2"><a class="btn btn-outline-soft btn-sm" data-bs-toggle="modal" data-bs-target="#hufflepuffModal">Ver Detalles</a></div>
           </div>
         </div>
+
+        <div class="modal fade" id="hufflepuffModal" tabindex="-1" aria-labelledby="hufflepuffModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content hufflepuff-bg">
+  <div class="modal-header">
+    <h5 class="modal-title">Hufflepuff 🦡 – La casa de los justos y leales</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+  </div>
+  <div class="modal-body">
+    <p><strong>Fundadora:</strong> Helga Hufflepuff</p>
+    <p><strong>Valores:</strong> Lealtad, paciencia y trabajo duro</p>
+    <p><strong>Sala común:</strong> Cerca de las cocinas, detrás de barriles encantados</p>
+    <p><strong>Elemento:</strong> Tierra 🌱</p>
+    <p><strong>Reliquia:</strong> Copa de Helga Hufflepuff</p>
+    <p><strong>Miembros famosos:</strong> Cedric Diggory, Nymphadora Tonks, Newt Scamander</p>
+    <p><strong>Curiosidad:</strong> Especialistas en Herbología, su fantasma es el Fraile Gordo</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+  </div>
+</div>
+  </div>
+</div>
+
 
         <div class="col-md-3">
           <div class="house-card">
             <div style="height:120px; display:flex; align-items:center; justify-content:center; font-size:44px; color:rgba(255,255,255,0.06)">🦅</div>
             <div class="house-title">Ravenclaw</div>
             <p class="muted">Inteligencia, creatividad y sabiduría. Explora productos en azul y bronce.</p>
-            <div class="text-start mt-2"><a class="btn btn-outline-soft btn-sm" href="#!">Ver Detalles</a></div>
+            <div class="text-start mt-2"><a class="btn btn-outline-soft btn-sm" data-bs-toggle="modal" data-bs-target="#ravenclawModal">Ver Detalles</a></div>
           </div>
         </div>
+
+        <div class="modal fade" id="ravenclawModal" tabindex="-1" aria-labelledby="ravenclawModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content ravenclaw-bg">
+  <div class="modal-header">
+    <h5 class="modal-title">Ravenclaw 🦅 – Donde la mente encuentra su vuelo</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+  </div>
+  <div class="modal-body">
+    <p><strong>Fundadora:</strong> Rowena Ravenclaw</p>
+    <p><strong>Valores:</strong> Inteligencia, creatividad y sabiduría</p>
+    <p><strong>Sala común:</strong> Torre Oeste, se accede resolviendo acertijos</p>
+    <p><strong>Elemento:</strong> Aire 🌬️</p>
+    <p><strong>Reliquia:</strong> Diadema de Rowena Ravenclaw</p>
+    <p><strong>Miembros famosos:</strong> Luna Lovegood, Cho Chang, Gilderoy Lockhart</p>
+    <p><strong>Curiosidad:</strong> Su fantasma es la Dama Gris, hija de Rowena</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+  </div>
+</div>
+  </div>
+</div>
+
 
         <div class="col-md-3">
           <div class="house-card">
             <div style="height:120px; display:flex; align-items:center; justify-content:center; font-size:44px; color:rgba(255,255,255,0.06)">🐍</div>
             <div class="house-title">Slytherin</div>
             <p class="muted">Ambición, astucia y determinación. Encuentra artículos en verde y plata.</p>
-            <div class="text-start mt-2"><a class="btn btn-outline-soft btn-sm" href="#!">Ver Detalles</a></div>
+            <div class="text-start mt-2"><a class="btn btn-outline-soft btn-sm" data-bs-toggle="modal" data-bs-target="#slytherinModal">Ver Detalles</a></div>
           </div>
         </div>
       </div>
+
+      <div class="modal fade" id="slytherinModal" tabindex="-1" aria-labelledby="slytherinModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content slytherin-bg">
+  <div class="modal-header">
+    <h5 class="modal-title">Slytherin 🐍 – El poder de la ambición</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+  </div>
+  <div class="modal-body">
+    <p><strong>Fundador:</strong> Salazar Slytherin</p>
+    <p><strong>Valores:</strong> Ambición, astucia y determinación</p>
+    <p><strong>Sala común:</strong> Mazmorras bajo el Lago Negro</p>
+    <p><strong>Elemento:</strong> Agua 🌊</p>
+    <p><strong>Reliquia:</strong> Guardapelo de Slytherin</p>
+    <p><strong>Miembros famosos:</strong> Severus Snape, Draco Malfoy, Tom Riddle</p>
+    <p><strong>Curiosidad:</strong> Su fantasma es el Barón Sanguinario, con una historia sombría</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+  </div>
+</div>
+  </div>
+</div>
+
     </section>
 
-    <!-- QUIZ (radio list) -->
-    <section id="quiz" class="mb-5">
+    <!-- TRIVIA (quiz) -->
+    <section id="trivia" class="mb-5">
       <div class="text-center mb-4">
         <h2 class="section-title">Test: ¿A qué casa perteneces?</h2>
         <p class="section-sub">Responde las preguntas y descubre tu casa</p>
@@ -481,7 +489,7 @@
             </div>
 
             <div class="quiz-question">
-              <p>3. ¿Qué cualidad te describe mejor?</p>
+              <p>3. ¿Qué cualidad te define mejor?</p>
               <label class="quiz-option"><input type="radio" name="q3" value="Gryffindor"> Coraje</label>
               <label class="quiz-option"><input type="radio" name="q3" value="Hufflepuff"> Honestidad</label>
               <label class="quiz-option"><input type="radio" name="q3" value="Ravenclaw"> Creatividad</label>
@@ -542,7 +550,8 @@
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#productos">Productos</a></li>
             <li><a href="#casas">Casas</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#trivia">Test</a></li>
+            <li><a href="#subscribe">Suscripción</a></li>
           </ul>
         </div>
 
@@ -556,62 +565,48 @@
     </div>
   </footer>
 
-  <!-- -------- SCRIPTS -------- -->
+  <!-- BOOTSTRAP JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    /* ---------- QUIZ logic: simple tally by values ---------- */
+    // ------- Quiz logic -------
     document.getElementById('calcBtn').addEventListener('click', function(){
       const form = document.getElementById('houseQuiz');
-      const q1 = form.q1.value;
-      const q2 = form.q2.value;
-      const q3 = form.q3.value;
+      const q1 = form.q1?.value;
+      const q2 = form.q2?.value;
+      const q3 = form.q3?.value;
 
       if(!q1 || !q2 || !q3){
         alert('Por favor respondé todas las preguntas.');
         return;
       }
 
-      // Count Occurrences
       const tally = {Gryffindor:0, Hufflepuff:0, Ravenclaw:0, Slytherin:0};
       [q1,q2,q3].forEach(v => { if(tally[v] !== undefined) tally[v]++; });
 
-      // find max
-      let result = 'Gryffindor';
+      // pick the house with highest count; tie-breaker: priority order Gryffindor,Hufflepuff,Ravenclaw,Slytherin
+      const order = ['Gryffindor','Hufflepuff','Ravenclaw','Slytherin'];
+      let result = order[0];
       let max = -1;
-      for(const k in tally){
-        if(tally[k] > max){ max = tally[k]; result = k; }
+      for(const h of order){
+        if(tally[h] > max){ max = tally[h]; result = h; }
       }
 
-      // if tie, pick by priority or random - we'll pick most 'answered by order'
-      // Show result
       const resText = {
-        Gryffindor: {
-          title: 'Gryffindor',
-          text: '¡Tu casa es Gryffindor! Valor, coraje y determinación. Te atraen los retos y defender lo justo.'
-        },
-        Hufflepuff: {
-          title: 'Hufflepuff',
-          text: '¡Tu casa es Hufflepuff! Lealtad, paciencia y trabajo duro. Valoras la amistad y la justicia equitativa.'
-        },
-        Ravenclaw: {
-          title: 'Ravenclaw',
-          text: '¡Tu casa es Ravenclaw! Inteligencia, creatividad y amor por el aprendizaje y la lógica.'
-        },
-        Slytherin: {
-          title: 'Slytherin',
-          text: '¡Tu casa es Slytherin! Ambición, astucia y determinación. Sabes lo que querés y buscás lograrlo.'
-        }
+        Gryffindor: { title:'Gryffindor', text:'¡Tu casa es Gryffindor! Valor, coraje y determinación.' },
+        Hufflepuff: { title:'Hufflepuff', text:'¡Tu casa es Hufflepuff! Lealtad, paciencia y trabajo duro.' },
+        Ravenclaw: { title:'Ravenclaw', text:'¡Tu casa es Ravenclaw! Inteligencia, creatividad y amor por el aprendizaje.' },
+        Slytherin: { title:'Slytherin', text:'¡Tu casa es Slytherin! Ambición, astucia y determinación.' }
       };
 
       const resultBox = document.getElementById('quizResult');
       const resultText = document.getElementById('resultText');
       resultText.innerHTML = '<strong>' + resText[result].title + ':</strong> ' + resText[result].text;
       resultBox.style.display = 'block';
-      resultBox.scrollIntoView({behavior:'smooth', block:'center'});
+      resultBox.scrollIntoView({ behavior:'smooth', block:'center' });
     });
 
-    /* ---------- SIMPLE subscribe handler (visual) ---------- */
+    // ------- Subscribe handler (visual) -------
     document.getElementById('subForm').addEventListener('submit', function(e){
       e.preventDefault();
       const mail = document.getElementById('subEmail').value;
@@ -620,29 +615,28 @@
       this.reset();
     });
 
-
-    /* ---------- particles background (lightweight) ---------- */
+    // ------- Particles background (lightweight) -------
     (function(){
       const canvas = document.getElementById('particles-canvas');
       if(!canvas) return;
       const ctx = canvas.getContext('2d');
-      let w=canvas.width = window.innerWidth;
-      let h=canvas.height = window.innerHeight;
-
+      let w = canvas.width = window.innerWidth;
+      let h = canvas.height = window.innerHeight;
       let stars = [];
-      const STAR_COUNT = Math.floor((w*h)/60000); // density
+      const STAR_COUNT = Math.floor((w*h)/60000);
 
       function rand(min,max){ return Math.random()*(max-min)+min; }
 
       function createStars(){
         stars = [];
-        for(let i=0;i<Math.max(40,STAR_COUNT);i++){
+        const count = Math.max(40, STAR_COUNT);
+        for(let i=0;i<count;i++){
           stars.push({
             x: Math.random()*w,
             y: Math.random()*h,
-            r: rand(0.3,1.6),
+            r: rand(0.3,1.8),
             alpha: rand(0.1,0.9),
-            dx: rand(-0.02,0.02),
+            dx: rand(-0.03,0.03),
             dy: rand(-0.02,0.02),
             pulse: Math.random()*0.03 + 0.01,
             phase: Math.random()*Math.PI*2
@@ -668,7 +662,7 @@
 
         for(let s of stars){
           s.phase += s.pulse;
-          const a = 0.4 + Math.abs(Math.sin(s.phase))*0.6 * s.alpha;
+          const a = 0.35 + Math.abs(Math.sin(s.phase))*0.65 * s.alpha;
           ctx.beginPath();
           ctx.fillStyle = 'rgba(255,255,255,'+a+')';
           ctx.shadowBlur = Math.max(0, s.r*6);
@@ -690,5 +684,7 @@
       draw();
     })();
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
