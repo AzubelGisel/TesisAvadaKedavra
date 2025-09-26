@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ravenclaw | Tienda Mágica</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #0E1A40;
+      color: #B08D57;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .card-product {
+      background-color: #151617;
+      color: #B08D57;
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: transform 0.3s ease;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .card-product:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 25px rgba(255,255,255,0.2);
+    }
+
+    .card-product img {
+      border-radius: 8px;
+      margin-bottom: 15px;
+      max-height: 200px;
+      object-fit: cover;
+    }
+
+    .price {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .btn-back {
+      background: transparent;
+      border: 1px solid #B08D57;
+      color: #B08D57;
+      padding: 8px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 30px;
+    }
+
+    .btn-back:hover {
+      background-color: rgba(255,255,255,0.1);
+    }
+
+    /* Botón Volver Arriba */
+    #btn-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #FFD700;
+      color: #800000;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      display: none;
+      z-index: 999;
+      transition: opacity 0.3s ease;
+    }
+
+    #btn-top:hover {
+      background-color: #fff3b0;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <a href="productos.html" class="btn-back">← Volver a Productos</a>
+    <h1 class="section-title">Productos de Ravenclaw 🦅</h1>
+
+    <div class="row g-4">
+      <!-- Bufanda -->
+      <div class="col-md-4">
+        <div class="card-product text-center" data-id="15">
+          <img src="img/ravenclaw/bufanda ravenclaw.jpg" alt="Bufanda Ravenclaw" class="img-fluid">
+          <h5 class="mt-3" data-nombre="Bufanda Ravenclaw">Bufanda Ravenclaw</h5>
+          <p data-descripcion="Bufanda tejida azul y bronce.">Bufanda tejida azul y bronce.</p>
+          <p class="price" data-precio="29.99">$29.99</p>
+        </div>
+      </div>
+
+      <!-- Chaqueta -->
+      <div class="col-md-4">
+        <div class="card-product text-center" data-id="16">
+          <img src="img/ravenclaw/chaqueta ravenclaw.jpg" alt="Chaqueta Ravenclaw" class="img-fluid">
+          <h5 class="mt-3" data-nombre="Chaqueta Ravenclaw">Chaqueta Ravenclaw</h5>
+          <p data-descripcion="Chaqueta Ravenclaw.">Chaqueta Ravenclaw.</p>
+          <p class="price" data-precio="29.99">$29.99</p>
+        </div>
+      </div>
+
+      <!-- Corbata -->
+      <div class="col-md-4">
+        <div class="card-product text-center" data-id="17">
+          <img src="img/ravenclaw/corbata ravenclaw.jpg" alt="Corbata Ravenclaw" class="img-fluid">
+          <h5 class="mt-3" data-nombre="Corbata Ravenclaw">Corbata Ravenclaw</h5>
+          <p data-descripcion="Corbata Ravenclaw.">Corbata Ravenclaw.</p>
+          <p class="price" data-precio="29.99">$29.99</p>
+        </div>
+      </div>
+
+      <!-- Cordones -->
+      <div class="col-md-4">
+        <div class="card-product text-center" data-id="18">
+          <img src="img/ravenclaw/cordones ravenclaw.jpg" alt="Cordones Ravenclaw" class="img-fluid">
+          <h5 class="mt-3" data-nombre="Cordones Ravenclaw">Cordones Ravenclaw</h5>
+          <p data-descripcion="Cordones Ravenclaw.">Cordones Ravenclaw.</p>
+          <p class="price" data-precio="29.99">$29.99</p>
+        </div>
+      </div>
+
+      <!-- Llavero -->
+      <div class="col-md-4">
+        <div class="card-product text-center" data-id="19">
+          <img src="img/ravenclaw/llavero escudo ravenclaw.jpg" alt="Llavero Ravenclaw" class="img-fluid">
+          <h5 class="mt-3" data-nombre="Llavero Ravenclaw">Llavero escudo de Ravenclaw</h5>
+          <p data-descripcion="Llavero Ravenclaw.">Llavero escudo de Ravenclaw.</p>
+          <p class="price" data-precio="29.99">$29.99</p>
+        </div>
+      </div>
+
+      <!-- Medias -->
+      <div class="col-md-4">
+        <div class="card-product text-center" data-id="20">
+          <img src="img/ravenclaw/medias ravenclaw.jpg" alt="Medias Ravenclaw" class="img-fluid">
+          <h5 class="mt-3" data-nombre="Medias Ravenclaw">Medias de Ravenclaw</h5>
+          <p data-descripcion="Medias Ravenclaw.">Medias de Ravenclaw.</p>
+          <p class="price" data-precio="29.99">$29.99</p>
+        </div>
+      </div>
+
+      <!-- Túnica -->
+      <div class="col-md-4">
+        <div class="card-product text-center" data-id="21">
+          <img src="img/ravenclaw/tunica ravenclaw.jpg" alt="Túnica Ravenclaw" class="img-fluid">
+          <h5 class="mt-3" data-nombre="Túnica Ravenclaw">Túnica Ravenclaw</h5>
+          <p data-descripcion="Túnica azul con detalles en bronce.">Túnica azul con detalles en bronce.</p>
+          <p class="price" data-precio="49.99">$49.99</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botón Volver Arriba -->
+  <button id="btn-top" title="Volver arriba">↑</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const btnTop = document.getElementById("btn-top");
+
+    window.addEventListener("scroll", () => {
+      btnTop.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+
+    btnTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>
+

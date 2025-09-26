@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Más Productos Mágicos | Tienda Mágica</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #222;
+      color: #f0c941;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .card-product {
+      background-color: #151617;
+      color: #f0c941;
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .card-product:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 25px rgba(255,255,255,0.2);
+    }
+
+    .card-product img {
+      border-radius: 8px;
+      margin-bottom: 15px;
+      max-height: 200px;
+      object-fit: cover;
+    }
+
+    .price {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .btn-back {
+      background: transparent;
+      border: 1px solid #f0c941;
+      color: #f0c941;
+      padding: 8px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 30px;
+    }
+
+    .btn-back:hover {
+      background-color: rgba(255,255,255,0.1);
+    }
+
+    /* Botón Volver Arriba */
+    #btn-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #FFD700;
+      color: #800000;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      display: none;
+      z-index: 999;
+      transition: opacity 0.3s ease;
+    }
+
+    #btn-top:hover {
+      background-color: #fff3b0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <a href="productos.html" class="btn-back">← Volver a Productos</a>
+    <h1 class="section-title">Más Productos Mágicos ✨</h1>
+
+    <div class="row g-4">
+      <!-- Collar de las Reliquias -->
+      <div class="col-md-4">
+        <div class="card-product text-center">
+          <div style="font-size:50px;">🧿</div>
+          <h5 class="mt-3">Collar de las Reliquias</h5>
+          <p>Símbolo sagrado con cadena plateada.</p>
+          <p class="price">$39.99</p>
+        </div>
+      </div>
+
+      <!-- Giratiempo -->
+      <div class="col-md-4">
+        <div class="card-product text-center">
+          <div style="font-size:50px;">⏳</div>
+          <h5 class="mt-3">Giratiempo</h5>
+          <p>Réplica dorada con giro real y detalles mágicos.</p>
+          <p class="price">$44.99</p>
+        </div>
+      </div>
+
+      <!-- Mapa del Merodeador -->
+      <div class="col-md-4">
+        <div class="card-product text-center">
+          <div style="font-size:50px;">🗺️</div>
+          <h5 class="mt-3">Mapa del Merodeador</h5>
+          <p>¡Juro solemnemente que mis intenciones no son buenas!</p>
+          <p class="price">$24.99</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botón Volver Arriba -->
+  <button id="btn-top" title="Volver arriba">↑</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const btnTop = document.getElementById("btn-top");
+
+    window.addEventListener("scroll", () => {
+      btnTop.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+
+    btnTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>
+
