@@ -225,6 +225,62 @@
   100% { text-shadow: 0 0 8px rgba(255, 215, 0, 0.6); }
 }
 
+.info-banner {
+  background-color: #0D1B2A;
+  color: #ffffff;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 10px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  margin-top: 2cm; /* ← esto agrega el espacio que querés */
+}
+
+
+
+
+.full-banner {
+  background-color: #0D1B2A; /* Azul oscuro */
+  color: #ffffff;
+  width: 100vw;
+  padding: 8px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  margin: 0;
+  position: relative;
+  left: 0;
+}
+
+
+#varitaMagica {
+  position: fixed;
+  width: 100px;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#varitaMagica img {
+  width: 100%;
+  transform: rotate(-20deg);
+  filter: drop-shadow(0 0 6px #FFD700);
+}
+
+.chispas {
+  position: absolute;
+  top: 30px;
+  left: 95px;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, #FFD700 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+}
+
   </style>
 </head>
 <body>
@@ -271,15 +327,14 @@
 </div>
 
 
-      <div class="promo-strip mt-4">
-        <span style="background: rgba(255,255,255,0.02); padding:8px 14px; border-radius:8px; display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(255,255,255,0.02);">
-          <span style="color:var(--muted-gold); font-weight:700;">★</span>
-          <span class="muted">¡Oferta especial! 15% de descuento en productos por tiempo limitado</span>
-        </span>
-      </div>
-    </div>
 
-    
+<div class="info-banner mt-4">
+  <div class="text-center py-2">
+    <strong>📢 Importante:</strong> Las inscripciones para el Test de Selección estarán abiertas hasta el 31 de octubre. ¡No te quedes afuera!
+  </div>
+</div>
+
+
   </header>
 
   <!-- MAIN CONTENT -->
@@ -289,7 +344,7 @@
     <section id="casas" class="mb-5">
       <div class="text-center mb-4">
         <h2 class="section-title">Las Casas de Hogwarts</h2>
-        <p class="section-sub">Descubre los valores de cada casa mágica</p>
+        <p class="section-sub" style="color:#8B0000;">Descubre los valores de cada casa mágica</p>
       </div>
 
       <div class="row g-4">
@@ -430,8 +485,8 @@
     <!-- TRIVIA (quiz) -->
     <section id="trivia" class="mb-5">
       <div class="text-center mb-4">
-        <h2 class="section-title title-animado">Test: ¿A qué casa perteneces?</h2>
-        <p class="section-sub">Responde las preguntas y descubre tu casa</p>
+        <h2 class="section-title">¿A qué casa perteneces?</h2>
+        <p class="section-sub" style="color:#8B0000;">Responde las preguntas y descubre tu casa</p>
       </div>
 
       <div class="row justify-content-center">
@@ -697,6 +752,48 @@ document.getElementById("hogwartsForm").addEventListener("submit", function(e) {
   document.getElementById("confirmacionLechuza").style.display = "block";
 });
 </script>
+
+<!-- Varita mágica flotante -->
+<div id="varitaMagica">
+  <img src="img/varita.png" alt="Varita mágica">
+  <div class="chispas"></div>
+</div>
+
+<script>
+function moverVarita() {
+  const varita = document.getElementById("varitaMagica");
+  const chispas = varita.querySelector(".chispas");
+
+  // Ocultar varita antes de moverla
+  varita.style.opacity = "0";
+
+  setTimeout(() => {
+    // Nueva posición aleatoria
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 120);
+    varita.style.left = `${x}px`;
+    varita.style.top = `${y}px`;
+
+    // Mostrar varita
+    varita.style.opacity = "1";
+
+    // Reiniciar chispas
+    chispas.style.opacity = "1";
+    chispas.style.transition = "none";
+    chispas.style.transform = "scale(1) translateX(0) translateY(0)";
+
+    setTimeout(() => {
+      chispas.style.transition = "transform 0.6s ease-out, opacity 0.6s ease-out";
+      chispas.style.transform = "scale(2) translateX(30px) translateY(-20px)";
+      chispas.style.opacity = "0";
+    }, 50);
+  }, 300); // Espera a que se oculte antes de mover
+}
+
+// Ejecutar cada 4 segundos
+setInterval(moverVarita, 4000);
+</script>
+
 
 
 </body>
