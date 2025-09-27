@@ -88,6 +88,27 @@
       0% { opacity: 0; transform: translateY(30px); }
       100% { opacity: 1; transform: translateY(0); }
     }
+
+    .slytherin-btn {
+  background-color: #1c1c1c; /* Gris oscuro sobrio */
+  color: #5cb85c; /* Verde Slytherin */
+  border: 2px solid #5cb85c;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 6px rgba(92, 184, 92, 0.2);
+}
+
+.slytherin-btn:hover {
+  background-color: #2a2a2a;
+  color: #cde8cd;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(92, 184, 92, 0.4);
+}
+
   </style>
 </head>
 <body>
@@ -96,77 +117,92 @@
     <h1 class="section-title">Productos de Slytherin 🐍</h1>
 
     <div class="row g-4">
-      <!-- Bufanda -->
+      
+      <!-- Túnica -->
       <div class="col-md-4">
         <div class="card-product text-center" data-id="22">
+          <img src="img/slytherin/tunica slytherin.jpg" alt="Túnica de Slytherin" class="img-fluid">
+          <h5 class="mt-3" data-nombre="Túnica de Slytherin">Túnica de Slytherin - Licencia Oficial</h5>
+          <p data-descripcion="Túnica de Slytherin.">Túnica de Slytherin.</p>
+          <small style="color: #aaa;">Con capucha y bolsillo interno para varita que te permite llevar tu varita de manera segura.</small>
+          <p class="price" data-precio="85.000">$85.000</p>
+          <button class="btn-house slytherin-btn mt-2 add-to-cart" data-id="22">Añadir al carrito</button>
+        </div>
+      </div>
+
+      <!-- Bufanda -->
+      <div class="col-md-4">
+        <div class="card-product text-center" data-id="23">
           <img src="img/slytherin/bufanda slytherin.jpg" alt="Bufanda de Slytherin" class="img-fluid">
-          <h5 class="mt-3" data-nombre="Bufanda Slytherin">Bufanda Slytherin</h5>
-          <p data-descripcion="Bufanda verde esmeralda con franjas plateadas.">Bufanda verde esmeralda con franjas plateadas.</p>
-          <p class="price" data-precio="29.99">$29.99</p>
+          <h5 class="mt-3" data-nombre="Bufanda Slytherin">Bufanda Slytherin - Licencia Oficial</h5>
+          <p data-descripcion="Bufanda verde esmeralda con franjas plateadas.">Bufanda Rayada Slytherin con escudo bordado.</p>
+          <small style="color: #aaa;">Con su diseño rayado y los colores emblemáticos de la casa.</small>
+          <p class="price" data-precio="39.900">$39.900</p>
+          <button class="btn-house slytherin-btn mt-2 add-to-cart" data-id="23">Añadir al carrito</button>
         </div>
       </div>
 
       <!-- Chaqueta -->
       <div class="col-md-4">
-        <div class="card-product text-center" data-id="23">
+        <div class="card-product text-center" data-id="24">
           <img src="img/slytherin/chaqueta slytherin.jpg" alt="Chaqueta de Slytherin" class="img-fluid">
-          <h5 class="mt-3" data-nombre="Chaqueta Slytherin">Chaqueta Slytherin</h5>
-          <p data-descripcion="Chaqueta oficial con escudo bordado.">Chaqueta oficial con escudo bordado.</p>
-          <p class="price" data-precio="14.99">$14.99</p>
+          <h5 class="mt-3" data-nombre="Chaqueta Slytherin">Chaqueta Slytherin – Licencia Oficial</h5>
+          <p data-descripcion="Chaqueta oficial con escudo bordado.">Chaqueta Slytherin con escudo bordado, diseño varsity y detalles mágicos para fanáticos valientes.</p>
+          <small style="color: #aaa;">Bolsillo interno para varita y acabado premium.</small>
+          <p class="price" data-precio="65.000">$65.000</p>
+          <button class="btn-house slytherin-btn mt-2 add-to-cart" data-id="24">Añadir al carrito</button>
         </div>
       </div>
 
       <!-- Corbata -->
       <div class="col-md-4">
-        <div class="card-product text-center" data-id="24">
+        <div class="card-product text-center" data-id="25">
           <img src="img/slytherin/corbata slytherin.jpg" alt="Corbata de Slytherin" class="img-fluid">
-          <h5 class="mt-3" data-nombre="Corbata Slytherin">Corbata Slytherin</h5>
-          <p data-descripcion="Corbata verde con detalles plateados.">Corbata verde con detalles plateados.</p>
-          <p class="price" data-precio="19.99">$19.99</p>
+          <h5 class="mt-3" data-nombre="Corbata Slytherin">Corbata Slytherin - Licencia Oficial</h5>
+          <p data-descripcion="Corbata verde con detalles plateados.">Verde serpiente, escudo bordado y ambición refinada.</p>
+          <small style="color: #aaa;">Para magos estratégicos con estilo impecable.</small>
+          <p class="price" data-precio="20.500">$20.500</p>
+          <button class="btn-house slytherin-btn mt-2 add-to-cart" data-id="25">Añadir al carrito</button>
         </div>
       </div>
 
       <!-- Cordones -->
       <div class="col-md-4">
-        <div class="card-product text-center" data-id="25">
+        <div class="card-product text-center" data-id="26">
           <img src="img/slytherin/cordones slytherin.jpg" alt="Cordones de Slytherin" class="img-fluid">
-          <h5 class="mt-3" data-nombre="Cordones Slytherin">Cordones Slytherin</h5>
-          <p data-descripcion="Cordones mágicos con los colores de la casa.">Cordones mágicos con los colores de la casa.</p>
-          <p class="price" data-precio="24.99">$24.99</p>
+          <h5 class="mt-3" data-nombre="Cordones Slytherin">Cordones Slytherin - Licencia oficial</h5>
+          <p data-descripcion="Cordones mágicos con los colores de la casa.">Cordones mágicos verde serpiente con patrones sigilosos.</p>
+          <small style="color: #aaa;">Hechos para quienes avanzan con ambición y estilo.</small>
+          <p class="price" data-precio="10.500">$10.500</p>
+          <button class="btn-house slytherin-btn mt-2 add-to-cart" data-id="26">Añadir al carrito</button>
         </div>
       </div>
 
       <!-- Llavero -->
       <div class="col-md-4">
-        <div class="card-product text-center" data-id="26">
+        <div class="card-product text-center" data-id="27">
           <img src="img/slytherin/llavero escudo slytherin.jpg" alt="Llavero de Slytherin" class="img-fluid">
-          <h5 class="mt-3" data-nombre="Llavero Slytherin">Llavero escudo de Slytherin</h5>
-          <p data-descripcion="Llavero metálico con el escudo de la casa.">Llavero metálico con el escudo de la casa.</p>
-          <p class="price" data-precio="12.99">$12.99</p>
+          <h5 class="mt-3" data-nombre="Llavero Slytherin">Llavero Slytherin - Licencia Oficial</h5>
+          <p data-descripcion="Llavero metálico con el escudo de la casa.">Llavero metálico con serpiente plateada sobre escudo verde, con detalles elegantes.</p>
+          <small style="color: #aaa;">Para magos ambiciosos que saben lo que quieren.</small>
+          <p class="price" data-precio="7.000">$7.000</p>
+          <button class="btn-house slytherin-btn mt-2 add-to-cart" data-id="27">Añadir al carrito</button>
         </div>
       </div>
 
       <!-- Medias -->
       <div class="col-md-4">
-        <div class="card-product text-center" data-id="27">
-          <img src="img/slytherin/medias slytherin.jpg" alt="Medias de Slytherin" class="img-fluid">
-          <h5 class="mt-3" data-nombre="Medias Slytherin">Medias Slytherin</h5>
-          <p data-descripcion="Medias mágicas con patrón verde y plata.">Medias mágicas con patrón verde y plata.</p>
-          <p class="price" data-precio="39.99">$39.99</p>
-        </div>
-      </div>
-
-      <!-- Túnica -->
-      <div class="col-md-4">
         <div class="card-product text-center" data-id="28">
-          <img src="img/slytherin/tunica slytherin.jpg" alt="Túnica de Slytherin" class="img-fluid">
-          <h5 class="mt-3" data-nombre="Túnica Slytherin">Túnica de Slytherin</h5>
-          <p data-descripcion="Túnica oficial con forro plateado.">Túnica oficial con forro plateado.</p>
-          <p class="price" data-precio="12.99">$12.99</p>
+          <img src="img/slytherin/medias slytherin.jpg" alt="Medias de Slytherin" class="img-fluid">
+          <h5 class="mt-3" data-nombre="Medias Slytherin">Medias Slytherin - Licencia Oficial</h5>
+          <p data-descripcion="Medias mágicas con patrón verde y plata.">Medias mágicas verdes con el símbolo de Slytherin.</p>
+          <small style="color: #aaa;">Estilo cómodo y diseño oficial.</small>
+          <p class="price" data-precio="6.700">$6.700</p>
+          <button class="btn-house slytherin-btn mt-2 add-to-cart" data-id="28">Añadir al carrito</button>
         </div>
       </div>
     </div>
-  </div>
+
 
   <!-- Botón Volver Arriba -->
   <button id="btn-top" title="Volver arriba">↑</button>
@@ -183,6 +219,21 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   </script>
+
+  <script>
+  const cart = [];
+
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+      const productId = button.getAttribute('data-id');
+      cart.push(productId);
+      alert('Producto añadido al carrito 🛒');
+      console.log('Carrito:', cart);
+    });
+  });
+</script>
+
+
 </body>
 </html>
 
