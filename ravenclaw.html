@@ -88,6 +88,27 @@
       0% { opacity: 0; transform: translateY(30px); }
       100% { opacity: 1; transform: translateY(0); }
     }
+.ravenclaw-btn {
+  background-color: #1c1c1c; /* Fondo gris oscuro */
+  color: #9dc3e6; /* Azul claro con mejor contraste */
+  border: 2px solid #9dc3e6; /* Borde definido */
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 6px rgba(157, 195, 230, 0.2);
+}
+
+.ravenclaw-btn:hover {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(157, 195, 230, 0.4);
+}
+
+    
   </style>
 </head>
 <body>
@@ -96,73 +117,88 @@
     <h1 class="section-title">Productos de Ravenclaw 🦅</h1>
 
     <div class="row g-4">
-      <!-- Bufanda -->
+
+      <!-- Túnica -->
       <div class="col-md-4">
         <div class="card-product text-center" data-id="15">
+          <img src="img/ravenclaw/tunica ravenclaw.jpg" alt="Túnica Ravenclaw" class="img-fluid">
+          <h5 class="mt-3" data-nombre="Túnica Ravenclaw">Túnica Ravenclaw - Licencia Oficial</h5>
+          <p data-descripcion="Túnica azul con detalles en bronce.">Túnica azul con detalles en bronce.</p>
+          <small style="color: #aaa;">Con capucha y bolsillo interno para varita que te permite llevar tu varita de manera segura.</small>
+          <p class="price" data-precio="85.000">$85.000</p>
+          <button class="btn-house ravenclaw-btn mt-2 add-to-cart" data-id="15">Añadir al carrito</button>
+        </div>
+      </div>
+
+      <!-- Bufanda -->
+      <div class="col-md-4">
+        <div class="card-product text-center" data-id="16">
           <img src="img/ravenclaw/bufanda ravenclaw.jpg" alt="Bufanda Ravenclaw" class="img-fluid">
-          <h5 class="mt-3" data-nombre="Bufanda Ravenclaw">Bufanda Ravenclaw</h5>
-          <p data-descripcion="Bufanda tejida azul y bronce.">Bufanda tejida azul y bronce.</p>
-          <p class="price" data-precio="29.99">$29.99</p>
+          <h5 class="mt-3" data-nombre="Bufanda Ravenclaw">Bufanda Ravenclaw - Licencia Oficial</h5>
+          <p data-descripcion="Bufanda tejida azul y bronce.">Bufanda Rayada Ravenclaw con escudo bordado.</p>
+          <small style="color: #aaa;">Con su diseño rayado y los colores emblemáticos de la casa.</small>
+          <p class="price" data-precio="39.900">$39.900</p>
+          <button class="btn-house ravenclaw-btn mt-2 add-to-cart" data-id="16">Añadir al carrito</button>
         </div>
       </div>
 
       <!-- Chaqueta -->
       <div class="col-md-4">
-        <div class="card-product text-center" data-id="16">
+        <div class="card-product text-center" data-id="17">
           <img src="img/ravenclaw/chaqueta ravenclaw.jpg" alt="Chaqueta Ravenclaw" class="img-fluid">
-          <h5 class="mt-3" data-nombre="Chaqueta Ravenclaw">Chaqueta Ravenclaw</h5>
-          <p data-descripcion="Chaqueta Ravenclaw.">Chaqueta Ravenclaw.</p>
-          <p class="price" data-precio="29.99">$29.99</p>
+          <h5 class="mt-3" data-nombre="Chaqueta Ravenclaw">Chaqueta Ravenclaw – Licencia Oficial</h5>
+          <p data-descripcion="Chaqueta Ravenclaw.">Chaqueta Ravenclaw con escudo bordado, diseño varsity y detalles mágicos para fanáticos valientes.</p>
+          <small style="color: #aaa;">Bolsillo interno para varita y acabado premium.</small>
+          <p class="price" data-precio="65.000">$65.000</p>
+          <button class="btn-house ravenclaw-btn mt-2 add-to-cart" data-id="17">Añadir al carrito</button>
         </div>
       </div>
 
       <!-- Corbata -->
       <div class="col-md-4">
-        <div class="card-product text-center" data-id="17">
+        <div class="card-product text-center" data-id="18">
           <img src="img/ravenclaw/corbata ravenclaw.jpg" alt="Corbata Ravenclaw" class="img-fluid">
-          <h5 class="mt-3" data-nombre="Corbata Ravenclaw">Corbata Ravenclaw</h5>
-          <p data-descripcion="Corbata Ravenclaw.">Corbata Ravenclaw.</p>
-          <p class="price" data-precio="29.99">$29.99</p>
+          <h5 class="mt-3" data-nombre="Corbata Ravenclaw">Corbata Ravenclaw - Licencia Oficial</h5>
+          <p data-descripcion="Corbata Ravenclaw.">Azul profundo, rayas plateadas y sabiduría bordada.</p>
+          <small style="color: #aaa;">Diseñada para mentes brillantes y elegantes.</small>
+          <p class="price" data-precio="20.500">$20.500</p>
+          <button class="btn-house ravenclaw-btn mt-2 add-to-cart" data-id="18">Añadir al carrito</button>
         </div>
       </div>
 
       <!-- Cordones -->
       <div class="col-md-4">
-        <div class="card-product text-center" data-id="18">
+        <div class="card-product text-center" data-id="19">
           <img src="img/ravenclaw/cordones ravenclaw.jpg" alt="Cordones Ravenclaw" class="img-fluid">
-          <h5 class="mt-3" data-nombre="Cordones Ravenclaw">Cordones Ravenclaw</h5>
-          <p data-descripcion="Cordones Ravenclaw.">Cordones Ravenclaw.</p>
-          <p class="price" data-precio="29.99">$29.99</p>
+          <h5 class="mt-3" data-nombre="Cordones Ravenclaw">Cordones Ravenclaw - Licencia oficial</h5>
+          <p data-descripcion="Cordones Ravenclaw.">Cordones magicos azul profundo con símbolos de sabiduría y libertad.</p>
+          <small style="color: #aaa;">Para mentes brillantes que pisan con propósito.</small>
+          <p class="price" data-precio="10.500">$10.500</p>
+          <button class="btn-house ravenclaw-btn mt-2 add-to-cart" data-id="19">Añadir al carrito</button>
         </div>
       </div>
 
       <!-- Llavero -->
       <div class="col-md-4">
-        <div class="card-product text-center" data-id="19">
+        <div class="card-product text-center" data-id="20">
           <img src="img/ravenclaw/llavero escudo ravenclaw.jpg" alt="Llavero Ravenclaw" class="img-fluid">
-          <h5 class="mt-3" data-nombre="Llavero Ravenclaw">Llavero escudo de Ravenclaw</h5>
-          <p data-descripcion="Llavero Ravenclaw.">Llavero escudo de Ravenclaw.</p>
-          <p class="price" data-precio="29.99">$29.99</p>
+          <h5 class="mt-3" data-nombre="Llavero Ravenclaw">Llavero Ravenclaw - Licencia Oficial</h5>
+          <p data-descripcion="Llavero Ravenclaw.">Llavero con cresta azul y bronce con el águila de la sabiduría.</p>
+          <small style="color: #aaa;">Diseñado para mentes brillantes y curiosas.</small>
+          <p class="price" data-precio="7.000">$7.000</p>
+          <button class="btn-house ravenclaw-btn mt-2 add-to-cart" data-id="20">Añadir al carrito</button>
         </div>
       </div>
 
       <!-- Medias -->
       <div class="col-md-4">
-        <div class="card-product text-center" data-id="20">
-          <img src="img/ravenclaw/medias ravenclaw.jpg" alt="Medias Ravenclaw" class="img-fluid">
-          <h5 class="mt-3" data-nombre="Medias Ravenclaw">Medias de Ravenclaw</h5>
-          <p data-descripcion="Medias Ravenclaw.">Medias de Ravenclaw.</p>
-          <p class="price" data-precio="29.99">$29.99</p>
-        </div>
-      </div>
-
-      <!-- Túnica -->
-      <div class="col-md-4">
         <div class="card-product text-center" data-id="21">
-          <img src="img/ravenclaw/tunica ravenclaw.jpg" alt="Túnica Ravenclaw" class="img-fluid">
-          <h5 class="mt-3" data-nombre="Túnica Ravenclaw">Túnica Ravenclaw</h5>
-          <p data-descripcion="Túnica azul con detalles en bronce.">Túnica azul con detalles en bronce.</p>
-          <p class="price" data-precio="49.99">$49.99</p>
+          <img src="img/ravenclaw/medias ravenclaw.jpg" alt="Medias Ravenclaw" class="img-fluid">
+          <h5 class="mt-3" data-nombre="Medias Ravenclaw">Medias de Ravenclaw - Licencia Oficial</h5>
+          <p data-descripcion="Medias Ravenclaw.">Medias mágicas azules con el escudo de Ravenclaw.</p>
+          <small style="color: #aaa;">Tejido suave y estampado duradero.</small>
+          <p class="price" data-precio="6.700">$6.700</p>
+          <button class="btn-house ravenclaw-btn mt-2 add-to-cart" data-id="21">Añadir al carrito</button>
         </div>
       </div>
     </div>
@@ -183,6 +219,21 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   </script>
+
+  <script>
+  const cart = [];
+
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+      const productId = button.getAttribute('data-id');
+      cart.push(productId);
+      alert('Producto añadido al carrito 🛒');
+      console.log('Carrito:', cart);
+    });
+  });
+</script>
+
+
 </body>
 </html>
 
