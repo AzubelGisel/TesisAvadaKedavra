@@ -4,9 +4,74 @@
   <meta charset="UTF-8">
   <title>Preguntas Frecuentes</title>
   <link rel="stylesheet" href="estilos.css"> <!-- si tenés un CSS general -->
+
+  <style>
+  body {
+    background-color: #1a1a1a;
+    color: #f5e6c4;
+    font-family: 'Cinzel', serif;
+    padding: 2rem;
+    background-image: url('img/fondo-mapa.jpg'); /* fondo tipo pergamino */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #e0c48f;
+    text-shadow: 0 0 6px rgba(255, 235, 180, 0.3);
+    margin-bottom: 0.5rem;
+  }
+
+  header p {
+    text-align: center;
+    font-style: italic;
+    color: #cbb89d;
+    margin-bottom: 2rem;
+  }
+
+  section h2 {
+    font-size: 1.4rem;
+    color: #d4b483;
+    margin-top: 2rem;
+    position: relative;
+    padding-left: 20px;
+  }
+
+  section h2::before {
+    content: "🗺️";
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  section p {
+    font-size: 1rem;
+    color: #f5e6c4;
+    margin-bottom: 1rem;
+    background-color: rgba(50, 40, 30, 0.4);
+    padding: 10px 15px;
+    border-left: 3px solid #d4b483;
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(255, 235, 180, 0.1);
+  }
+
+  section p:hover {
+    background-color: rgba(70, 60, 40, 0.5);
+    transform: scale(1.01);
+    transition: all 0.3s ease;
+  }
+</style>
+
+
 </head>
 <body style="background-color:#1a1a1a; color:#fff; font-family: 'Segoe UI', sans-serif; padding: 2rem;">
   <header>
+
+    <a href="index.html" class="btn-volver-inicio">← Volver al Inicio</a>
+
     <h1>Preguntas Frecuentes</h1>
     <p>Respuestas mágicas para tus dudas mundanas 🧙‍♀️</p>
   </header>
@@ -16,7 +81,7 @@
     <p>Elegí tu producto mágico, hacé clic en “Agregar al caldero” y seguí los pasos.</p>
 
     <h2>¿Qué métodos de pago aceptan?</h2>
-    <p>Tarjetas, transferencias, y pronto: galeones digitales.</p>
+    <p>Efectivo, transferencias, y pronto: galeones digitales.</p>
 
     <h2>¿Cuánto tarda en llegar mi pedido?</h2>
     <p>Entre 2 y 5 días hábiles en Tucumán. ¡Más rápido que una escoba Nimbus!</p>
@@ -27,5 +92,6 @@
     <h2>¿Qué hago si tengo problemas con mi pedido?</h2>
     <p>Escribinos por correo o por lechuza digital. Respondemos en menos de 24 horas.</p>
   </section>
+  
 </body>
 </html>
