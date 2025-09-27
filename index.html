@@ -284,32 +284,36 @@
   </style>
 </head>
 <body>
+<!-- NAVBAR / membrete (1.5cm) -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+  <div class="container-fluid">
+    <a class="brand-wrap navbar-brand" href="#inicio">
+      <span class="brand-star">★</span>
+      <span class="brand-title">Avada Kedavra</span>
+    </a>
 
-  <!-- NAVBAR / membrete (1.5cm) -->
-  <nav class="navbar navbar-expand-lg navbar-custom">
-    <div class="container-fluid">
-      <a class="brand-wrap navbar-brand" href="#inicio"><span class="brand-star">★</span><span class="brand-title">Avada Kedavra</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse" aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse" aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navCollapse">
+      <ul class="navbar-nav align-items-center me-3">
+        <li class="nav-item"><a class="nav-link custom" href="#inicio">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link custom" href="productos.html">Productos</a></li>
+        <li class="nav-item"><a class="nav-link custom" href="#casas">Casas</a></li>
+        <li class="nav-item"><a class="nav-link custom" href="#trivia">Sombrero Seleccionador</a></li>
+        <li class="nav-item"><a class="nav-link custom" href="#subscribe">Nosotros</a></li>
+        <!-- Nueva opción agregada -->
+        <li class="nav-item"><a class="nav-link custom" href="faq.html">❓ Preguntas Frecuentes</a></li>
+      </ul>
 
-      <div class="collapse navbar-collapse justify-content-end" id="navCollapse">
-        <ul class="navbar-nav align-items-center me-3">
-          <li class="nav-item"><a class="nav-link custom" href="#inicio">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link custom" href="productos.html">Productos</a></li>
-          <li class="nav-item"><a class="nav-link custom" href="#casas">Casas</a></li>
-          <!-- Sombrero Seleccionador como enlace de menú -->
-          <li class="nav-item"><a class="nav-link custom" href="#trivia">Sombrero Seleccionador</a></li>
-          <li class="nav-item"><a class="nav-link custom" href="#subscribe">Nosotros</a></li>
-        </ul>
-
-        <div class="d-flex align-items-center">
-          <button class="cart-btn cart"><i class="bi bi-cart3"></i>&nbsp; Carrito (0)</button>
-        </div>
+      <div class="d-flex align-items-center">
+        <button class="cart-btn cart"><i class="bi bi-cart3"></i>&nbsp; Carrito (0)</button>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
+
 
   <!-- HERO -->
   <header class="hero" id="inicio">
@@ -706,7 +710,7 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Modal: Solicitud a Hogwarts -->
+ <!-- Modal: Solicitud a Hogwarts -->
 <div class="modal fade" id="hogwartsFormModal" tabindex="-1" aria-labelledby="hogwartsFormLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content" style="background:rgba(0,0,0,0.85); color:#fff; border-radius:12px;">
@@ -732,6 +736,16 @@
             <label for="correoelectronico" class="form-label">Correo electrónico</label>
             <input type="text" class="form-control" id="correoelectronico" required>
           </div>
+          <div class="mb-3">
+            <label for="antecedentes-magicos" class="form-label">Antecedentes mágicos</label>
+            <select class="form-select" id="antecedentes-magicos" required>
+              <option value="">Seleccione una opción</option>
+              <option value="sangre-pura">🧬 Sangre pura</option>
+              <option value="mestizo">🦁 Mestizo</option>
+              <option value="nacido-muggle">🌍 Nacido de muggles</option>
+              <option value="desconocido">❓ Desconocido</option>
+            </select>
+          </div>
           <div class="text-center">
             <button type="submit" class="btn btn-light">Enviar solicitud</button>
           </div>
@@ -744,6 +758,7 @@
     </div>
   </div>
 </div>
+
 
 <script>
 document.getElementById("hogwartsForm").addEventListener("submit", function(e) {
