@@ -304,7 +304,7 @@
         <li class="nav-item"><a class="nav-link custom" href="#trivia">Sombrero Seleccionador</a></li>
         <li class="nav-item"><a class="nav-link custom" href="#subscribe">Nosotros</a></li>
         <!-- Nueva opción agregada -->
-        <li class="nav-item"><a class="nav-link custom" href="faq.html">❓ Preguntas Frecuentes</a></li>
+        <li class="nav-item"><a class="nav-link custom" href="faq.html">Preguntas Frecuentes</a></li>
       </ul>
 
       <div class="d-flex align-items-center">
@@ -713,8 +713,13 @@
  <!-- Modal: Solicitud a Hogwarts -->
 <div class="modal fade" id="hogwartsFormModal" tabindex="-1" aria-labelledby="hogwartsFormLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content" style="background:rgba(0,0,0,0.85); color:#fff; border-radius:12px;">
-      <div class="modal-header">
+<div class="modal-content" style="
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  border-radius: 12px;
+  border: 2px solid #d4af37;
+  box-shadow: 0 0 20px rgba(255, 223, 100, 0.6), 0 0 40px rgba(255, 223, 100, 0.3);
+">      <div class="modal-header">
         <h5 class="modal-title" id="hogwartsFormLabel">📜 Solicitud de Ingreso a Hogwarts</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
@@ -750,10 +755,19 @@
             <button type="submit" class="btn btn-light">Enviar solicitud</button>
           </div>
         </form>
-        <div id="confirmacionLechuza" class="mt-4 text-center" style="display:none;">
-          <p>✅ ¡Solicitud enviada con éxito!</p>
-          <p>Una lechuza mágica te entregará la respuesta pronto 🦉</p>
-        </div>
+        <div id="confirmacionLechuza" class="mt-4 text-center" style="
+  display: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffd;
+  padding: 1rem;
+  border: 2px dashed #d4af37;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 223, 100, 0.5);
+">
+  <p>✅ <strong>¡Solicitud enviada con éxito!</strong></p>
+  <p>Una lechuza mágica te entregará la respuesta pronto 🦉</p>
+</div>
+
       </div>
     </div>
   </div>
