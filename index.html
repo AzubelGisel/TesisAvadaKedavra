@@ -15,42 +15,53 @@
   <style>
     /* --- Variables y base --- */
     :root{
-      --bg-matte: #0f1112;        /* fondo general, menos negro */
-      --panel: #151617;
-      --muted-gold: #b6922f;
-      --subtitle-red: #7b1f1f;
-      --btn-blue: #112334;
-      --btn-blue-hover: #1b3d5a;
-      --text: #e9e9e9;
-      --membrete-height: 1.5cm;   /* altura requerida */
+      --bg-matte: #0f1112;        /* Fondo general oscuro, usado como base para secciones principales */
+      --panel: #151617;           /* Color de paneles o contenedores internos, ligeramente más claro que el fondo */
+      --muted-gold: #b6922f;      /* Dorado apagado */
+      --subtitle-red: #7b1f1f;    /* Rojo para subtítulos */
+      --btn-blue: #112334;        /* Botón principal */
+      --btn-blue-hover: #1b3d5a;  /* Hover del botón */
+      --text: #e9e9e9;            /* Color de texto claro */
+      --membrete-height: 1.5cm;     /* Altura de membrete */
     }
 
-    html { scroll-behavior: smooth; }
-    html,body { height:100%; margin:0; background:var(--bg-matte); color:var(--text); font-family:"Roboto", sans-serif; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+    html { scroll-behavior: smooth; }  /* Desplazamiento suave al hacer clic en enlaces internos */
+    html,body { 
+      height:100%;                            /* Ocupa toda la altura de la ventana */
+      margin:0;                               /* Elimina márgenes por defecto */
+      background:var(--bg-matte);             /* Fondo oscuro definido en variables */
+      color:var(--text);                      /* Texto claro para contraste */
+      font-family:"Roboto", sans-serif;       /* Fuente principal del sitio */
+      -webkit-font-smoothing:antialiased;     /* Mejora suavizado en Chrome/Safari */
+      -moz-osx-font-smoothing:grayscale;      /* Mejora suavizado en Firefox/Mac */
+    }
 
-    a { text-decoration: none; color: inherit; }
+    a { 
+      text-decoration: none;     /* Quita subrayado de los enlaces */
+      color: inherit;            /* Hereda el color del texto del contenedor */
+    }
 
     /* --- NAVBAR / membrete --- */
     .navbar-custom {
-      height: var(--membrete-height);
-      background: #080808;
-      display: flex;
-      align-items: center;
-      border-bottom: 1px solid rgba(255,255,255,0.03);
-      padding-left: 28px;
-      padding-right: 28px;
+      height: var(--membrete-height);                       /* Altura definida por variable */
+      background: #080808;                                /* Fondo negro profundo */
+      display: flex;                                        /* Usa flexbox para alinear contenido */
+      align-items: center;                                  /* Centra verticalmente los elementos */
+      border-bottom: 1px solid rgba(255,255,255,0.03);    /* Línea sutil inferior */
+      padding-left: 28px;                                   /* Espaciado izquierdo */
+      padding-right: 28px;                                  /* Espaciado derecho */
     }
 
     .navbar-custom {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
+  position: fixed;    /* Fija la barra en la parte superior */
+  top: 0;             /* Alineada al borde superior */
+  left: 0;            /* Alineada al borde izquierdo */
+  right: 0;           /* Alineada al borde derecho */
+  z-index: 999;       /* Se mantiene por encima de otros elementos */
 }
 
 .hero {
-  margin-top: var(--membrete-height);
+  margin-top: var(--membrete-height); /* Espacio para no tapar el header fijo */
 }
 
 
@@ -80,7 +91,7 @@
       background:transparent;
     }
 
-    /* When using anchors, ensure sections are visible below the membrete */
+
     section { scroll-margin-top: calc(var(--membrete-height) + 12px); }
 
     /* --- HERO --- */
@@ -860,8 +871,6 @@ setInterval(moverVarita, 4000);
     
   </div>
 </div>
-
-
 
 </body>
 </html>
