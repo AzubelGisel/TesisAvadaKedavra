@@ -592,122 +592,63 @@
   <!-- BOOTSTRAP JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-  <script>
-    // ------- Quiz logic -------
-    document.getElementById('calcBtn').addEventListener('click', function(){
-      const form = document.getElementById('houseQuiz');
-      const q1 = form.q1?.value;
-      const q2 = form.q2?.value;
-      const q3 = form.q3?.value;
+ <script>
+document.getElementById('calcBtn').addEventListener('click', function(){
+  const form = document.getElementById('houseQuiz');
+  const q1 = form.q1?.value;
+  const q2 = form.q2?.value;
+  const q3 = form.q3?.value;
 
-      if(!q1 || !q2 || !q3){
-        alert('Por favor respondé todas las preguntas.');
-        return;
-      }
+  if(!q1 || !q2 || !q3){
+    alert('Por favor respondé todas las preguntas.');
+    return;
+  }
 
-      const tally = {Gryffindor:0, Hufflepuff:0, Ravenclaw:0, Slytherin:0};
-      [q1,q2,q3].forEach(v => { if(tally[v] !== undefined) tally[v]++; });
+  const tally = {Gryffindor:0, Hufflepuff:0, Ravenclaw:0, Slytherin:0};
+  [q1,q2,q3].forEach(v => { if(tally[v] !== undefined) tally[v]++; });
 
-      // pick the house with highest count; tie-breaker: priority order Gryffindor,Hufflepuff,Ravenclaw,Slytherin
-      const order = ['Gryffindor','Hufflepuff','Ravenclaw','Slytherin'];
-      let result = order[0];
-      let max = -1;
-      for(const h of order){
-        if(tally[h] > max){ max = tally[h]; result = h; }
-      }
+  const order = ['Gryffindor','Hufflepuff','Ravenclaw','Slytherin'];
+  let result = order[0], max = -1;
+  for(const h of order){ if(tally[h] > max){ max = tally[h]; result = h; } }
 
-      const resText = {
-        Gryffindor: { title:'Gryffindor', text:'¡Tu casa es Gryffindor! Valor, coraje y determinación.' },
-        Hufflepuff: { title:'Hufflepuff', text:'¡Tu casa es Hufflepuff! Lealtad, paciencia y trabajo duro.' },
-        Ravenclaw: { title:'Ravenclaw', text:'¡Tu casa es Ravenclaw! Inteligencia, creatividad y amor por el aprendizaje.' },
-        Slytherin: { title:'Slytherin', text:'¡Tu casa es Slytherin! Ambición, astucia y determinación.' }
-      };
+  const casas = {
+    Gryffindor: {
+      escudo: '🦁',
+      frase: 'Donde habitan los valientes. Tu coraje te guiará.',
+      clase: 'gryffindor-bg'
+    },
+    Hufflepuff: {
+      escudo: '🦡',
+      frase: 'La casa de los justos y leales. Tu corazón es tu fuerza.',
+      clase: 'hufflepuff-bg'
+    },
+    Ravenclaw: {
+      escudo: '🦅',
+      frase: 'Donde la mente encuentra su vuelo. Tu sabiduría ilumina el camino.',
+      clase: 'ravenclaw-bg'
+    },
+    Slytherin: {
+      escudo: '🐍',
+      frase: 'El poder de la ambición. Tu astucia te llevará lejos.',
+      clase: 'slytherin-bg'
+    }
+  };
 
-      const resultBox = document.getElementById('quizResult');
-      const resultText = document.getElementById('resultText');
-      resultText.innerHTML = '<strong>' + resText[result].title + ':</strong> ' + resText[result].text;
-      resultBox.style.display = 'block';
-      resultBox.scrollIntoView({ behavior:'smooth', block:'center' });
-    });
+  // Actualizar contenido del modal
+  const data = casas[result];
+  document.getElementById('escudoCasa').innerText = data.escudo;
+  document.getElementById('nombreCasa').innerText = result;
+  document.getElementById('fraseCasa').innerText = data.frase;
 
-    // ------- Subscribe handler (visual) -------
-    document.getElementById('subForm').addEventListener('submit', function(e){
-      e.preventDefault();
-      const mail = document.getElementById('subEmail').value;
-      if(!mail){ alert('Ingresá un correo válido'); return; }
-      alert('¡Gracias! Te suscribiste con: ' + mail);
-      this.reset();
-    });
+  const modalContent = document.getElementById('modalCartaContent');
+  modalContent.className = 'modal-content ' + data.clase;
 
-    // ------- Particles background (lightweight) -------
-    (function(){
-      const canvas = document.getElementById('particles-canvas');
-      if(!canvas) return;
-      const ctx = canvas.getContext('2d');
-      let w = canvas.width = window.innerWidth;
-      let h = canvas.height = window.innerHeight;
-      let stars = [];
-      const STAR_COUNT = Math.floor((w*h)/60000);
+  // Mostrar el modal
+  const modal = new bootstrap.Modal(document.getElementById('cartaCasaModal'));
+  modal.show();
+});
+</script>
 
-      function rand(min,max){ return Math.random()*(max-min)+min; }
-
-      function createStars(){
-        stars = [];
-        const count = Math.max(40, STAR_COUNT);
-        for(let i=0;i<count;i++){
-          stars.push({
-            x: Math.random()*w,
-            y: Math.random()*h,
-            r: rand(0.3,1.8),
-            alpha: rand(0.1,0.9),
-            dx: rand(-0.03,0.03),
-            dy: rand(-0.02,0.02),
-            pulse: Math.random()*0.03 + 0.01,
-            phase: Math.random()*Math.PI*2
-          });
-        }
-      }
-
-      function resize(){
-        w = canvas.width = window.innerWidth;
-        h = canvas.height = window.innerHeight;
-        createStars();
-      }
-      window.addEventListener('resize', resize);
-
-      function draw(){
-        ctx.clearRect(0,0,w,h);
-        // subtle huge gradient
-        const g = ctx.createLinearGradient(0,0,w,h);
-        g.addColorStop(0,'rgba(255,255,255,0.01)');
-        g.addColorStop(1,'rgba(0,0,0,0.03)');
-        ctx.fillStyle = g;
-        ctx.fillRect(0,0,w,h);
-
-        for(let s of stars){
-          s.phase += s.pulse;
-          const a = 0.35 + Math.abs(Math.sin(s.phase))*0.65 * s.alpha;
-          ctx.beginPath();
-          ctx.fillStyle = 'rgba(255,255,255,'+a+')';
-          ctx.shadowBlur = Math.max(0, s.r*6);
-          ctx.shadowColor = 'rgba(255,240,200,0.08)';
-          ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
-          ctx.fill();
-          // drift
-          s.x += s.dx;
-          s.y += s.dy;
-          if(s.x<0) s.x = w;
-          if(s.x>w) s.x = 0;
-          if(s.y<0) s.y = h;
-          if(s.y>h) s.y = 0;
-        }
-        requestAnimationFrame(draw);
-      }
-
-      resize();
-      draw();
-    })();
-  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
  <!-- Modal: Solicitud a Hogwarts -->
@@ -823,6 +764,22 @@ function moverVarita() {
 setInterval(moverVarita, 4000);
 </script>
 
+<!-- Modal: Resultado de la Casa -->
+<div class="modal fade" id="cartaCasaModal" tabindex="-1" aria-labelledby="cartaCasaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" id="modalCartaContent">
+      <div class="modal-header">
+        <h5 class="modal-title title-animado" id="cartaCasaLabel">Tu carta ha llegado 🦉</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body text-center">
+        <div id="escudoCasa" style="font-size:64px; margin-bottom:12px;"></div>
+        <h4 id="nombreCasa"></h4>
+        <p id="fraseCasa" class="mt-2"></p>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 </body>
