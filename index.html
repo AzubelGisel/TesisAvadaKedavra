@@ -300,10 +300,21 @@
       <span class="brand-title">Avada Kedavra</span>
     </a>
 
+<!-- NAVBAR / membrete (1.5cm) -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+  <div class="container-fluid">
+    <!-- Marca -->
+    <a class="brand-wrap navbar-brand" href="#inicio">
+      <span class="brand-star">★</span>
+      <span class="brand-title">Avada Kedavra</span>
+    </a>
+
+    <!-- Botón hamburguesa -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse" aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <!-- Menú colapsable -->
     <div class="collapse navbar-collapse justify-content-end" id="navCollapse">
       <ul class="navbar-nav align-items-center me-3">
         <li class="nav-item"><a class="nav-link custom" href="#inicio">Inicio</a></li>
@@ -311,16 +322,19 @@
         <li class="nav-item"><a class="nav-link custom" href="#casas">Casas</a></li>
         <li class="nav-item"><a class="nav-link custom" href="#trivia">Sombrero Seleccionador</a></li>
         <li class="nav-item"><a class="nav-link custom" href="#subscribe">Nosotros</a></li>
-        <!-- Nueva opción agregada -->
         <li class="nav-item"><a class="nav-link custom" href="faq.html">Preguntas Frecuentes</a></li>
       </ul>
 
-      <div class="d-flex align-items-center">
-        <button class="cart-btn cart"><i class="bi bi-cart3"></i>&nbsp; Carrito (0)</button>
+      <!-- Ícono del carrito alineado a la derecha -->
+      <div class="d-flex">
+        <a href="carrito.html" class="cart-btn d-flex align-items-center">
+          <i class="bi bi-cart3"></i>&nbsp; Carrito (<span id="contador-carrito">0</span>)
+        </a>
       </div>
     </div>
   </div>
 </nav>
+
 
 
   <!-- HERO -->
@@ -351,6 +365,72 @@
 
   <!-- MAIN CONTENT -->
   <main class="container my-5" id="main-content">
+
+    <!-- PRODUCTOS DESTACADOS -->
+    <section id="productos" class="mb-5">
+      <div class="text-center mb-4">
+        <h2 class="section-title">PRODUCTOS DESTACADOS</h2>
+        <p class="section-sub">Artículos mágicos seleccionados especialmente para ti</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="card-product h-100 d-flex flex-column justify-content-between">
+            <div>
+              <div style="height:160px; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.08); font-size:60px;">👕</div>
+              <h5 class="mt-2">Túnica de Gryffindor</h5>
+              <p class="muted">Túnica oficial con los colores de la casa Gryffindor.</p>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div class="price">$49.99</div>
+              <button onclick="agregarAlCarrito(1)">Añadir</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card-product h-100 d-flex flex-column justify-content-between">
+            <div>
+              <div style="height:160px; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.08); font-size:60px;">🧣</div>
+              <h5 class="mt-2">Bufanda de Slytherin</h5>
+              <p class="muted">Elegante bufanda en verde y plata.</p>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div class="price">$29.99</div>
+              <button onclick="agregarAlCarrito(2)">Añadir</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card-product h-100 d-flex flex-column justify-content-between">
+            <div>
+              <div style="height:160px; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.08); font-size:60px;">🪄</div>
+              <h5 class="mt-2">Varita de Ravenclaw</h5>
+              <p class="muted">Réplica inspirada en diseños de Ravenclaw.</p>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div class="price">$34.99</div>
+              <button onclick="agregarAlCarrito(3)">Añadir</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card-product h-100 d-flex flex-column justify-content-between">
+            <div>
+              <div style="height:160px; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.08); font-size:60px;">📌</div>
+              <h5 class="mt-2">Pin de Hufflepuff</h5>
+              <p class="muted">Pin metálico con emblema de Hufflepuff.</p>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div class="price">$12.99</div>
+              <button onclick="agregarAlCarrito(4)">Añadir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- CASAS -->
     <section id="casas" class="mb-5">
@@ -599,66 +679,132 @@
   </footer>
 
   <!-- BOOTSTRAP JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+ <!-- ✅ Bootstrap JS debe ir separado -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
- <script>
-document.getElementById('calcBtn').addEventListener('click', function(){
-  const form = document.getElementById('houseQuiz');
-  const q1 = form.q1?.value;
-  const q2 = form.q2?.value;
-  const q3 = form.q3?.value;
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // 🛒 Carrito
+  const productos = [
+    { id: 1, nombre: "Túnica de Gryffindor", precio: 49.99 },
+    { id: 2, nombre: "Bufanda de Slytherin", precio: 29.99 },
+    { id: 3, nombre: "Varita de Ravenclaw", precio: 34.99 },
+    { id: 4, nombre: "Pin de Hufflepuff", precio: 12.99 }
+  ];
 
-  if(!q1 || !q2 || !q3){
-    alert('Por favor respondé todas las preguntas.');
-    return;
+  let carrito = (JSON.parse(localStorage.getItem("carrito")) || []).map(p => ({
+    ...p,
+    cantidad: p.cantidad ?? 1
+  }));
+  const contador = document.getElementById("contador-carrito");
+  if (contador) {
+    const total = carrito.reduce((acc, p) => acc + (p.cantidad || 1), 0);
+    contador.textContent = total;
   }
 
-  const tally = {Gryffindor:0, Hufflepuff:0, Ravenclaw:0, Slytherin:0};
-  [q1,q2,q3].forEach(v => { if(tally[v] !== undefined) tally[v]++; });
+  window.agregarAlCarrito = function(idProducto) {
+    const productoSeleccionado = productos.find(p => p.id === idProducto);
+    const index = carrito.findIndex(p => p.id === idProducto);
 
-  const order = ['Gryffindor','Hufflepuff','Ravenclaw','Slytherin'];
-  let result = order[0], max = -1;
-  for(const h of order){ if(tally[h] > max){ max = tally[h]; result = h; } }
-
-  const casas = {
-    Gryffindor: {
-      escudo: '🦁',
-      frase: 'Donde habitan los valientes. Tu coraje te guiará.',
-      clase: 'gryffindor-bg'
-    },
-    Hufflepuff: {
-      escudo: '🦡',
-      frase: 'La casa de los justos y leales. Tu corazón es tu fuerza.',
-      clase: 'hufflepuff-bg'
-    },
-    Ravenclaw: {
-      escudo: '🦅',
-      frase: 'Donde la mente encuentra su vuelo. Tu sabiduría ilumina el camino.',
-      clase: 'ravenclaw-bg'
-    },
-    Slytherin: {
-      escudo: '🐍',
-      frase: 'El poder de la ambición. Tu astucia te llevará lejos.',
-      clase: 'slytherin-bg'
+    if (index !== -1) {
+      carrito[index].cantidad += 1;
+    } else {
+      carrito.push({ ...productoSeleccionado, cantidad: 1 });
     }
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    if (contador) {
+      const total = carrito.reduce((acc, p) => acc + (p.cantidad || 1), 0);
+      contador.textContent = total;
+    }
+
+    alert(`Se agregó "${productoSeleccionado.nombre}" al carrito.`);
+    console.log("Carrito actual:", carrito);
+    mostrarCarrito?.();
   };
 
-  // Actualizar contenido del modal
-  const data = casas[result];
-  document.getElementById('escudoCasa').innerText = data.escudo;
-  document.getElementById('nombreCasa').innerText = result;
-  document.getElementById('fraseCasa').innerText = data.frase;
+  window.mostrarCarrito = function() {
+    const lista = document.getElementById("lista-carrito");
+    if (!lista) return;
+    lista.innerHTML = "";
 
-  const modalContent = document.getElementById('modalCartaContent');
-  modalContent.className = 'modal-content ' + data.clase;
+    carrito.forEach(producto => {
+      const item = document.createElement("li");
+      item.textContent = `${producto.nombre} x${producto.cantidad} - $${(producto.precio * producto.cantidad).toFixed(2)}`;
+      lista.appendChild(item);
+    });
+  };
 
-  // Mostrar el modal
-  const modal = new bootstrap.Modal(document.getElementById('cartaCasaModal'));
-  modal.show();
+  // 🧠 Cierre de menú hamburguesa
+  const navbarCollapse = document.getElementById("navCollapse");
+  const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+
+  document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
+    link.addEventListener("click", () => {
+      if (navbarCollapse.classList.contains("show")) {
+        bsCollapse.hide();
+      }
+    });
+  });
+
+  // 🎩 Sombrero Seleccionador
+  document.getElementById('calcBtn')?.addEventListener('click', function(){
+    const form = document.getElementById('houseQuiz');
+    const q1 = form.q1?.value;
+    const q2 = form.q2?.value;
+    const q3 = form.q3?.value;
+
+    if(!q1 || !q2 || !q3){
+      alert('Por favor respondé todas las preguntas.');
+      return;
+    }
+
+    const tally = {Gryffindor:0, Hufflepuff:0, Ravenclaw:0, Slytherin:0};
+    [q1,q2,q3].forEach(v => { if(tally[v] !== undefined) tally[v]++; });
+
+    const order = ['Gryffindor','Hufflepuff','Ravenclaw','Slytherin'];
+    let result = order[0], max = -1;
+    for(const h of order){ if(tally[h] > max){ max = tally[h]; result = h; } }
+
+    const casas = {
+      Gryffindor: {
+        escudo: '🦁',
+        frase: 'Donde habitan los valientes. Tu coraje te guiará.',
+        clase: 'gryffindor-bg'
+      },
+      Hufflepuff: {
+        escudo: '🦡',
+        frase: 'La casa de los justos y leales. Tu corazón es tu fuerza.',
+        clase: 'hufflepuff-bg'
+      },
+      Ravenclaw: {
+        escudo: '🦅',
+        frase: 'Donde la mente encuentra su vuelo. Tu sabiduría ilumina el camino.',
+        clase: 'ravenclaw-bg'
+      },
+      Slytherin: {
+        escudo: '🐍',
+        frase: 'El poder de la ambición. Tu astucia te llevará lejos.',
+        clase: 'slytherin-bg'
+      }
+    };
+
+    const data = casas[result];
+    document.getElementById('escudoCasa').innerText = data.escudo;
+    document.getElementById('nombreCasa').innerText = result;
+    document.getElementById('fraseCasa').innerText = data.frase;
+
+    const modalContent = document.getElementById('modalCartaContent');
+    modalContent.className = 'modal-content ' + data.clase;
+
+    const modal = new bootstrap.Modal(document.getElementById('cartaCasaModal'));
+    modal.show();
+  });
 });
 </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
  <!-- Modal: Solicitud a Hogwarts -->
 <div class="modal fade" id="hogwartsFormModal" tabindex="-1" aria-labelledby="hogwartsFormLabel" aria-hidden="true">
