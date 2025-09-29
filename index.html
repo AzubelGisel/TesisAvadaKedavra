@@ -292,15 +292,7 @@
   </style>
 </head>
 <body>
-<!-- NAVBAR / membrete (1.5cm) -->
-<nav class="navbar navbar-expand-lg navbar-custom">
-  <div class="container-fluid">
-    <a class="brand-wrap navbar-brand" href="#inicio">
-      <span class="brand-star">★</span>
-      <span class="brand-title">Avada Kedavra</span>
-    </a>
-
-<!-- NAVBAR / membrete (1.5cm) -->
+<!-- NAVBAR / membrete -->
 <nav class="navbar navbar-expand-lg navbar-custom">
   <div class="container-fluid">
     <!-- Marca -->
@@ -335,8 +327,6 @@
   </div>
 </nav>
 
-
-
   <!-- HERO -->
   <header class="hero" id="inicio">
     <canvas id="particles-canvas"></canvas>
@@ -352,14 +342,11 @@
 </button>
 </div>
 
-
-
 <div class="info-banner mt-4">
   <div class="text-center py-2">
     <strong>📢 Importante:</strong> Las inscripciones para el Test de Selección estarán abiertas hasta el 31 de octubre. ¡No te quedes afuera!
   </div>
 </div>
-
 
   </header>
 
@@ -504,8 +491,6 @@
 </div>
   </div>
 </div>
-
-
         <div class="col-md-3">
           <div class="house-card">
             <div style="height:140px; display:flex; align-items:center; justify-content:center; font-size:64px; color:#0E1A40;">🦅</div>
@@ -537,7 +522,6 @@
 </div>
   </div>
 </div>
-
 
         <div class="col-md-3">
           <div class="house-card">
@@ -681,6 +665,21 @@
   <!-- BOOTSTRAP JS -->
  <!-- ✅ Bootstrap JS debe ir separado -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Script para cerrar el menú hamburguesa al hacer clic fuera -->
+<script>
+  document.addEventListener("click", function(event) {
+    const navbar = document.getElementById("navCollapse");
+    const isOpen = navbar.classList.contains("show");
+    const isClickInside = navbar.contains(event.target);
+    const isToggler = event.target.closest(".navbar-toggler");
+
+    if (isOpen && !isClickInside && !isToggler) {
+      const bsCollapse = new bootstrap.Collapse(navbar, { toggle: true });
+      bsCollapse.hide();
+    }
+  });
+</script>
+
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -1004,6 +1003,8 @@ setInterval(moverVarita, 4000);
   resize();
   draw();
 })();
+
+
 </script>
 
 </body>
