@@ -220,20 +220,7 @@
     });
   </script>
 
-  <script>
-  const cart = [];
-
-  document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', () => {
-      const productId = button.getAttribute('data-id');
-      cart.push(productId);
-      alert('Producto añadido al carrito 🛒');
-      console.log('Carrito:', cart);
-    });
-  });
-</script>
-
-
+<script src="js/carrito.js"></script>
 </body>
 </html>
 

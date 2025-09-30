@@ -1,12 +1,16 @@
-let carrito = (JSON.parse(localStorage.getItem("carrito")) || []).map(p => ({
-  ...p,
-  cantidad: p.cantidad ?? 1
-}));
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-const lista = document.getElementById("lista-carrito");
-const totalCarrito = document.getElementById("total-carrito");
+function guardarYActualizar() {
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  renderizarCarrito();
+}
 
 function renderizarCarrito() {
+  const lista = document.getElementById("lista-carrito");
+  const totalCarrito = document.getElementById("total-carrito");
+
+  if (!lista || !totalCarrito) return;
+
   lista.innerHTML = "";
   let total = 0;
 
@@ -55,19 +59,42 @@ function eliminar(index) {
   guardarYActualizar();
 }
 
-function guardarYActualizar() {
-  localStorage.setItem("carrito", JSON.stringify(carrito));
+document.addEventListener("DOMContentLoaded", () => {
   renderizarCarrito();
-}
 
-renderizarCarrito();
+  const botonContinuar = document.getElementById("continuarCompra");
+  if (botonContinuar) {
+    botonContinuar.addEventListener("click", () => {
+      botonContinuar.classList.add("animado");
+      setTimeout(() => {
+        botonContinuar.classList.remove("animado");
+        window.location.href = "envio.html";
+      }, 600);
+    });
+  }
 
-document.getElementById("continuarCompra").addEventListener("click", () => {
-  const boton = document.getElementById("continuarCompra");
-  boton.classList.add("animado");
+  document.querySelectorAll(".add-to-cart").forEach(boton => {
+    boton.addEventListener("click", () => {
+      const card = boton.closest(".card-product");
+      if (!card) return;
 
-  setTimeout(() => {
-    boton.classList.remove("animado");
-    window.location.href = "envio.html";
-  }, 600);
+      const producto = {
+        id: boton.dataset.id,
+        nombre: card.querySelector("[data-nombre]").textContent,
+        descripcion: card.querySelector("[data-descripcion]").textContent,
+        precio: parseFloat(card.querySelector("[data-precio]").textContent.replace("$", "").replace(".", "").replace(",", ".")),
+        cantidad: 1
+      };
+
+      const existente = carrito.find(p => p.id === producto.id);
+      if (existente) {
+        existente.cantidad += 1;
+      } else {
+        carrito.push(producto);
+      }
+
+      guardarYActualizar();
+      alert(`🛒 Añadido: ${producto.nombre}`);
+    });
+  });
 });

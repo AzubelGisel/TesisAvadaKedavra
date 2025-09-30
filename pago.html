@@ -173,7 +173,8 @@
           { nombre: "Bufanda de Slytherin", precio: 2999 }
         ];
 
-        let total = productos.reduce((acc, p) => acc + p.precio, 0);
+        let total = productos.reduce((acc, p) => acc + parseFloat(p.precio), 0);
+
         let envioTexto = "";
         if (envioElegido.value === "domicilio") {
           total += 15000;
@@ -232,8 +233,10 @@ if (telefono) {
 // Guarda el tipo de envío elegido para mostrarlo en confirmacion.html
 localStorage.setItem("envio_tipo", envioTexto);
 
+
 // Guarda el total final calculado para mostrarlo en confirmacion.html
-localStorage.setItem("envio_total", total);
+localStorage.setItem("envio_total", total.toFixed(2));
+
 
 // Guarda el estado del modo debug (true o false) para que confirmacion.html lo respete
 localStorage.setItem("modo_debug", modoDebug);

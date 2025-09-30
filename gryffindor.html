@@ -203,7 +203,6 @@
       </div>
     </div>
 
-    
   </div>  <!-- Botón Volver Arriba -->
   <button id="btn-top" title="Volver arriba">↑</button>
 
@@ -211,29 +210,16 @@
 
   <script>
     const btnTop = document.getElementById("btn-top");
-
     window.addEventListener("scroll", () => {
       btnTop.style.display = window.scrollY > 300 ? "block" : "none";
     });
-
     btnTop.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   </script>
-  
-  <script>
-  const cart = [];
 
-  document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', () => {
-      const productId = button.getAttribute('data-id');
-      cart.push(productId);
-      alert('Producto añadido al carrito 🛒');
-      console.log('Carrito:', cart);
-    });
-  });
-</script>
-
+  <!-- ✅ Reemplazo del script roto por el correcto -->
+  <script src="js/carrito.js"></script>
 
 </body>
 </html>
