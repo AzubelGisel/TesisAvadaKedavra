@@ -63,35 +63,122 @@
     transform: scale(1.01);
     transition: all 0.3s ease;
   }
+
+  body {
+  background-image: url('fondo map.jpg'); /* usá el nombre correcto */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  color: #fff;
+  z-index: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* ajustá el 0.4 para más o menos transparencia */
+  z-index: -1;
+}
+
+.faq-contenido {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 40px; /* esto controla qué tan arriba empieza */
+  color: #fff;
+  font-family: 'Cinzel', serif;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+
+.btn-volver {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.5); /* fondo negro con transparencia */
+  color: #fff;
+  padding: 6px 12px; /* más chico */
+  font-size: 14px;   /* más compacto */
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.btn-volver:hover {
+  background-color: rgba(255, 215, 0, 0.8); /* dorado con transparencia */
+  color: #000;
+}
+
+.faq-contenido {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .faq-contenido {
+    padding: 20px 10px;
+    font-size: 15px;
+  }
+
+  .btn-volver {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
+
+.faq-contenido {
+  border: 2px solid rgba(255, 215, 0, 0.5);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
 </style>
 
 
 </head>
 <body style="background-color:#1a1a1a; color:#fff; font-family: 'Segoe UI', sans-serif; padding: 2rem;">
+  <div class="overlay"></div>
+
   <header>
+    <a href="index.html" class="btn-volver">← Volver al Inicio</a>
 
-    <a href="index.html" class="btn-volver-inicio">← Volver al Inicio</a>
-
+    <div class="faq-contenido">
     <h1>Preguntas Frecuentes</h1>
     <p>Respuestas mágicas para tus dudas mundanas 🧙‍♀️</p>
   </header>
 
+  <div class="faq-contenido">
   <section>
-    <h2>¿Cómo puedo hacer un pedido?</h2>
+    <h2>🛒¿Cómo puedo hacer un pedido?</h2>
     <p>Elegí tu producto mágico, hacé clic en “Agregar al caldero” y seguí los pasos.</p>
 
-    <h2>¿Qué métodos de pago aceptan?</h2>
+    <h2>💰¿Qué métodos de pago aceptan?</h2>
     <p>Efectivo, transferencias, y pronto: galeones digitales.</p>
 
-    <h2>¿Cuánto tarda en llegar mi pedido?</h2>
+    <h2>🚚¿Cuánto tarda en llegar mi pedido?</h2>
     <p>Entre 2 y 5 días hábiles en Tucumán. ¡Más rápido que una escoba Nimbus!</p>
 
-    <h2>¿Puedo devolver un producto?</h2>
+    <h2>🔄¿Puedo devolver un producto?</h2>
     <p>Sí, dentro de los 7 días, siempre que no haya sido encantado o usado para invocar criaturas.</p>
 
-    <h2>¿Qué hago si tengo problemas con mi pedido?</h2>
+    <h2>🦉¿Qué hago si tengo problemas con mi pedido?</h2>
     <p>Escribinos por correo o por lechuza digital. Respondemos en menos de 24 horas.</p>
   </section>
+
+  </div>
   
 </body>
 </html>
