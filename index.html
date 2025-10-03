@@ -346,10 +346,16 @@
 </div>
 
 <div class="info-banner mt-4">
-  <div class="text-center py-2">
+  <div class="text-center py-2" id="banner-novedades">
     <strong>📢 Importante:</strong> Las inscripciones para el Test de Selección estarán abiertas hasta el 31 de octubre. ¡No te quedes afuera!
   </div>
 </div>
+
+<div class="promo-banner mt-3 text-center py-2" id="promo-destacada">
+  <!-- Aquí se insertará la promo desde localStorage -->
+</div>
+
+
 
   </header>
 
@@ -1009,6 +1015,31 @@ setInterval(moverVarita, 4000);
 
 
 </script>
+
+<script>
+  const banner = localStorage.getItem("banner");
+  if (banner) {
+    document.getElementById("banner-novedades").innerHTML = `<strong>📢 Importante:</strong> ${banner}`;
+  }
+</script>
+
+<script>
+const promo = JSON.parse(localStorage.getItem("promo"));
+if (promo) {
+  document.getElementById("promo-destacada").innerHTML = `
+    <strong>🎁 ${promo.titulo}</strong><br>
+    ${promo.descripcion}<br>
+    <em>Válida del ${promo.inicio} al ${promo.fin}</em>
+  `;
+}
+</script>
+
+<script>
+  let visitas = localStorage.getItem("visitas");
+  visitas = visitas ? parseInt(visitas) + 1 : 1;
+  localStorage.setItem("visitas", visitas);
+</script>
+
 
 </body>
 </html>
