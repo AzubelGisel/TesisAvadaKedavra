@@ -289,6 +289,61 @@
   pointer-events: none;
 }
 
+.test-intro {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 10px;
+  color: #ffd700;
+}
+
+.test-intro .col-md-6 {
+  flex: 1 1 50%;
+  padding: 1rem;
+}
+
+.sombrero-img {
+  width: 100%;
+  max-width: 500px;
+  opacity: 0.9;
+  border-radius: 10px;
+}
+
+.test-texto h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.test-texto p {
+  font-size: 1.2rem;
+}
+
+.test-intro .col-md-6:first-child {
+  flex: 1.2; /* Imagen más ancha */
+}
+
+.test-intro .col-md-6:last-child {
+  flex: 0.8; /* Texto más angosto */
+}
+.sombrero-img {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  object-fit: contain;
+}
+
+.test-intro {
+  min-height: 500px;
+}
+html {
+  scroll-behavior: smooth;
+}
+#testhogwarts {
+  scroll-margin-top: 100px; /* ajustá según el alto de tu navbar */
+}
+
+
   </style>
 </head>
 <body>
@@ -315,7 +370,7 @@
         <li class="nav-item"><a class="nav-link custom" href="#inicio">Inicio</a></li>
         <li class="nav-item"><a class="nav-link custom" href="productos magicos.html">Productos mágicos</a></li>
         <li class="nav-item"><a class="nav-link custom" href="#casas">Casas</a></li>
-        <li class="nav-item"><a class="nav-link custom" href="#trivia">Sombrero Seleccionador</a></li>
+        <li class="nav-item"><a class="nav-link custom" href="#testhogwarts">Sombrero Seleccionador</a></li>
         <li class="nav-item"><a class="nav-link custom" href="#subscribe">Nosotros</a></li>
         <li class="nav-item"><a class="nav-link custom" href="faq.html">Preguntas Frecuentes</a></li>
       </ul>
@@ -568,50 +623,16 @@
     </section>
 
     <!-- TRIVIA (quiz) -->
-    <section id="trivia" class="mb-5">
-      <div class="text-center mb-4">
-        <h2 class="section-title">¿A qué casa perteneces?</h2>
-        <p class="section-sub" style="color:#8B0000;">Responde las preguntas y descubre tu casa</p>
-      </div>
-
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <form id="houseQuiz" class="quiz-wrap" onsubmit="return false;">
-            <div class="quiz-question">
-              <p>1. ¿Qué valoras más?</p>
-              <label class="quiz-option"><input type="radio" name="q1" value="Gryffindor"> Valentía</label>
-              <label class="quiz-option"><input type="radio" name="q1" value="Hufflepuff"> Lealtad</label>
-              <label class="quiz-option"><input type="radio" name="q1" value="Ravenclaw"> Sabiduría</label>
-              <label class="quiz-option"><input type="radio" name="q1" value="Slytherin"> Ambición</label>
-            </div>
-
-            <div class="quiz-question">
-              <p>2. ¿Qué criatura te atrae más?</p>
-              <label class="quiz-option"><input type="radio" name="q2" value="Gryffindor"> León</label>
-              <label class="quiz-option"><input type="radio" name="q2" value="Hufflepuff"> Tejón</label>
-              <label class="quiz-option"><input type="radio" name="q2" value="Ravenclaw"> Águila</label>
-              <label class="quiz-option"><input type="radio" name="q2" value="Slytherin"> Serpiente</label>
-            </div>
-
-            <div class="quiz-question">
-              <p>3. ¿Qué cualidad te define mejor?</p>
-              <label class="quiz-option"><input type="radio" name="q3" value="Gryffindor"> Coraje</label>
-              <label class="quiz-option"><input type="radio" name="q3" value="Hufflepuff"> Honestidad</label>
-              <label class="quiz-option"><input type="radio" name="q3" value="Ravenclaw"> Creatividad</label>
-              <label class="quiz-option"><input type="radio" name="q3" value="Slytherin"> Determinación</label>
-            </div>
-
-            <div class="text-center mt-3">
-              <button class="btn btn-matte" id="calcBtn" type="button">Descubrir mi casa</button>
-            </div>
-
-            <div id="quizResult" class="mt-3" style="display:none;">
-              <div class="alert alert-dark" role="alert" id="resultText" style="border:1px solid rgba(255,255,255,0.04);"></div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
+    <section id="testhogwarts" class="test-intro d-flex align-items-center justify-content-center my-5">
+  <div class="col-md-6 text-center">
+    <img src="img/testhogwarts2.jpg" alt="Sombrero Seleccionador" class="img-fluid sombrero-img" />
+  </div>
+  <div class="col-md-6 text-center test-texto">
+    <h2>🧙‍♂️ ¿A qué casa de Hogwarts perteneces?</h2>
+    <p>Descubrí tu verdadera casa mágica con nuestro test encantado.</p>
+    <a href="test.html" class="btn btn-warning mt-3">Comenzar el Test</a>
+  </div>
+</section>
 
     <!-- SUSCRIPCIÓN -->
     <section id="subscribe" class="mb-5">
