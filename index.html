@@ -427,7 +427,45 @@ html {
   opacity: 0.3;
   cursor: default;
 }
+.hero {
+  position: relative;
+  background-image: url('img/hp1.jpg'); /* reemplazá con tu imagen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  padding: 6rem 2rem;
+  overflow: hidden;
+}
 
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* oscurece para que el texto se lea bien */
+  z-index: 0;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 8px rgba(0,0,0,0.6);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.hero-textos {
+  margin-bottom: 14rem; /* ⬆️ espacio entre textos y botón */
+}
 
   </style>
 </head>
@@ -474,29 +512,30 @@ html {
   <header class="hero" id="inicio">
     <canvas id="particles-canvas"></canvas>
     <div class="hero-inner">
-      <h1>Bienvenido al Mundo Mágico</h1>
-      <p class="subtitle">
-        Descubre nuestra colección exclusiva de vestimenta, accesorios y<br>
-        artículos de Harry Potter para todas las casas de Hogwarts.
-      </p>
-      <div class="mt-4">
-  <button class="btn btn-matte btn-lg" data-bs-toggle="modal" data-bs-target="#hogwartsFormModal">
-  🪄 Solicitud a Hogwarts
-</button>
-</div>
+  <div class="hero-textos">
+    <h1>Bienvenido al Mundo Mágico</h1>
+    <p class="subtitle">
+      Descubre nuestra colección exclusiva de vestimenta, accesorios y<br>
+      artículos de Harry Potter para todas las casas de Hogwarts.
+    </p>
+  </div>
 
-<div class="info-banner mt-4">
-  <div class="text-center py-2" id="banner-novedades">
-    <strong>📢 Importante:</strong> Las inscripciones para el Test de Selección estarán abiertas hasta el 31 de octubre. ¡No te quedes afuera!
+  <div class="hero-bottom">
+    <button class="btn btn-matte btn-lg" data-bs-toggle="modal" data-bs-target="#hogwartsFormModal">
+      🪄 Solicitud a Hogwarts
+    </button>
+
+    <div class="info-banner mt-4">
+      <div class="text-center py-2" id="banner-novedades">
+        <strong>📢 Importante:</strong> Las inscripciones para el Test de Selección estarán abiertas hasta el 31 de octubre. ¡No te quedes afuera!
+      </div>
+    </div>
+
+    <div class="promo-banner mt-3 text-center py-2" id="promo-destacada">
+      <!-- Aquí se insertará la promo desde localStorage -->
+    </div>
   </div>
 </div>
-
-<div class="promo-banner mt-3 text-center py-2" id="promo-destacada">
-  <!-- Aquí se insertará la promo desde localStorage -->
-</div>
-
-
-
   </header>
 
   <!-- MAIN CONTENT -->
