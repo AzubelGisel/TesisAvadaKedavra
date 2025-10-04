@@ -80,6 +80,7 @@
       background:transparent;
     }
 
+
     /* When using anchors, ensure sections are visible below the membrete */
     section { scroll-margin-top: calc(var(--membrete-height) + 12px); }
 
@@ -106,9 +107,29 @@
       pointer-events:none;
     }
 
-    .hero-inner { max-width:1100px; z-index:2; text-align:center; width:100%; }
-    .hero h1 { font-family:"Cinzel", serif; font-weight:800; font-size:4.0rem; margin:0 0 20px; color:#fff; letter-spacing:2px; text-transform:uppercase; line-height:1.02; text-shadow: 0 2px 8px rgba(0,0,0,0.7); }
-    .hero p.subtitle { font-size:1.25rem; color:var(--subtitle-red); margin:0 auto 36px; max-width:780px; line-height:1.65; font-weight:400; }
+    .hero-inner { max-width:1100px; 
+    z-index:2; 
+    text-align:center; 
+    width:100%; 
+    }
+
+    .hero h1 {
+  font-family: 'Cinzel Decorative', serif;
+  color: #ffd700;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 8px rgba(0,0,0,0.6);
+}
+
+
+    .hero p.subtitle { 
+    font-size:1.25rem; 
+    color:var(--subtitle-red); 
+    margin:0 auto 36px; 
+    max-width:780px; 
+    line-height:1.65; 
+    font-weight:400; 
+    }
 
     .hero .btn {
       border-radius:10px;
@@ -468,6 +489,8 @@ html {
 }
 
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <!-- NAVBAR / membrete -->
@@ -487,9 +510,6 @@ html {
     <!-- Menú colapsable -->
     <div class="collapse navbar-collapse justify-content-end" id="navCollapse">
   <ul class="navbar-nav align-items-start me-3 menu-box">
-
-
-
         <li class="nav-item"><a class="nav-link custom" href="#inicio">Inicio</a></li>
         <li class="nav-item"><a class="nav-link custom" href="productos magicos.html">Productos mágicos</a></li>
         <li class="nav-item"><a class="nav-link custom" href="#casas">Casas</a></li>
