@@ -342,6 +342,91 @@ html {
 #testhogwarts {
   scroll-margin-top: 100px; /* ajustá según el alto de tu navbar */
 }
+.carrusel-section {
+  padding: 2rem;
+  background: linear-gradient(to right, #000, #1a1a1a);
+  color: #fff;
+}.carrusel-container {
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 2rem; /* espacio para flechas */
+  display: flex;
+  align-items: center; /* centra verticalmente */
+}
+
+.carrusel-track {
+  display: flex;
+  gap: 1rem;
+  transition: transform 0.5s ease;
+  width: max-content;
+}
+
+.carrusel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #222;
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+
+.carrusel-item {
+  min-width: 250px;
+  flex-shrink: 0;
+}
+
+.card-product {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.emoji {
+  font-size: 60px;
+  color: rgba(255, 255, 255, 0.08);
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrusel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #222;
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.prev {
+  left: 0;
+}
+.next {
+  right: 0;
+}
+.carrusel-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
 
 
   </style>
@@ -417,71 +502,78 @@ html {
   <!-- MAIN CONTENT -->
   <main class="container my-5" id="main-content">
 
-    <!-- PRODUCTOS DESTACADOS -->
-    <section id="productos" class="mb-5">
-      <div class="text-center mb-4">
-        <h2 class="section-title">PRODUCTOS DESTACADOS</h2>
-        <p class="section-sub">Artículos mágicos seleccionados especialmente para ti</p>
-      </div>
+    <section id="productos-destacados" class="carrusel-section">
+  <h2 class="section-title text-center mb-4">PRODUCTOS DESTACADOS</h2>
+  <p class="section-sub text-center mb-4">Artículos mágicos seleccionados especialmente para ti</p>
 
-      <div class="row g-4">
-        <div class="col-md-3">
-          <div class="card-product h-100 d-flex flex-column justify-content-between">
-            <div>
-              <div style="height:160px; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.08); font-size:60px;">👕</div>
-              <h5 class="mt-2">Túnica de Gryffindor</h5>
-              <p class="muted">Túnica oficial con los colores de la casa Gryffindor.</p>
-            </div>
-            <div class="d-flex justify-content-between align-items-center mt-3">
-              <div class="price">$49.99</div>
-              <button onclick="agregarAlCarrito(1)">Añadir</button>
-            </div>
-          </div>
-        </div>
+  <div class="carrusel-container">
+    <button class="carrusel-btn prev">←</button>
+    <div class="carrusel-track">
 
-        <div class="col-md-3">
-          <div class="card-product h-100 d-flex flex-column justify-content-between">
-            <div>
-              <div style="height:160px; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.08); font-size:60px;">🧣</div>
-              <h5 class="mt-2">Bufanda de Slytherin</h5>
-              <p class="muted">Elegante bufanda en verde y plata.</p>
-            </div>
-            <div class="d-flex justify-content-between align-items-center mt-3">
-              <div class="price">$29.99</div>
-              <button onclick="agregarAlCarrito(2)">Añadir</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="card-product h-100 d-flex flex-column justify-content-between">
-            <div>
-              <div style="height:160px; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.08); font-size:60px;">🪄</div>
-              <h5 class="mt-2">Varita de Ravenclaw</h5>
-              <p class="muted">Réplica inspirada en diseños de Ravenclaw.</p>
-            </div>
-            <div class="d-flex justify-content-between align-items-center mt-3">
-              <div class="price">$34.99</div>
-              <button onclick="agregarAlCarrito(3)">Añadir</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="card-product h-100 d-flex flex-column justify-content-between">
-            <div>
-              <div style="height:160px; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.08); font-size:60px;">📌</div>
-              <h5 class="mt-2">Pin de Hufflepuff</h5>
-              <p class="muted">Pin metálico con emblema de Hufflepuff.</p>
-            </div>
-            <div class="d-flex justify-content-between align-items-center mt-3">
-              <div class="price">$12.99</div>
-              <button onclick="agregarAlCarrito(4)">Añadir</button>
-            </div>
-          </div>
+      <div class="carrusel-item">
+        <div class="card-product">
+          <div class="emoji">👕</div>
+          <h5>Túnica de Gryffindor</h5>
+          <p class="muted">Túnica oficial con los colores de la casa Gryffindor.</p>
+          <div class="price">$49.99</div>
+          <button onclick="agregarAlCarrito(1)">Añadir</button>
         </div>
       </div>
-    </section>
+
+      <div class="carrusel-item">
+        <div class="card-product">
+          <div class="emoji">🧣</div>
+          <h5>Bufanda de Slytherin</h5>
+          <p class="muted">Elegante bufanda en verde y plata.</p>
+          <div class="price">$29.99</div>
+          <button onclick="agregarAlCarrito(2)">Añadir</button>
+        </div>
+      </div>
+
+      <div class="carrusel-item">
+    <div class="card-product">
+      <div class="emoji">👕</div>
+      <h5>Túnica de Gryffindor</h5>
+      <p class="muted">Túnica oficial con los colores de la casa Gryffindor.</p>
+      <div class="price">$49.99</div>
+      <button onclick="agregarAlCarrito(1)">Añadir</button>
+    </div>
+  </div>
+
+  <div class="carrusel-item">
+    <div class="card-product">
+      <div class="emoji">🧣</div>
+      <h5>Bufanda de Slytherin</h5>
+      <p class="muted">Elegante bufanda en verde y plata.</p>
+      <div class="price">$29.99</div>
+      <button onclick="agregarAlCarrito(2)">Añadir</button>
+    </div>
+  </div>
+
+  <div class="carrusel-item">
+    <div class="card-product">
+      <div class="emoji">🪄</div>
+      <h5>Varita de Ravenclaw</h5>
+      <p class="muted">Réplica inspirada en diseños de Ravenclaw.</p>
+      <div class="price">$34.99</div>
+      <button onclick="agregarAlCarrito(3)">Añadir</button>
+    </div>
+  </div>
+
+  <div class="carrusel-item">
+    <div class="card-product">
+      <div class="emoji">📌</div>
+      <h5>Pin de Hufflepuff</h5>
+      <p class="muted">Pin metálico con emblema de Hufflepuff.</p>
+      <div class="price">$12.99</div>
+      <button onclick="agregarAlCarrito(4)">Añadir</button>
+    </div>
+  </div>
+</div>
+    <button class="carrusel-btn next">→</button>
+  </div>
+</section>
+
 
     <!-- CASAS -->
     <section id="casas" class="mb-5">
@@ -1056,11 +1148,36 @@ if (promo) {
 </script>
 
 <script>
-  let visitas = localStorage.getItem("visitas");
-  visitas = visitas ? parseInt(visitas) + 1 : 1;
-  localStorage.setItem("visitas", visitas);
-</script>
+  const track = document.querySelector('.carrusel-track');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
 
+  let scrollAmount = 0;
+  const itemWidth = 270; // ajustá si tus tarjetas son más anchas
+  const container = document.querySelector('.carrusel-container');
+
+  function updateButtons() {
+    const maxScroll = track.scrollWidth - container.offsetWidth;
+    prevBtn.disabled = scrollAmount <= 0;
+    nextBtn.disabled = scrollAmount >= maxScroll;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    const maxScroll = track.scrollWidth - container.offsetWidth;
+    scrollAmount = Math.min(scrollAmount + itemWidth, maxScroll);
+    track.style.transform = `translateX(-${scrollAmount}px)`;
+    updateButtons();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    scrollAmount = Math.max(scrollAmount - itemWidth, 0);
+    track.style.transform = `translateX(-${scrollAmount}px)`;
+    updateButtons();
+  });
+
+  window.addEventListener('load', updateButtons);
+  window.addEventListener('resize', updateButtons);
+</script>
 
 </body>
 </html>
