@@ -220,6 +220,31 @@ html, body {
   border-bottom: 1px solid #333;
 }
 
+.btn-caldero {
+  background-color: #353434e3; /* gris oscuro mágico */
+  color: #fdfdfd;
+  border: none;
+  border-radius: 10px;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 6px rgba(0,0,0,0.3);
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.btn-caldero:hover {
+  background-color: #666;
+  box-shadow: 0 0 10px rgba(92, 9, 9, 0.2);
+  transform: scale(1.05);
+}
+.btn-caldero:hover {
+  background-color: #666;
+  box-shadow: 0 0 10px #ffd700;
+}
+
 
   </style>
 </head>
@@ -277,7 +302,7 @@ html, body {
           <p data-descripcion="Túnica oficial con escudo bordado y forro dorado.">Túnica oficial con escudo bordado y forro dorado.</p>
           <small style="color: #aaa;">Con capucha y bolsillo interno para varita que te permite llevar tu varita de manera segura.</small>
           <p class="price" data-precio="85.000">$85.000</p>
-          <button class="btn btn-warning mt-2 add-to-cart" data-id="1">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="1">Añadir al caldero</button>
         </div> 
       </div>
 
@@ -289,7 +314,7 @@ html, body {
           <p data-descripcion="Túnica Hufflepuff.">Túnica de Hufflepuff.</p>
           <small style="color: #aaa;">Con capucha y bolsillo interno para varita que te permite llevar tu varita de manera segura.</small>
           <p class="price" data-precio="85.000">$85.000</p>
-          <button class="btn-house hufflepuff-btn mt-2 add-to-cart" data-id="2">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="2">Añadir al caldero</button>
         </div>
       </div>
 
@@ -301,7 +326,7 @@ html, body {
           <p data-descripcion="Túnica azul con detalles en bronce.">Túnica azul con detalles en bronce.</p>
           <small style="color: #aaa;">Con capucha y bolsillo interno para varita que te permite llevar tu varita de manera segura.</small>
           <p class="price" data-precio="85.000">$85.000</p>
-          <button class="btn-house ravenclaw-btn mt-2 add-to-cart" data-id="3">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="3">Añadir al caldero</button>
         </div>
       </div>
 
@@ -313,7 +338,7 @@ html, body {
           <p data-descripcion="Túnica de Slytherin.">Túnica de Slytherin.</p>
           <small style="color: #aaa;">Con capucha y bolsillo interno para varita que te permite llevar tu varita de manera segura.</small>
           <p class="price" data-precio="85.000">$85.000</p>
-          <button class="btn-house slytherin-btn mt-2 add-to-cart" data-id="4">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="4">Añadir al caldero</button>
         </div>
       </div>
 
@@ -325,7 +350,7 @@ html, body {
           <p data-descripcion="Bufanda tejida con los colores de Gryffindor.">Bufanda Rayada Gryffindor con escudo bordado.</p>
           <small style="color: #aaa;">Con su diseño rayado y los colores emblemáticos de la casa.</small>
           <p class="price" data-precio="39.900">$39.900</p>
-          <button class="btn btn-warning mt-2 add-to-cart" data-id="5">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="5">Añadir al caldero</button>
         </div>
       </div>
 
@@ -337,7 +362,7 @@ html, body {
           <p data-descripcion="Bufanda tejida en amarillo y negro.">Bufanda Rayada Hufflepuff con escudo bordado.</p>
           <small style="color: #aaa;">Con su diseño rayado y los colores emblemáticos de la casa.</small>
           <p class="price" data-precio="39.900">$39.900</p>
-          <button class="btn-house hufflepuff-btn mt-2 add-to-cart" data-id="6">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="6">Añadir al caldero</button>
         </div>
       </div>
 
@@ -349,7 +374,7 @@ html, body {
           <p data-descripcion="Bufanda tejida azul y bronce.">Bufanda Rayada Ravenclaw con escudo bordado.</p>
           <small style="color: #aaa;">Con su diseño rayado y los colores emblemáticos de la casa.</small>
           <p class="price" data-precio="39.900">$39.900</p>
-          <button class="btn-house ravenclaw-btn mt-2 add-to-cart" data-id="7">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="7">Añadir al caldero</button>
         </div>
       </div>
 
@@ -361,7 +386,7 @@ html, body {
           <p data-descripcion="Bufanda verde esmeralda con franjas plateadas.">Bufanda Rayada Slytherin con escudo bordado.</p>
           <small style="color: #aaa;">Con su diseño rayado y los colores emblemáticos de la casa.</small>
           <p class="price" data-precio="39.900">$39.900</p>
-          <button class="btn-house slytherin-btn mt-2 add-to-cart" data-id="8">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="8">Añadir al caldero</button>
         </div>
       </div>
 
@@ -373,7 +398,7 @@ html, body {
           <p data-descripcion="Chaqueta escarlata con detalles dorados.">Chaqueta Gryffindor con escudo bordado, diseño varsity y detalles mágicos para fanáticos valientes.</p>
           <small style="color: #aaa;">Bolsillo interno para varita y acabado premium.</small>
           <p class="price" data-precio="65.000">$65.000</p>
-          <button class="btn btn-warning mt-2 add-to-cart" data-id="9">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="9">Añadir al caldero</button>
         </div>
       </div>
 
@@ -385,7 +410,7 @@ html, body {
           <p data-descripcion="Chaqueta Hufflepuff.">Chaqueta Hufflepuff con escudo bordado, diseño varsity y detalles mágicos para fanáticos valientes.</p>
           <small style="color: #aaa;">Bolsillo interno para varita y acabado premium.</small>
           <p class="price" data-precio="65.000">$65.000</p>
-          <button class="btn-house hufflepuff-btn mt-2 add-to-cart" data-id="10">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="10">Añadir al caldero</button>
         </div>
       </div>
 
@@ -397,7 +422,7 @@ html, body {
           <p data-descripcion="Chaqueta Ravenclaw.">Chaqueta Ravenclaw con escudo bordado, diseño varsity y detalles mágicos para fanáticos valientes.</p>
           <small style="color: #aaa;">Bolsillo interno para varita y acabado premium.</small>
           <p class="price" data-precio="65.000">$65.000</p>
-          <button class="btn-house ravenclaw-btn mt-2 add-to-cart" data-id="11">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="11">Añadir al caldero</button>
         </div>
       </div>
 
@@ -409,7 +434,7 @@ html, body {
           <p data-descripcion="Chaqueta oficial con escudo bordado.">Chaqueta Slytherin con escudo bordado, diseño varsity y detalles mágicos para fanáticos valientes.</p>
           <small style="color: #aaa;">Bolsillo interno para varita y acabado premium.</small>
           <p class="price" data-precio="65.000">$65.000</p>
-          <button class="btn-house slytherin-btn mt-2 add-to-cart" data-id="12">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="12">Añadir al caldero</button>
         </div>
       </div>
 
@@ -421,7 +446,7 @@ html, body {
           <p data-descripcion="Corbata oficial con diseño escarlata y dorado.">Elegancia mágica con escudo bordado y rayas doradas.</p>
           <small style="color: #aaa;">Ideal para magos audaces y eventos mágicos.</small>
           <p class="price" data-precio="20.500">$20.500</p>
-          <button class="btn btn-warning mt-2 add-to-cart" data-id="13">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="13">Añadir al caldero</button>
         </div>
       </div>
 
@@ -433,7 +458,7 @@ html, body {
           <p data-descripcion="Corbata Hufflepuff.">Rayas negras, emblema del tejón y lealtad tejida con estilo.</p>
           <small style="color: #aaa;">Perfecta para quienes valoran el trabajo y la amistad.</small>
           <p class="price" data-precio="20.500">$20.500</p>
-          <button class="btn-house hufflepuff-btn mt-2 add-to-cart" data-id="14">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="14">Añadir al caldero</button>
         </div>
       </div>
 
@@ -445,7 +470,7 @@ html, body {
           <p data-descripcion="Corbata Ravenclaw.">Azul profundo, rayas plateadas y sabiduría bordada.</p>
           <small style="color: #aaa;">Diseñada para mentes brillantes y elegantes.</small>
           <p class="price" data-precio="20.500">$20.500</p>
-          <button class="btn-house ravenclaw-btn mt-2 add-to-cart" data-id="15">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="15">Añadir al caldero</button>
         </div>
       </div>
 
@@ -457,7 +482,7 @@ html, body {
           <p data-descripcion="Corbata verde con detalles plateados.">Verde serpiente, escudo bordado y ambición refinada.</p>
           <small style="color: #aaa;">Para magos estratégicos con estilo impecable.</small>
           <p class="price" data-precio="20.500">$20.500</p>
-          <button class="btn-house slytherin-btn mt-2 add-to-cart" data-id="16">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="16">Añadir al caldero</button>
         </div>
       </div>
 
@@ -469,7 +494,7 @@ html, body {
           <p data-descripcion="Cordones mágicos con los colores de la casa.">Cordones mágicos rojo intenso con detalles dorados y emblemas de la casa más valiente.</p>
           <small style="color: #aaa;">Diseñados para pasos audaces y mágicos.</small>
           <p class="price" data-precio="10.500">$10.500</p>
-          <button class="btn btn-warning mt-2 add-to-cart" data-id="17">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="17">Añadir al caldero</button>
         </div>
       </div>  
 
@@ -481,7 +506,7 @@ html, body {
           <p data-descripcion="Cordones Hufflepuff.">Cordones mágicos amarillo brillante con siluetas encantadas.</p>
           <small style="color: #aaa;">Perfectos para quienes caminan con paciencia y lealtad.</small>
           <p class="price" data-precio="10.500">$10.500</p>
-          <button class="btn-house hufflepuff-btn mt-2 add-to-cart" data-id="18">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="18">Añadir al caldero</button>
         </div>
       </div>
 
@@ -493,7 +518,7 @@ html, body {
           <p data-descripcion="Cordones Ravenclaw.">Cordones magicos azul profundo con símbolos de sabiduría y libertad.</p>
           <small style="color: #aaa;">Para mentes brillantes que pisan con propósito.</small>
           <p class="price" data-precio="10.500">$10.500</p>
-          <button class="btn-house ravenclaw-btn mt-2 add-to-cart" data-id="19">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="19">Añadir al caldero</button>
         </div>
       </div>
 
@@ -505,7 +530,7 @@ html, body {
           <p data-descripcion="Cordones mágicos con los colores de la casa.">Cordones mágicos verde serpiente con patrones sigilosos.</p>
           <small style="color: #aaa;">Hechos para quienes avanzan con ambición y estilo.</small>
           <p class="price" data-precio="10.500">$10.500</p>
-          <button class="btn-house slytherin-btn mt-2 add-to-cart" data-id="20">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="20">Añadir al caldero</button>
         </div>
       </div>
 
@@ -517,7 +542,7 @@ html, body {
           <p data-descripcion="Llavero metálico con escudo grabado.">Llavero metálico con escudo dorado sobre fondo rojo, con el león en alto.</p>
           <small style="color: #aaa;">Ideal para magos valientes que llevan su casa con orgullo.</small>
           <p class="price" data-precio="7.000">$7.000</p>
-          <button class="btn btn-warning mt-2 add-to-cart" data-id="21">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="21">Añadir al caldero</button>
         </div>
       </div>
 
@@ -529,7 +554,7 @@ html, body {
           <p data-descripcion="Llavero metálico con emblema de tejón.">Llavero con emblema del tejón en amarillo y negro, con acabado metálico.</p>
           <small style="color: #aaa;">Perfecto para quienes valoran la lealtad y el trabajo en equipo.</small>
           <p class="price" data-precio="7.000">$7.000</p>
-          <button class="btn-house hufflepuff-btn mt-2 add-to-cart" data-id="22">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="22">Añadir al caldero</button>
         </div>
       </div>
 
@@ -541,7 +566,7 @@ html, body {
           <p data-descripcion="Llavero Ravenclaw.">Llavero con cresta azul y bronce con el águila de la sabiduría.</p>
           <small style="color: #aaa;">Diseñado para mentes brillantes y curiosas.</small>
           <p class="price" data-precio="7.000">$7.000</p>
-          <button class="btn-house ravenclaw-btn mt-2 add-to-cart" data-id="23">Añadir al caldero</button>
+         <button class="btn-caldero add-to-cart" data-id="23">Añadir al caldero</button>
         </div>
       </div>
 
@@ -553,7 +578,7 @@ html, body {
           <p data-descripcion="Llavero metálico con el escudo de la casa.">Llavero metálico con serpiente plateada sobre escudo verde, con detalles elegantes.</p>
           <small style="color: #aaa;">Para magos ambiciosos que saben lo que quieren.</small>
           <p class="price" data-precio="7.000">$7.000</p>
-          <button class="btn-house slytherin-btn mt-2 add-to-cart" data-id="24">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="24">Añadir al caldero</button>
         </div>
       </div>
 
@@ -565,7 +590,7 @@ html, body {
           <p data-descripcion="Medias mágicas con patrón escarlata.">Medias mágicas rojas con el escudo de la casa Gryffindor.</p>
           <small style="color: #aaa;">Cómodas y resistentes.</small>
           <p class="price" data-precio="6.700">$6.700</p>
-          <button class="btn btn-warning mt-2 add-to-cart" data-id="25">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="25">Añadir al caldero</button>
         </div>
       </div>
 
@@ -577,7 +602,7 @@ html, body {
           <p data-descripcion="Medias Hufflepuff.">Medias mágicas amarillas con el emblema de Hufflepuff.</p>
           <small style="color: #aaa;">Diseño clásico, ideal para uso diario o como accesorio temático.</small>
           <p class="price" data-precio="6.700">$6.700</p>
-          <button class="btn-house hufflepuff-btn mt-2 add-to-cart" data-id="26">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="26">Añadir al caldero</button>
         </div>
       </div>
 
@@ -589,7 +614,7 @@ html, body {
           <p data-descripcion="Medias Ravenclaw.">Medias mágicas azules con el escudo de Ravenclaw.</p>
           <small style="color: #aaa;">Tejido suave y estampado duradero.</small>
           <p class="price" data-precio="6.700">$6.700</p>
-          <button class="btn-house ravenclaw-btn mt-2 add-to-cart" data-id="27">Añadir al caldero</button>
+         <button class="btn-caldero add-to-cart" data-id="27">Añadir al caldero</button>
         </div>
       </div>
 
@@ -601,7 +626,7 @@ html, body {
           <p data-descripcion="Medias mágicas con patrón verde y plata.">Medias mágicas verdes con el símbolo de Slytherin.</p>
           <small style="color: #aaa;">Estilo cómodo y diseño oficial.</small>
           <p class="price" data-precio="6.700">$6.700</p>
-          <button class="btn-house slytherin-btn mt-2 add-to-cart" data-id="28">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="28">Añadir al caldero</button>
         </div>
       </div>
 
@@ -613,7 +638,7 @@ html, body {
           <p data-descripcion="Varita de Sauco.">La varita más poderosa del mundo mágico.</p>
           <small style="color: #aaa;">Incluye estuche rígido y cinta decorativa.</small>
           <p class="price" data-precio="39.900">$39.900</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="29">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="29">Añadir al caldero</button>
         </div>
       </div>
 
@@ -625,7 +650,7 @@ html, body {
           <p data-descripcion="Lentes.">Lentes redondos con diseño clásico.</p>
           <small style="color: #aaa;">Livianos, cómodos y perfectos para completar tu look mágico.</small>
           <p class="price" data-precio="8.000">$8.000</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="30">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="30">Añadir al caldero</button>
         </div>
       </div>
 
@@ -637,7 +662,7 @@ html, body {
           <p data-descripcion="Collar 9 34.">Collar con dije metálico del emblemático andén mágico que conecta al Expreso de Hogwarts.</p>
           <small style="color: #aaa;">Cadena ajustable. Diseño simple y elegante.</small>
           <p class="price" data-precio="5.000">$5.000</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="31">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="31">Añadir al caldero</button>
         </div>
       </div>
 
@@ -649,7 +674,7 @@ html, body {
           <p data-descripcion="Collar piedra filosofal.">Collar de la legendaria piedra mágica que otorga vida eterna.</p>
           <small style="color: #aaa;">Diseño simple y elegante.</small>
           <p class="price" data-precio="5.000">$5.000</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="32">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="32">Añadir al caldero</button>
         </div>
       </div>
 
@@ -661,7 +686,7 @@ html, body {
           <p data-descripcion="Collar snitch dorada.">Collar con dije metálico de la Snitch Dorada, símbolo del deporte más emocionante del mundo mágico..</p>
           <small style="color: #aaa;">Diseño detallado con alas extendidas, cadena de 26 cm.</small>
           <p class="price" data-precio="7.000">$7.000</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="33">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="33">Añadir al caldero</button>
         </div>
       </div>
 
@@ -673,7 +698,7 @@ html, body {
           <p data-descripcion="Cuaderno hogwarts azul.">Cuaderno con tapa dura decorada con el escudo de Hogwarts y detalles del Mapa del Merodeador.</p>
           <small style="color: #aaa;">Diseño de estrellas, casas y lema oficial.</small>
           <p class="price" data-precio="33.000">$33.000</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="34">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="34">Añadir al caldero</button>
         </div>
       </div>
 
@@ -685,7 +710,7 @@ html, body {
           <p data-descripcion="Cuaderno hogwarts rojo.">Cuaderno espiralado con tapa dura y escudo de Hogwarts.</p>
           <small style="color: #aaa;">Diseño con patrón de coronas.</small>
           <p class="price" data-precio="30.000">$30.000</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="35">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="35">Añadir al caldero</button>
         </div>
       </div>
 
@@ -697,7 +722,7 @@ html, body {
           <p data-descripcion="Cuaderno mapa del merodeador.">Tapa con ilustración de Hogwarts y detalles vintage.</p>
           <small style="color: #aaa;">Ideal para anotaciones mágicas.</small>
           <p class="price" data-precio="30.000">$30.000</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="36">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="36">Añadir al caldero</button>
         </div>
       </div>
 
@@ -709,7 +734,7 @@ html, body {
           <p data-descripcion="Cuaderno hogwarts clásico.">Cuaderno espiralado con tapa dura y escudo completo de las cuatro casas.</p>
           <small style="color: #aaa;">Fondo oscuro con diseño elegante.</small>
           <p class="price" data-precio="30.000">$30.000</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="37">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="37">Añadir al caldero</button>
         </div>
       </div>
 
@@ -721,7 +746,7 @@ html, body {
           <p data-descripcion="Funko dumbledore.">Incluye detalles en su túnica púrpura, sombrero decorado y emblemática barba..</p>
           <small style="color: #aaa;">Presentación en caja original.</small>
           <p class="price" data-precio="65.500">$65.500</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="38">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="38">Añadir al caldero</button>
         </div>
       </div>
 
@@ -733,7 +758,7 @@ html, body {
           <p data-descripcion="Funko hermione 11.">Hermione con vestido rosa y peinado de gala, tal como aparece en “El Cáliz de Fuego”.</p>
           <small style="color: #aaa;">Presentación en caja original.</small>
           <p class="price" data-precio="65.500">$65.500</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="39">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="39">Añadir al caldero</button>
         </div>
       </div>
 
@@ -745,7 +770,7 @@ html, body {
           <p data-descripcion="Funko hermione 80.">Hermione con uniforme de Hogwarts, libro en mano y caldero mágico.</p>
           <small style="color: #aaa;">Incluye base transparente. Presentación en caja original.</small>
           <p class="price" data-precio="65.500">$65.500</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="40">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="40">Añadir al caldero</button>
         </div>
       </div>
 
@@ -757,7 +782,7 @@ html, body {
           <p data-descripcion="Funko hermione.">Hermione con buzo rosa, jeans y varita en mano, lista para la acción.</p>
           <small style="color: #aaa;">Presentación en caja original.</small>
           <p class="price" data-precio="65.500">$65.500</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="41">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="41">Añadir al caldero</button>
         </div>
       </div>
 
@@ -769,7 +794,7 @@ html, body {
           <p data-descripcion="Funko hp 51.">Harry con uniforme de Hogwarts y escoba en mano, listo para el partido.</p>
           <small style="color: #aaa;">Presentación en caja original.</small>
           <p class="price" data-precio="65.500">$65.500</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="42">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="42">Añadir al caldero</button>
         </div>
       </div>
 
@@ -781,7 +806,7 @@ html, body {
           <p data-descripcion="Funko hp 112.">Harry en pijama con su icónica capa de invisibilidad de diseño estrellado.</p>
           <small style="color: #aaa;">Edición exclusiva Wizarding World. Presentación en caja original.</small>
           <p class="price" data-precio="65.500">$65.500</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="43">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="43">Añadir al caldero</button>
         </div>
       </div>
 
@@ -793,7 +818,7 @@ html, body {
           <p data-descripcion="Funko hp 149.">Harry con uniforme de Quidditch, escoba en mano y Snitch dorada lista para atrapar.</p>
           <small style="color: #aaa;">Presentación en caja original.</small>
           <p class="price" data-precio="65.500">$65.500</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="44">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="44">Añadir al caldero</button>
         </div>
       </div>
 
@@ -805,7 +830,7 @@ html, body {
           <p data-descripcion="Funko hp 165.">Harry con túnica de Quidditch, gafas, escoba y Snitch dorada, montado sobre base transparente que simula vuelo.</p>
           <small style="color: #aaa;">Presentación en caja original.</small>
           <p class="price" data-precio="65.500">$65.500</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="45">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="45">Añadir al caldero</button>
         </div>
       </div>
 
@@ -817,7 +842,7 @@ html, body {
           <p data-descripcion="Funko pop ron con scabbers.">Ron con su característico suéter marrón y Scabbers en mano.</p>
           <small style="color: #aaa;">Presentación en caja original.</small>
           <p class="price" data-precio="65.500">$65.500</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="46">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="46">Añadir al caldero</button>
         </div>
       </div>
 
@@ -829,7 +854,7 @@ html, body {
           <p data-descripcion="Funko ron 166.">Ron con gorro tejido, camisa a cuadros y flor en mano, inspirado en su look del Baile de Navidad.</p>
           <small style="color: #aaa;">Presentación en caja original.</small>
           <p class="price" data-precio="65.500">$65.500</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="47">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="47">Añadir al caldero</button>
         </div>
       </div>
 
@@ -841,7 +866,7 @@ html, body {
           <p data-descripcion="Funko ron baile.">Ron con su inolvidable traje marrón, camisa con volados y moño rojo, tal como aparece en “El Cáliz de Fuego”.</p>
           <small style="color: #aaa;">Presentación en caja original.</small>
           <p class="price" data-precio="65.500">$65.500</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="48">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="48">Añadir al caldero</button>
         </div>
       </div>
 
@@ -853,7 +878,7 @@ html, body {
           <p data-descripcion="Funko ron.">Ron con túnica negra, escudo de Gryffindor y varita en mano.</p>
           <small style="color: #aaa;">Presentación en caja original.</small>
           <p class="price" data-precio="65.500">$65.500</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="49">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="49">Añadir al caldero</button>
         </div>
       </div>
 
@@ -865,7 +890,7 @@ html, body {
           <p data-descripcion="Funko voldemort.">Voldemort con túnica verde oscura y varita en mano, con su clásica expresión sin nariz.</p>
           <small style="color: #aaa;">Presentación en caja original.</small>
           <p class="price" data-precio="65.500">$65.500</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="50">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="50">Añadir al caldero</button>
         </div>
       </div>
 
@@ -877,7 +902,7 @@ html, body {
           <p data-descripcion="Giratiempo.">Collar dorado con anillos giratorios y reloj de arena central.</p>
           <small style="color: #aaa;">Grabado con la frase mágica: “I mark the hours, every one, nor have I yet outrun the sun…"</small>
           <p class="price" data-precio="12.500">$12.500</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="51">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="51">Añadir al caldero</button>
         </div>
       </div>
 
@@ -889,7 +914,7 @@ html, body {
           <p data-descripcion="Grageas.">Caja temática con diseño clásico y guía ilustrada de 20 sabores, desde cereza y limón hasta vómito y suciedad.</p>
           <small style="color: #aaa;">Ideal para desafíos mágicos, regalos divertidos o colecciones temáticas.</small>
           <p class="price" data-precio="14.000">$14.000</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="52">Añadir al caldero</button>
+         <button class="btn-caldero add-to-cart" data-id="52">Añadir al caldero</button>
         </div>
       </div>
 
@@ -901,7 +926,7 @@ html, body {
           <p data-descripcion="Lampara reliquias de la muerte.">Lámpara de mesa con base en forma del símbolo de las Reliquias de la Muerte. Pantalla ilustrada con la historia de “Los Tres Hermanos” en estilo silueta.</p>
           <small style="color: #aaa;">Ideal para ambientar espacios mágicos.</small>
           <p class="price" data-precio="64.999">$64.999</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="53">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="53">Añadir al caldero</button>
         </div>
       </div>
 
@@ -913,7 +938,7 @@ html, body {
           <p data-descripcion="Mapa del merodeador.">Mapa del Merodeador, con diseño detallado de los pasillos y secretos de Hogwarts.</p>
           <small style="color: #aaa;">Juro solemnemente que mis intenciones no son buenas.</small>
           <p class="price" data-precio="21.000">$21.000</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="54">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="54">Añadir al caldero</button>
         </div>
       </div>
 
@@ -925,7 +950,7 @@ html, body {
           <p data-descripcion="Neceser hogwarts.">Neceser color burdeos con escudo completo de las casas de Hogwarts.</p>
           <small style="color: #aaa;">Ideal para lápices, maquillaje o pequeños objetos encantados.</small>
           <p class="price" data-precio="33.500">$33.500</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="55">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="55">Añadir al caldero</button>
         </div>
       </div>
 
@@ -937,7 +962,7 @@ html, body {
           <p data-descripcion="Neceser mapa del merodeador.">Neceser color crema con diseño inspirado en el Mapa del Merodeador y la frase mágica para activarlo.</p>
           <small style="color: #aaa;">Ideal para cosméticos, útiles o pequeños objetos encantados.</small>
           <p class="price" data-precio="33.500">$33.500</p>
-          <button class="btn-house neutral-btn mt-2 add-to-cart" data-id="56">Añadir al caldero</button>
+          <button class="btn-caldero add-to-cart" data-id="56">Añadir al caldero</button>
         </div>
       </div>
 
