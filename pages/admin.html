@@ -1,0 +1,57 @@
+<!-- pages/admin.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Modo Administrador</title>
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+  <!-- LOGIN -->
+  <section id="admin-login">
+    <h2>🔐 Acceso Administrador</h2>
+    <input type="text" id="adminUser" placeholder="Usuario">
+    <input type="password" id="adminPass" placeholder="Contraseña">
+    <button onclick="validarAdmin()">Ingresar</button>
+  </section>
+
+  <!-- PANEL -->
+  <section id="admin-panel" style="display: none;">
+    <aside id="admin-menu">
+      <button onclick="mostrarSeccion('productos')">📦</button>
+      <button onclick="mostrarSeccion('promo')">🎁</button>
+      <button onclick="mostrarSeccion('banner')">🖼️</button>
+      <button onclick="mostrarSeccion('stats')">📊</button>
+      <button onclick="cerrarSesion()">⛔</button>
+    </aside>
+
+    <div id="productos" class="panel-seccion">
+      <h3>📦 Gestión de productos</h3>
+      <input type="text" id="buscadorProductos" placeholder="Buscar producto..." oninput="filtrarProductos()">
+      <table id="tablaProductos"></table>
+      <button onclick="agregarProducto()">Agregar producto</button>
+    </div>
+
+    <div id="promo" class="panel-seccion">
+      <h3>🎁 Promociones</h3>
+      <input type="text" id="promoTexto" placeholder="Texto de promoción">
+      <button onclick="guardarPromo()">Guardar promo</button>
+    </div>
+
+    <div id="banner" class="panel-seccion">
+      <h3>🖼️ Banner de novedades</h3>
+      <input type="text" id="bannerTexto" placeholder="Texto de novedades">
+      <button onclick="guardarBanner()">Guardar banner</button>
+    </div>
+
+    <div id="stats" class="panel-seccion">
+      <h3>📊 Estadísticas</h3>
+      <ul id="topVentas"></ul>
+      <div id="contadorVisitas"></div>
+    </div>
+  </section>
+
+  <script src="../js/components/admin.js"></script>
+</body>
+</html>
+
