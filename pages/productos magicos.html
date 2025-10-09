@@ -5,248 +5,7 @@
   <title>Productos Mágicos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <style>
-    body {
-      background-color: #f5f5f5;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    .card-product {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 10px;
-  background-color: #fffbea;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-    .card-product img {
-  max-height: 180px;
-  object-fit: contain;
-  margin-bottom: 10px;
-}
-
-
-    .card-product:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
-    }
-
-    .producto {
-      margin-bottom: 30px;
-    }
-
-    .btn-filtro {
-      margin: 0 5px 15px 5px;
-    }
-
-    body {
-  background-color: #121212;
-  color: #f0f0f0;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.card {
-  background-color: #1a1a1a;
-  color: #e0e0e0;
-  border: 1px solid #2c2c2c;
-}
-
-header, .navbar, .filter-buttons {
-  background-color: #0f0f0f;
-  color: #f5f5f5;
-  border-bottom: 1px solid #333;
-}
-
-body {
-  background: radial-gradient(circle at top left, #1a1a1a, #0f0f0f);
-}
-/* Botón base */
-.filter-button {
-  padding: 10px 16px;
-  margin: 6px;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: #f5f5f5;
-}
-
-/* Gryffindor */
-.filter-button.gryffindor {
-  background-color: #7f0909;
-  box-shadow: 0 0 8px rgba(127, 9, 9, 0.6);
-}
-
-/* Slytherin */
-.filter-button.slytherin {
-  background-color: #1a472a;
-  box-shadow: 0 0 8px rgba(26, 71, 42, 0.6);
-}
-
-/* Ravenclaw */
-.filter-button.ravenclaw {
-  background-color: #0e1a40;
-  box-shadow: 0 0 8px rgba(14, 26, 64, 0.6);
-}
-
-/* Hufflepuff */
-.filter-button.hufflepuff {
-  background-color: #ecb939;
-  color: #1a1a1a;
-  box-shadow: 0 0 8px rgba(236, 185, 57, 0.6);
-}
-
-/* Hover mágico */
-.filter-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.151);
-}
-
-
-@keyframes fadeInMagic {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-.filter-button {
-  animation: fadeInMagic 0.6s ease forwards;
-}
-
-h5 {
-  color: #888888; /* Más oscuro, ideal para un look elegante */
-}
-
-p {
-  color: #b0b0b0; /* Gris oscuro, suave pero legible */
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.btn-todos {
-  background-color: #808181 !important;  /* Gris medio, más visible */
-  color: #fff !important;              /* Texto blanco para contraste */
-  border-color: #bfbcbc !important;
-  box-shadow: 0 0 8px rgba(189, 189, 189, 0.2);
-}
-
-.btn-todos:hover {
-  background-color: #666 !important;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
-}
-
-.botones-flotantes {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 1000;
-}
-
-.botones-flotantes button {
-  background-color: #4b2e83; /* púrpura mágico */
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 18px;
-  cursor: pointer;
-  box-shadow: 0 0 5px rgba(0,0,0,0.3);
-  transition: background-color 0.3s ease;
-}
-
-.botones-flotantes button:hover {
-  background-color: #6a42c1;
-}
-
-.filter-buttons {
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  padding: 10px;
-  background-color: #0f0f0f; /* mismo fondo que el header */
-  border-bottom: 1px solid #333;
-}
-
-.filter-buttons {
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10; 
-  padding: 10px;
-  background-color: #0f0f0f;
-  border-bottom: 1px solid #333;
-}
-
-
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-.filter-button {
-  padding: 12px;
-  border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: #f5f5f5;
-  animation: fadeInMagic 0.6s ease forwards;
-}
-
-.filter-button small {
-  display: block;
-  font-size: 13px;
-  font-weight: normal;
-  color: #ccc;
-}
-
-.filter-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
-}
-
-.filter-buttons {
-  z-index: 1000;
-  background-color: #0f0f0f;
-  border-bottom: 1px solid #333;
-}
-
-.btn-caldero {
-  background-color: #353434e3; /* gris oscuro mágico */
-  color: #fdfdfd;
-  border: none;
-  border-radius: 10px;
-  padding: 0.6rem 1.2rem;
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 6px rgba(0,0,0,0.3);
-  display: inline-block;
-  margin-top: 0.5rem;
-}
-
-.btn-caldero:hover {
-  background-color: #666;
-  box-shadow: 0 0 10px rgba(92, 9, 9, 0.2);
-  transform: scale(1.05);
-}
-.btn-caldero:hover {
-  background-color: #666;
-  box-shadow: 0 0 10px #ffd700;
-}
-
-
-  </style>
+  <link rel="stylesheet" href="../css/productosMagicos.css">
 </head>
 <body>
 
@@ -255,10 +14,10 @@ html, body {
     
 
     <!-- Barra superior con flecha, filtros y carrito -->
-<div class="d-flex justify-content-between align-items-center mb-4 filter-buttons px-3 sticky-top">
-  <!-- Flecha a la izquierda -->
-  <div>
-    <a href="index.html" class="btn btn-outline-light" title="Volver al inicio">←</a>
+  <div class="d-flex justify-content-between align-items-center mb-4 filter-buttons px-3 sticky-top">
+    <!-- Flecha a la izquierda -->
+    <div>
+      <a href="../index.html" class="btn btn-outline-light" title="Volver al inicio">←</a>
   </div>
 
   <!-- Botones de casas centrados -->
@@ -283,21 +42,20 @@ html, body {
   <!-- Carrito a la derecha -->
   <div>
     <a href="carrito.html" class="btn btn-outline-light" title="Ver caldero">🛒</a>
+    </div>
   </div>
-</div>
 
 
-<div class="buscador-container text-center mb-4">
-  <input type="text" id="buscador" class="form-control" placeholder="🔍 Buscar producto mágico...">
-</div>
-
+  <div class="buscador-container text-center mb-4">
+    <input type="text" id="buscador" class="form-control" placeholder="🔍 Buscar producto mágico...">
+  </div>
 
     <!-- Grid de productos magicos -->
     <div class="row" id="contenedor-productos">
       <!-- Túnica -->
       <div class="col-md-4 producto" data-casa="gryffindor">
         <div class="card-product text-center" data-id="1">
-          <img src="img/gryffindor/tunica gryffindor.jpg" alt="Túnica de Gryffindor" class="img-fluid">
+          <img src="../img/gryffindor/tunica gryffindor.jpg" alt="Túnica de Gryffindor" class="img-fluid">
           <h5 class="mt-3" data-nombre="Túnica Gryffindor">Túnica Gryffindor - Licencia Oficial</h5>
           <p data-descripcion="Túnica oficial con escudo bordado y forro dorado.">Túnica oficial con escudo bordado y forro dorado.</p>
           <small style="color: #aaa;">Con capucha y bolsillo interno para varita que te permite llevar tu varita de manera segura.</small>
@@ -309,7 +67,7 @@ html, body {
       <!-- Túnica -->
       <div class="col-md-4 producto" data-casa="hufflepuff">
         <div class="card-product text-center" data-id="2">
-          <img src="img/hufflepuff/tunica hufflepuff.jpg" alt="Túnica Hufflepuff" class="img-fluid">
+          <img src="../img/hufflepuff/tunica hufflepuff.jpg" alt="Túnica Hufflepuff" class="img-fluid">
           <h5 class="mt-3" data-nombre="Túnica Hufflepuff">Túnica Hufflepuff - Licencia Oficial</h5>
           <p data-descripcion="Túnica Hufflepuff.">Túnica de Hufflepuff.</p>
           <small style="color: #aaa;">Con capucha y bolsillo interno para varita que te permite llevar tu varita de manera segura.</small>
@@ -321,7 +79,7 @@ html, body {
       <!-- Túnica -->
       <div class="col-md-4 producto" data-casa="ravenclaw">
         <div class="card-product text-center" data-id="3">
-          <img src="img/ravenclaw/tunica ravenclaw.jpg" alt="Túnica Ravenclaw" class="img-fluid">
+          <img src="../img/ravenclaw/tunica ravenclaw.jpg" alt="Túnica Ravenclaw" class="img-fluid">
           <h5 class="mt-3" data-nombre="Túnica Ravenclaw">Túnica Ravenclaw - Licencia Oficial</h5>
           <p data-descripcion="Túnica azul con detalles en bronce.">Túnica azul con detalles en bronce.</p>
           <small style="color: #aaa;">Con capucha y bolsillo interno para varita que te permite llevar tu varita de manera segura.</small>
@@ -333,7 +91,7 @@ html, body {
       <!-- Túnica -->
       <div class="col-md-4 producto" data-casa="slytherin">
         <div class="card-product text-center" data-id="4">
-          <img src="img/slytherin/tunica slytherin.jpg" alt="Túnica de Slytherin" class="img-fluid">
+          <img src="../img/slytherin/tunica slytherin.jpg" alt="Túnica de Slytherin" class="img-fluid">
           <h5 class="mt-3" data-nombre="Túnica de Slytherin">Túnica de Slytherin - Licencia Oficial</h5>
           <p data-descripcion="Túnica de Slytherin.">Túnica de Slytherin.</p>
           <small style="color: #aaa;">Con capucha y bolsillo interno para varita que te permite llevar tu varita de manera segura.</small>
@@ -345,7 +103,7 @@ html, body {
       <!-- Bufanda -->
       <div class="col-md-4 producto" data-casa="gryffindor">
         <div class="card-product text-center" data-id="5">
-          <img src="img/gryffindor/bufanda gryffindor.jpg" alt="Bufanda de Gryffindor" class="img-fluid">
+          <img src="../img/gryffindor/bufanda gryffindor.jpg" alt="Bufanda de Gryffindor" class="img-fluid">
           <h5 class="mt-3" data-nombre="Bufanda Gryffindor">Bufanda Gryffindor – Producto Oficial</h5>
           <p data-descripcion="Bufanda tejida con los colores de Gryffindor.">Bufanda Rayada Gryffindor con escudo bordado.</p>
           <small style="color: #aaa;">Con su diseño rayado y los colores emblemáticos de la casa.</small>
@@ -357,7 +115,7 @@ html, body {
       <!-- Bufanda -->
       <div class="col-md-4 producto" data-casa="hufflepuff">
         <div class="card-product text-center" data-id="6">
-          <img src="img/hufflepuff/bufanda hufflepuff.jpg" alt="Bufanda Hufflepuff" class="img-fluid">
+          <img src="../img/hufflepuff/bufanda hufflepuff.jpg" alt="Bufanda Hufflepuff" class="img-fluid">
           <h5 class="mt-3" data-nombre="Bufanda Hufflepuff">Bufanda Hufflepuff - Licencia Oficial</h5>
           <p data-descripcion="Bufanda tejida en amarillo y negro.">Bufanda Rayada Hufflepuff con escudo bordado.</p>
           <small style="color: #aaa;">Con su diseño rayado y los colores emblemáticos de la casa.</small>
@@ -369,7 +127,7 @@ html, body {
       <!-- Bufanda -->
       <div class="col-md-4 producto" data-casa="ravenclaw">
         <div class="card-product text-center" data-id="7">
-          <img src="img/ravenclaw/bufanda ravenclaw.jpg" alt="Bufanda Ravenclaw" class="img-fluid">
+          <img src="../img/ravenclaw/bufanda ravenclaw.jpg" alt="Bufanda Ravenclaw" class="img-fluid">
           <h5 class="mt-3" data-nombre="Bufanda Ravenclaw">Bufanda Ravenclaw - Licencia Oficial</h5>
           <p data-descripcion="Bufanda tejida azul y bronce.">Bufanda Rayada Ravenclaw con escudo bordado.</p>
           <small style="color: #aaa;">Con su diseño rayado y los colores emblemáticos de la casa.</small>
@@ -381,7 +139,7 @@ html, body {
       <!-- Bufanda -->
       <div class="col-md-4 producto" data-casa="slytherin">
         <div class="card-product text-center" data-id="8">
-          <img src="img/slytherin/bufanda slytherin.jpg" alt="Bufanda de Slytherin" class="img-fluid">
+          <img src="../img/slytherin/bufanda slytherin.jpg" alt="Bufanda de Slytherin" class="img-fluid">
           <h5 class="mt-3" data-nombre="Bufanda Slytherin">Bufanda Slytherin - Licencia Oficial</h5>
           <p data-descripcion="Bufanda verde esmeralda con franjas plateadas.">Bufanda Rayada Slytherin con escudo bordado.</p>
           <small style="color: #aaa;">Con su diseño rayado y los colores emblemáticos de la casa.</small>
@@ -393,7 +151,7 @@ html, body {
       <!-- Chaqueta -->
       <div class="col-md-4 producto" data-casa="gryffindor">
         <div class="card-product text-center" data-id="9">
-          <img src="img/gryffindor/chaqueta gryffindor.jpg" alt="Chaqueta de Gryffindor" class="img-fluid">
+          <img src="../img/gryffindor/chaqueta gryffindor.jpg" alt="Chaqueta de Gryffindor" class="img-fluid">
           <h5 class="mt-3" data-nombre="Chaqueta Gryffindor">Chaqueta Gryffindor – Licencia Oficial</h5>
           <p data-descripcion="Chaqueta escarlata con detalles dorados.">Chaqueta Gryffindor con escudo bordado, diseño varsity y detalles mágicos para fanáticos valientes.</p>
           <small style="color: #aaa;">Bolsillo interno para varita y acabado premium.</small>
@@ -405,7 +163,7 @@ html, body {
       <!-- Chaqueta -->
       <div class="col-md-4 producto" data-casa="hufflepuff">
         <div class="card-product text-center" data-id="10">
-          <img src="img/hufflepuff/chaqueta hufflepuff.jpg" alt="Chaqueta Hufflepuff" class="img-fluid">
+          <img src="../img/hufflepuff/chaqueta hufflepuff.jpg" alt="Chaqueta Hufflepuff" class="img-fluid">
           <h5 class="mt-3" data-nombre="Chaqueta Hufflepuff">Chaqueta Hufflepuff – Licencia Oficial</h5>
           <p data-descripcion="Chaqueta Hufflepuff.">Chaqueta Hufflepuff con escudo bordado, diseño varsity y detalles mágicos para fanáticos valientes.</p>
           <small style="color: #aaa;">Bolsillo interno para varita y acabado premium.</small>
@@ -417,7 +175,7 @@ html, body {
       <!-- Chaqueta -->
       <div class="col-md-4 producto" data-casa="ravenclaw">
         <div class="card-product text-center" data-id="11">
-          <img src="img/ravenclaw/chaqueta ravenclaw.jpg" alt="Chaqueta Ravenclaw" class="img-fluid">
+          <img src="../img/ravenclaw/chaqueta ravenclaw.jpg" alt="Chaqueta Ravenclaw" class="img-fluid">
           <h5 class="mt-3" data-nombre="Chaqueta Ravenclaw">Chaqueta Ravenclaw – Licencia Oficial</h5>
           <p data-descripcion="Chaqueta Ravenclaw.">Chaqueta Ravenclaw con escudo bordado, diseño varsity y detalles mágicos para fanáticos valientes.</p>
           <small style="color: #aaa;">Bolsillo interno para varita y acabado premium.</small>
@@ -429,7 +187,7 @@ html, body {
       <!-- Chaqueta -->
       <div class="col-md-4 producto" data-casa="slytherin">
         <div class="card-product text-center" data-id="12">
-          <img src="img/slytherin/chaqueta slytherin.jpg" alt="Chaqueta de Slytherin" class="img-fluid">
+          <img src="../img/slytherin/chaqueta slytherin.jpg" alt="Chaqueta de Slytherin" class="img-fluid">
           <h5 class="mt-3" data-nombre="Chaqueta Slytherin">Chaqueta Slytherin – Licencia Oficial</h5>
           <p data-descripcion="Chaqueta oficial con escudo bordado.">Chaqueta Slytherin con escudo bordado, diseño varsity y detalles mágicos para fanáticos valientes.</p>
           <small style="color: #aaa;">Bolsillo interno para varita y acabado premium.</small>
@@ -441,7 +199,7 @@ html, body {
       <!-- Corbata -->
       <div class="col-md-4 producto" data-casa="gryffindor">
         <div class="card-product text-center" data-id="13">
-          <img src="img/gryffindor/corbata gryffindor.jpg" alt="Corbata de Gryffindor" class="img-fluid">
+          <img src="../img/gryffindor/corbata gryffindor.jpg" alt="Corbata de Gryffindor" class="img-fluid">
           <h5 class="mt-3" data-nombre="Corbata Gryffindor">Corbata Gryffindor - Licencia Oficial</h5>
           <p data-descripcion="Corbata oficial con diseño escarlata y dorado.">Elegancia mágica con escudo bordado y rayas doradas.</p>
           <small style="color: #aaa;">Ideal para magos audaces y eventos mágicos.</small>
@@ -453,7 +211,7 @@ html, body {
       <!-- Corbata -->
       <div class="col-md-4 producto" data-casa="hufflepuff">
         <div class="card-product text-center" data-id="14">
-          <img src="img/hufflepuff/corbata hufflepuff.jpg" alt="Corbata Hufflepuff" class="img-fluid">
+          <img src="../img/hufflepuff/corbata hufflepuff.jpg" alt="Corbata Hufflepuff" class="img-fluid">
           <h5 class="mt-3" data-nombre="Corbata Hufflepuff">Corbata Hufflepuff - Licencia Oficial</h5>
           <p data-descripcion="Corbata Hufflepuff.">Rayas negras, emblema del tejón y lealtad tejida con estilo.</p>
           <small style="color: #aaa;">Perfecta para quienes valoran el trabajo y la amistad.</small>
@@ -465,7 +223,7 @@ html, body {
       <!-- Corbata -->
       <div class="col-md-4 producto" data-casa="ravenclaw">
         <div class="card-product text-center" data-id="15">
-          <img src="img/ravenclaw/corbata ravenclaw.jpg" alt="Corbata Ravenclaw" class="img-fluid">
+          <img src="../img/ravenclaw/corbata ravenclaw.jpg" alt="Corbata Ravenclaw" class="img-fluid">
           <h5 class="mt-3" data-nombre="Corbata Ravenclaw">Corbata Ravenclaw - Licencia Oficial</h5>
           <p data-descripcion="Corbata Ravenclaw.">Azul profundo, rayas plateadas y sabiduría bordada.</p>
           <small style="color: #aaa;">Diseñada para mentes brillantes y elegantes.</small>
@@ -477,7 +235,7 @@ html, body {
       <!-- Corbata -->
       <div class="col-md-4 producto" data-casa="slytherin">
         <div class="card-product text-center" data-id="16">
-          <img src="img/slytherin/corbata slytherin.jpg" alt="Corbata de Slytherin" class="img-fluid">
+          <img src="../img/slytherin/corbata slytherin.jpg" alt="Corbata de Slytherin" class="img-fluid">
           <h5 class="mt-3" data-nombre="Corbata Slytherin">Corbata Slytherin - Licencia Oficial</h5>
           <p data-descripcion="Corbata verde con detalles plateados.">Verde serpiente, escudo bordado y ambición refinada.</p>
           <small style="color: #aaa;">Para magos estratégicos con estilo impecable.</small>
@@ -489,7 +247,7 @@ html, body {
        <!-- Cordones -->
       <div class="col-md-4 producto" data-casa="gryffindor">
         <div class="card-product text-center" data-id="17">
-          <img src="img/gryffindor/cordones gryffindor.jpg" alt="Cordones de Gryffindor" class="img-fluid">
+          <img src="../img/gryffindor/cordones gryffindor.jpg" alt="Cordones de Gryffindor" class="img-fluid">
           <h5 class="mt-3" data-nombre="Cordones Gryffindor">Cordones Gryffindor - Licencia oficial</h5>
           <p data-descripcion="Cordones mágicos con los colores de la casa.">Cordones mágicos rojo intenso con detalles dorados y emblemas de la casa más valiente.</p>
           <small style="color: #aaa;">Diseñados para pasos audaces y mágicos.</small>
@@ -501,7 +259,7 @@ html, body {
       <!-- Cordones -->
       <div class="col-md-4 producto" data-casa="hufflepuff">
         <div class="card-product text-center" data-id="18">
-          <img src="img/hufflepuff/cordones hufflepuff.jpg" alt="Cordones Hufflepuff" class="img-fluid">
+          <img src="../img/hufflepuff/cordones hufflepuff.jpg" alt="Cordones Hufflepuff" class="img-fluid">
           <h5 class="mt-3" data-nombre="Cordones Hufflepuff">Cordones Hufflepuff - Licencia oficial</h5>
           <p data-descripcion="Cordones Hufflepuff.">Cordones mágicos amarillo brillante con siluetas encantadas.</p>
           <small style="color: #aaa;">Perfectos para quienes caminan con paciencia y lealtad.</small>
@@ -513,7 +271,7 @@ html, body {
       <!-- Cordones -->
       <div class="col-md-4 producto" data-casa="ravenclaw">
         <div class="card-product text-center" data-id="19">
-          <img src="img/ravenclaw/cordones ravenclaw.jpg" alt="Cordones Ravenclaw" class="img-fluid">
+          <img src="../img/ravenclaw/cordones ravenclaw.jpg" alt="Cordones Ravenclaw" class="img-fluid">
           <h5 class="mt-3" data-nombre="Cordones Ravenclaw">Cordones Ravenclaw - Licencia oficial</h5>
           <p data-descripcion="Cordones Ravenclaw.">Cordones magicos azul profundo con símbolos de sabiduría y libertad.</p>
           <small style="color: #aaa;">Para mentes brillantes que pisan con propósito.</small>
@@ -525,7 +283,7 @@ html, body {
       <!-- Cordones -->
       <div class="col-md-4 producto" data-casa="slytherin">
         <div class="card-product text-center" data-id="20">
-          <img src="img/slytherin/cordones slytherin.jpg" alt="Cordones de Slytherin" class="img-fluid">
+          <img src="../img/slytherin/cordones slytherin.jpg" alt="Cordones de Slytherin" class="img-fluid">
           <h5 class="mt-3" data-nombre="Cordones Slytherin">Cordones Slytherin - Licencia oficial</h5>
           <p data-descripcion="Cordones mágicos con los colores de la casa.">Cordones mágicos verde serpiente con patrones sigilosos.</p>
           <small style="color: #aaa;">Hechos para quienes avanzan con ambición y estilo.</small>
@@ -537,7 +295,7 @@ html, body {
       <!-- Llavero -->
       <div class="col-md-4 producto" data-casa="gryffindor">
         <div class="card-product text-center" data-id="21">
-          <img src="img/gryffindor/llavero escudo gryffindor.jpg" alt="Llavero de Gryffindor" class="img-fluid">
+          <img src="../img/gryffindor/llavero escudo gryffindor.jpg" alt="Llavero de Gryffindor" class="img-fluid">
           <h5 class="mt-3" data-nombre="Llavero Gryffindor">Llavero Gryffindor - Licencia Oficial</h5>
           <p data-descripcion="Llavero metálico con escudo grabado.">Llavero metálico con escudo dorado sobre fondo rojo, con el león en alto.</p>
           <small style="color: #aaa;">Ideal para magos valientes que llevan su casa con orgullo.</small>
@@ -549,7 +307,7 @@ html, body {
       <!-- Llavero -->
       <div class="col-md-4 producto" data-casa="hufflepuff">
         <div class="card-product text-center" data-id="22">
-          <img src="img/hufflepuff/llavero escudo hufflepuff.jpg" alt="Llavero Hufflepuff" class="img-fluid">
+          <img src="../img/hufflepuff/llavero escudo hufflepuff.jpg" alt="Llavero Hufflepuff" class="img-fluid">
           <h5 class="mt-3" data-nombre="Llavero Hufflepuff">Llavero Hufflepuff - Licencia Oficial</h5>
           <p data-descripcion="Llavero metálico con emblema de tejón.">Llavero con emblema del tejón en amarillo y negro, con acabado metálico.</p>
           <small style="color: #aaa;">Perfecto para quienes valoran la lealtad y el trabajo en equipo.</small>
@@ -561,7 +319,7 @@ html, body {
       <!-- Llavero -->
       <div class="col-md-4 producto" data-casa="ravenclaw">
         <div class="card-product text-center" data-id="23">
-          <img src="img/ravenclaw/llavero escudo ravenclaw.jpg" alt="Llavero Ravenclaw" class="img-fluid">
+          <img src="../img/ravenclaw/llavero escudo ravenclaw.jpg" alt="Llavero Ravenclaw" class="img-fluid">
           <h5 class="mt-3" data-nombre="Llavero Ravenclaw">Llavero Ravenclaw - Licencia Oficial</h5>
           <p data-descripcion="Llavero Ravenclaw.">Llavero con cresta azul y bronce con el águila de la sabiduría.</p>
           <small style="color: #aaa;">Diseñado para mentes brillantes y curiosas.</small>
@@ -573,7 +331,7 @@ html, body {
       <!-- Llavero -->
       <div class="col-md-4 producto" data-casa="slytherin">
         <div class="card-product text-center" data-id="24">
-          <img src="img/slytherin/llavero escudo slytherin.jpg" alt="Llavero de Slytherin" class="img-fluid">
+          <img src="../img/slytherin/llavero escudo slytherin.jpg" alt="Llavero de Slytherin" class="img-fluid">
           <h5 class="mt-3" data-nombre="Llavero Slytherin">Llavero Slytherin - Licencia Oficial</h5>
           <p data-descripcion="Llavero metálico con el escudo de la casa.">Llavero metálico con serpiente plateada sobre escudo verde, con detalles elegantes.</p>
           <small style="color: #aaa;">Para magos ambiciosos que saben lo que quieren.</small>
@@ -585,7 +343,7 @@ html, body {
       <!-- Medias -->
       <div class="col-md-4 producto" data-casa="gryffindor">
         <div class="card-product text-center" data-id="25">
-          <img src="img/gryffindor/medias gryffindor.jpg" alt="Medias de Gryffindor" class="img-fluid">
+          <img src="../img/gryffindor/medias gryffindor.jpg" alt="Medias de Gryffindor" class="img-fluid">
           <h5 class="mt-3" data-nombre="Medias Gryffindor">Medias Gryffindor - Licencia Oficial</h5>
           <p data-descripcion="Medias mágicas con patrón escarlata.">Medias mágicas rojas con el escudo de la casa Gryffindor.</p>
           <small style="color: #aaa;">Cómodas y resistentes.</small>
@@ -597,7 +355,7 @@ html, body {
       <!-- Medias -->
       <div class="col-md-4 producto" data-casa="hufflepuff">
         <div class="card-product text-center" data-id="26">
-          <img src="img/hufflepuff/medias hufflepuff.jpg" alt="Medias Hufflepuff" class="img-fluid">
+          <img src="../img/hufflepuff/medias hufflepuff.jpg" alt="Medias Hufflepuff" class="img-fluid">
           <h5 class="mt-3" data-nombre="Medias Hufflepuff">Medias Hufflepuff - Licencia Oficial</h5>
           <p data-descripcion="Medias Hufflepuff.">Medias mágicas amarillas con el emblema de Hufflepuff.</p>
           <small style="color: #aaa;">Diseño clásico, ideal para uso diario o como accesorio temático.</small>
@@ -609,7 +367,7 @@ html, body {
       <!-- Medias -->
       <div class="col-md-4 producto" data-casa="ravenclaw">
         <div class="card-product text-center" data-id="27">
-          <img src="img/ravenclaw/medias ravenclaw.jpg" alt="Medias Ravenclaw" class="img-fluid">
+          <img src="../img/ravenclaw/medias ravenclaw.jpg" alt="Medias Ravenclaw" class="img-fluid">
           <h5 class="mt-3" data-nombre="Medias Ravenclaw">Medias de Ravenclaw - Licencia Oficial</h5>
           <p data-descripcion="Medias Ravenclaw.">Medias mágicas azules con el escudo de Ravenclaw.</p>
           <small style="color: #aaa;">Tejido suave y estampado duradero.</small>
@@ -621,7 +379,7 @@ html, body {
       <!-- Medias -->
       <div class="col-md-4 producto" data-casa="slytherin">
         <div class="card-product text-center" data-id="28">
-          <img src="img/slytherin/medias slytherin.jpg" alt="Medias de Slytherin" class="img-fluid">
+          <img src="../img/slytherin/medias slytherin.jpg" alt="Medias de Slytherin" class="img-fluid">
           <h5 class="mt-3" data-nombre="Medias Slytherin">Medias Slytherin - Licencia Oficial</h5>
           <p data-descripcion="Medias mágicas con patrón verde y plata.">Medias mágicas verdes con el símbolo de Slytherin.</p>
           <small style="color: #aaa;">Estilo cómodo y diseño oficial.</small>
@@ -633,7 +391,7 @@ html, body {
       <!-- Varita de Sauco -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="29"> 
-          <img src="img/mas productos/varita de sauco con estuche.jpg" alt="Varita de Sauco" class="img-fluid">
+          <img src="../img/mas productos/varita de sauco con estuche.jpg" alt="Varita de Sauco" class="img-fluid">
           <h5 class="mt-3" data-nombre="Varita de Sauco">🪄 Varita de Sauco – Licencia Oficial + Estuche</h5>
           <p data-descripcion="Varita de Sauco.">La varita más poderosa del mundo mágico.</p>
           <small style="color: #aaa;">Incluye estuche rígido y cinta decorativa.</small>
@@ -645,7 +403,7 @@ html, body {
       <!-- Lentes -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="30">
-          <img src="img\mas productos\lentes.jpg" alt="Lentes" class="img-fluid">
+          <img src="../img\mas productos\lentes.jpg" alt="Lentes" class="img-fluid">
           <h5 class="mt-3" data-nombre="Lentes">👓 Lentes Harry Potter – Producto Oficial</h5>
           <p data-descripcion="Lentes.">Lentes redondos con diseño clásico.</p>
           <small style="color: #aaa;">Livianos, cómodos y perfectos para completar tu look mágico.</small>
@@ -657,7 +415,7 @@ html, body {
       <!-- Collar 9 34 -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="31">
-          <img src="img/mas productos/Collar 9 34.jpg" alt="Collar 9 34" class="img-fluid">
+          <img src="../img/mas productos/Collar 9 34.jpg" alt="Collar 9 34" class="img-fluid">
           <h5 class="mt-3" data-nombre="Collar 9 34">🚂 Collar Andén 9¾ – Licencia Oficial</h5>
           <p data-descripcion="Collar 9 34.">Collar con dije metálico del emblemático andén mágico que conecta al Expreso de Hogwarts.</p>
           <small style="color: #aaa;">Cadena ajustable. Diseño simple y elegante.</small>
@@ -669,7 +427,7 @@ html, body {
       <!-- Collar piedra filosofal -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="32">
-          <img src="img/mas productos/collar piedra filosofal.jpg" alt="Collar piedra filosofal" class="img-fluid">
+          <img src="../img/mas productos/collar piedra filosofal.jpg" alt="Collar piedra filosofal" class="img-fluid">
           <h5 class="mt-3" data-nombre="Collar piedra filosofal">💎 Collar Piedra Filosofal – Licencia Oficial</h5>
           <p data-descripcion="Collar piedra filosofal.">Collar de la legendaria piedra mágica que otorga vida eterna.</p>
           <small style="color: #aaa;">Diseño simple y elegante.</small>
@@ -681,7 +439,7 @@ html, body {
       <!-- Collar snitch dorada -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="33">
-          <img src="img/mas productos/collar snitch dorada.jpg" alt="Collar snitch dorada" class="img-fluid">
+          <img src="../img/mas productos/collar snitch dorada.jpg" alt="Collar snitch dorada" class="img-fluid">
           <h5 class="mt-3" data-nombre="Collar snitch dorada">🏆 Collar Snitch Dorada – Licencia Oficial</h5>
           <p data-descripcion="Collar snitch dorada.">Collar con dije metálico de la Snitch Dorada, símbolo del deporte más emocionante del mundo mágico..</p>
           <small style="color: #aaa;">Diseño detallado con alas extendidas, cadena de 26 cm.</small>
@@ -693,7 +451,7 @@ html, body {
       <!-- Cuaderno hogwarts azul -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="34">
-          <img src="img/mas productos/cuaderno hogwarts azul.jpg" alt="Cuaderno hogwarts azul" class="img-fluid">
+          <img src="../img/mas productos/cuaderno hogwarts azul.jpg" alt="Cuaderno hogwarts azul" class="img-fluid">
           <h5 class="mt-3" data-nombre="Cuaderno hogwarts azul">📘 Cuaderno Hogwarts Azul – Licencia Oficial</h5>
           <p data-descripcion="Cuaderno hogwarts azul.">Cuaderno con tapa dura decorada con el escudo de Hogwarts y detalles del Mapa del Merodeador.</p>
           <small style="color: #aaa;">Diseño de estrellas, casas y lema oficial.</small>
@@ -705,7 +463,7 @@ html, body {
       <!-- Cuaderno Hogwarts Rojo -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="35">
-          <img src="img/mas productos/cuaderno hogwarts rojo.jpg" alt="Cuaderno hogwarts rojo" class="img-fluid">
+          <img src="../img/mas productos/cuaderno hogwarts rojo.jpg" alt="Cuaderno hogwarts rojo" class="img-fluid">
           <h5 class="mt-3" data-nombre="Cuaderno hogwarts rojo">🦁 Cuaderno Hogwarts Rojo – Gryffindor Oficial</h5>
           <p data-descripcion="Cuaderno hogwarts rojo.">Cuaderno espiralado con tapa dura y escudo de Hogwarts.</p>
           <small style="color: #aaa;">Diseño con patrón de coronas.</small>
@@ -717,7 +475,7 @@ html, body {
       <!-- Cuaderno mapa del merodeador -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="36">
-          <img src="img/mas productos/cuaderno mapa del merodeador.jpg" alt="Cuaderno mapa del merodeador" class="img-fluid">
+          <img src="../img/mas productos/cuaderno mapa del merodeador.jpg" alt="Cuaderno mapa del merodeador" class="img-fluid">
           <h5 class="mt-3" data-nombre="Cuaderno mapa del merodeador">🗺️ Cuaderno Mapa del Merodeador – Licencia Oficial</h5>
           <p data-descripcion="Cuaderno mapa del merodeador.">Tapa con ilustración de Hogwarts y detalles vintage.</p>
           <small style="color: #aaa;">Ideal para anotaciones mágicas.</small>
@@ -729,7 +487,7 @@ html, body {
       <!-- Cuaderno hogwarts clásico -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="37">
-          <img src="img/mas productos/cuaderno hogwarts clásico.jpg" alt="Cuaderno hogwarts clásico" class="img-fluid">
+          <img src="../img/mas productos/cuaderno hogwarts clásico.jpg" alt="Cuaderno hogwarts clásico" class="img-fluid">
           <h5 class="mt-3" data-nombre="Cuaderno hogwarts clásico">🏰 Cuaderno Hogwarts Clásico – Licencia Oficial</h5>
           <p data-descripcion="Cuaderno hogwarts clásico.">Cuaderno espiralado con tapa dura y escudo completo de las cuatro casas.</p>
           <small style="color: #aaa;">Fondo oscuro con diseño elegante.</small>
@@ -741,7 +499,7 @@ html, body {
       <!-- Funko dumbledore -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="38">
-          <img src="img/mas productos/funko dumbledore.jpg" alt="Funko dumbledore" class="img-fluid">
+          <img src="../img/mas productos/funko dumbledore.jpg" alt="Funko dumbledore" class="img-fluid">
           <h5 class="mt-3" data-nombre="Funko dumbledore">🧙‍♂️ Funko Pop! Albus Dumbledore – Producto Oficial #15</h5>
           <p data-descripcion="Funko dumbledore.">Incluye detalles en su túnica púrpura, sombrero decorado y emblemática barba..</p>
           <small style="color: #aaa;">Presentación en caja original.</small>
@@ -753,7 +511,7 @@ html, body {
       <!-- Funko hermione 11 -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="39">
-          <img src="img/mas productos/funko hermione 11.jpg" alt="Funko hermione 11" class="img-fluid">
+          <img src="../img/mas productos/funko hermione 11.jpg" alt="Funko hermione 11" class="img-fluid">
           <h5 class="mt-3" data-nombre="Funko hermione 11">💃 Funko Pop! Hermione Granger – Baile de Navidad #11</h5>
           <p data-descripcion="Funko hermione 11.">Hermione con vestido rosa y peinado de gala, tal como aparece en “El Cáliz de Fuego”.</p>
           <small style="color: #aaa;">Presentación en caja original.</small>
@@ -765,7 +523,7 @@ html, body {
       <!-- Funko hermione 80 -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="40">
-          <img src="img/mas productos/funko hermione 80.jpg" alt="Funko hermione 80" class="img-fluid">
+          <img src="../img/mas productos/funko hermione 80.jpg" alt="Funko hermione 80" class="img-fluid">
           <h5 class="mt-3" data-nombre="Funko hermione 80">🧪 Funko Pop! Hermione Granger – Hot Topic Exclusive #80</h5>
           <p data-descripcion="Funko hermione 80.">Hermione con uniforme de Hogwarts, libro en mano y caldero mágico.</p>
           <small style="color: #aaa;">Incluye base transparente. Presentación en caja original.</small>
@@ -777,7 +535,7 @@ html, body {
       <!-- Funko hermione -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="41">
-          <img src="img/mas productos/funko hermione.jpg" alt="Funko hermione" class="img-fluid">
+          <img src="../img/mas productos/funko hermione.jpg" alt="Funko hermione" class="img-fluid">
           <h5 class="mt-3" data-nombre="Funko hermione">🧥 Funko Pop! Hermione Granger – Casual #43</h5>
           <p data-descripcion="Funko hermione.">Hermione con buzo rosa, jeans y varita en mano, lista para la acción.</p>
           <small style="color: #aaa;">Presentación en caja original.</small>
@@ -789,7 +547,7 @@ html, body {
       <!-- Funko hp 51 -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="42">
-          <img src="img/mas productos/funko hp 51.jpg" alt="Funko hp 51" class="img-fluid">
+          <img src="../img/mas productos/funko hp 51.jpg" alt="Funko hp 51" class="img-fluid">
           <h5 class="mt-3" data-nombre="Funko hp 51">🧹 Funko Pop! Harry Potter – Quidditch #51</h5>
           <p data-descripcion="Funko hp 51.">Harry con uniforme de Hogwarts y escoba en mano, listo para el partido.</p>
           <small style="color: #aaa;">Presentación en caja original.</small>
@@ -801,7 +559,7 @@ html, body {
       <!-- Funko hp 112 -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="43">
-          <img src="img/mas productos/funko hp 112.jpg" alt="Funko hp 112" class="img-fluid">
+          <img src="../img/mas productos/funko hp 112.jpg" alt="Funko hp 112" class="img-fluid">
           <h5 class="mt-3" data-nombre="Funko hp 112">🧥 Funko Pop! Harry Potter – Capa de Invisibilidad #112</h5>
           <p data-descripcion="Funko hp 112.">Harry en pijama con su icónica capa de invisibilidad de diseño estrellado.</p>
           <small style="color: #aaa;">Edición exclusiva Wizarding World. Presentación en caja original.</small>
@@ -813,7 +571,7 @@ html, body {
       <!-- Funko hp 149 -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="44">
-          <img src="img/mas productos/funko hp 149.jpg" alt="Funko hp 149" class="img-fluid">
+          <img src="../img/mas productos/funko hp 149.jpg" alt="Funko hp 149" class="img-fluid">
           <h5 class="mt-3" data-nombre="Funko hp 149">🏆 Funko Pop! Harry Potter – Snitch Dorada #149</h5>
           <p data-descripcion="Funko hp 149.">Harry con uniforme de Quidditch, escoba en mano y Snitch dorada lista para atrapar.</p>
           <small style="color: #aaa;">Presentación en caja original.</small>
@@ -825,7 +583,7 @@ html, body {
       <!-- Funko hp 165 -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="45">
-          <img src="img/mas productos/funko hp 165.jpg" alt="Funko hp 165" class="img-fluid">
+          <img src="../img/mas productos/funko hp 165.jpg" alt="Funko hp 165" class="img-fluid">
           <h5 class="mt-3" data-nombre="Funko hp 165">🧹 Funko Pop! Harry Potter – En Vuelo #165</h5>
           <p data-descripcion="Funko hp 165.">Harry con túnica de Quidditch, gafas, escoba y Snitch dorada, montado sobre base transparente que simula vuelo.</p>
           <small style="color: #aaa;">Presentación en caja original.</small>
@@ -837,7 +595,7 @@ html, body {
       <!-- Funko pop ron con scabbers -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="46">
-          <img src="img/mas productos/funko pop ron con scabbers.jpg" alt="Funko pop ron con scabbers" class="img-fluid">
+          <img src="../img/mas productos/funko pop ron con scabbers.jpg" alt="Funko pop ron con scabbers" class="img-fluid">
           <h5 class="mt-3" data-nombre="Funko pop ron con scabbers">🐀 Funko Pop! Ron Weasley – Con Scabbers #44</h5>
           <p data-descripcion="Funko pop ron con scabbers.">Ron con su característico suéter marrón y Scabbers en mano.</p>
           <small style="color: #aaa;">Presentación en caja original.</small>
@@ -849,7 +607,7 @@ html, body {
       <!-- Funko ron 166 -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="47">
-          <img src="img/mas productos/funko ron 166.jpg" alt="Funko ron 166" class="img-fluid">
+          <img src="../img/mas productos/funko ron 166.jpg" alt="Funko ron 166" class="img-fluid">
           <h5 class="mt-3" data-nombre="Funko ron 166">🌸 Funko Pop! Ron Weasley – Gorro y Flor #166</h5>
           <p data-descripcion="Funko ron 166.">Ron con gorro tejido, camisa a cuadros y flor en mano, inspirado en su look del Baile de Navidad.</p>
           <small style="color: #aaa;">Presentación en caja original.</small>
@@ -861,7 +619,7 @@ html, body {
       <!-- Funko ron baile -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="48">
-          <img src="img/mas productos/funko ron baile.jpg" alt="Funko ron baile" class="img-fluid">
+          <img src="../img/mas productos/funko ron baile.jpg" alt="Funko ron baile" class="img-fluid">
           <h5 class="mt-3" data-nombre="Funko ron baile">🎩 Funko Pop! Ron Weasley – Baile de Navidad #12</h5>
           <p data-descripcion="Funko ron baile.">Ron con su inolvidable traje marrón, camisa con volados y moño rojo, tal como aparece en “El Cáliz de Fuego”.</p>
           <small style="color: #aaa;">Presentación en caja original.</small>
@@ -873,7 +631,7 @@ html, body {
        <!-- Funko ron -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="49">
-          <img src="img/mas productos/funko ron.jpg" alt="Funko ron" class="img-fluid">
+          <img src="../img/mas productos/funko ron.jpg" alt="Funko ron" class="img-fluid">
           <h5 class="mt-3" data-nombre="Funko ron">🧙‍♂️ Funko Pop! Ron Weasley – Uniforme Hogwarts #02</h5>
           <p data-descripcion="Funko ron.">Ron con túnica negra, escudo de Gryffindor y varita en mano.</p>
           <small style="color: #aaa;">Presentación en caja original.</small>
@@ -885,7 +643,7 @@ html, body {
        <!-- Funko voldemort -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="50">
-          <img src="img/mas productos/funko voldemort.jpg" alt="Funko voldemort" class="img-fluid">
+          <img src="../img/mas productos/funko voldemort.jpg" alt="Funko voldemort" class="img-fluid">
           <h5 class="mt-3" data-nombre="Funko voldemort">🐍 Funko Pop! Lord Voldemort – Producto Oficial #06</h5>
           <p data-descripcion="Funko voldemort.">Voldemort con túnica verde oscura y varita en mano, con su clásica expresión sin nariz.</p>
           <small style="color: #aaa;">Presentación en caja original.</small>
@@ -897,7 +655,7 @@ html, body {
        <!-- Giratiempo -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="51">
-          <img src="img/mas productos/giratiempo.jpg" alt="Giratiempo" class="img-fluid">
+          <img src="../img/mas productos/giratiempo.jpg" alt="Giratiempo" class="img-fluid">
           <h5 class="mt-3" data-nombre="Giratiempo">⏳ Collar Giratiempo – Producto Oficial</h5>
           <p data-descripcion="Giratiempo.">Collar dorado con anillos giratorios y reloj de arena central.</p>
           <small style="color: #aaa;">Grabado con la frase mágica: “I mark the hours, every one, nor have I yet outrun the sun…"</small>
@@ -909,7 +667,7 @@ html, body {
        <!-- Grageas  -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="52">
-          <img src="img/mas productos/grageas.jpg" alt="Grageas" class="img-fluid">
+          <img src="../img/mas productos/grageas.jpg" alt="Grageas" class="img-fluid">
           <h5 class="mt-3" data-nombre="Grageas">Bertie Botts Grageas Asquerosas</h5>
           <p data-descripcion="Grageas.">Caja temática con diseño clásico y guía ilustrada de 20 sabores, desde cereza y limón hasta vómito y suciedad.</p>
           <small style="color: #aaa;">Ideal para desafíos mágicos, regalos divertidos o colecciones temáticas.</small>
@@ -921,7 +679,7 @@ html, body {
        <!-- Lampara reliquias de la muerte -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="53">
-          <img src="img/mas productos/lampara reliquias de la muerte.jpg" alt="Lampara reliquias de la muerte" class="img-fluid">
+          <img src="../img/mas productos/lampara reliquias de la muerte.jpg" alt="Lampara reliquias de la muerte" class="img-fluid">
           <h5 class="mt-3" data-nombre="Lampara reliquias de la muerte">💡 Lámpara Reliquias de la Muerte – Producto Oficial</h5>
           <p data-descripcion="Lampara reliquias de la muerte.">Lámpara de mesa con base en forma del símbolo de las Reliquias de la Muerte. Pantalla ilustrada con la historia de “Los Tres Hermanos” en estilo silueta.</p>
           <small style="color: #aaa;">Ideal para ambientar espacios mágicos.</small>
@@ -933,7 +691,7 @@ html, body {
        <!-- Mapa del merodeador -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="54">
-          <img src="img/mas productos/mapa del merodeador.jpg" alt="Mapa del merodeador" class="img-fluid">
+          <img src="../img/mas productos/mapa del merodeador.jpg" alt="Mapa del merodeador" class="img-fluid">
           <h5 class="mt-3" data-nombre="Mapa del merodeador">🗺️ Mapa del Merodeador – Réplica Oficial</h5>
           <p data-descripcion="Mapa del merodeador.">Mapa del Merodeador, con diseño detallado de los pasillos y secretos de Hogwarts.</p>
           <small style="color: #aaa;">Juro solemnemente que mis intenciones no son buenas.</small>
@@ -945,7 +703,7 @@ html, body {
        <!-- Neceser hogwarts -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="55">
-          <img src="img/mas productos/neceser hogwarts.jpg" alt="Neceser hogwarts" class="img-fluid">
+          <img src="../img/mas productos/neceser hogwarts.jpg" alt="Neceser hogwarts" class="img-fluid">
           <h5 class="mt-3" data-nombre="Neceser hogwarts">🎒 Neceser Hogwarts – Producto Oficial</h5>
           <p data-descripcion="Neceser hogwarts.">Neceser color burdeos con escudo completo de las casas de Hogwarts.</p>
           <small style="color: #aaa;">Ideal para lápices, maquillaje o pequeños objetos encantados.</small>
@@ -957,7 +715,7 @@ html, body {
        <!-- Neceser mapa del merodeador -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="56">
-          <img src="img/mas productos/neceser mapa del merodeador.jpg" alt="Neceser mapa del merodeador" class="img-fluid">
+          <img src="../img/mas productos/neceser mapa del merodeador.jpg" alt="Neceser mapa del merodeador" class="img-fluid">
           <h5 class="mt-3" data-nombre="Neceser mapa del merodeador">🗺️ Neceser Mapa del Merodeador – Producto Oficial</h5>
           <p data-descripcion="Neceser mapa del merodeador.">Neceser color crema con diseño inspirado en el Mapa del Merodeador y la frase mágica para activarlo.</p>
           <small style="color: #aaa;">Ideal para cosméticos, útiles o pequeños objetos encantados.</small>
@@ -969,7 +727,7 @@ html, body {
        <!-- Boleto plataforma 9 3/4 -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="57">
-          <img src="img/mas productos/boleto plataforma 934.jpg" alt="Boleto plataforma 9 3/4" class="img-fluid">
+          <img src="../img/mas productos/boleto plataforma 934.jpg" alt="Boleto plataforma 9 3/4" class="img-fluid">
           <h5 class="mt-3" data-nombre="Boleto plataforma 9 3/4">🎫 Boleto Plataforma 9 ¾ – Producto Oficial</h5>
           <p data-descripcion="Boleto plataforma 9 3/4.">Boleto de tren al Expreso de Hogwarts.</p>
           <small style="color: #aaa;">Con detalles dorados y tipografía encantada.</small>
@@ -981,7 +739,7 @@ html, body {
       <!-- Almohadón Ron Weasley -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="58">
-          <img src="img/mas productos/Almohadon Ron Weasley.jpg" alt="Almohadón Ron Weasley" class="img-fluid">
+          <img src="../img/mas productos/Almohadon Ron Weasley.jpg" alt="Almohadón Ron Weasley" class="img-fluid">
           <h5 class="mt-3" data-nombre="Almohadón Ron Weasley">🧡 Almohadón Ron Weasley – Producto Oficial</h5>
           <p data-descripcion="Almohadón Ron Weasley.">Almohadón decorativo con diseño inspirado en Ron Weasley.</p>
           <small style="color: #aaa;">Confeccionado en tela tropical mecánico y relleno de vellón suave.</small>
@@ -993,7 +751,7 @@ html, body {
       <!-- Almohadón Luna Lovegood -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="59">
-          <img src="img/mas productos/Almohadon Luna Lovegood.jpg" alt="Almohadón Luna Lovegood" class="img-fluid">
+          <img src="../img/mas productos/Almohadon Luna Lovegood.jpg" alt="Almohadón Luna Lovegood" class="img-fluid">
           <h5 class="mt-3" data-nombre="Almohadón Luna Lovegood">🌻 Almohadón Luna Lovegood – Edición Excéntrica</h5>
           <p data-descripcion="Almohadón Luna Lovegood.">Almohadón decorativo con diseño inspirado en Luna Lovegood.</p>
           <small style="color: #aaa;">Confeccionado en tela tropical mecánico y relleno de vellón suave.</small>
@@ -1005,7 +763,7 @@ html, body {
       <!-- Almohadón Draco Malfoy -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="60">
-          <img src="img/mas productos/Almohadon Draco Malfoy.jpg" alt="Almohadón Draco Malfoy" class="img-fluid">
+          <img src="../img/mas productos/Almohadon Draco Malfoy.jpg" alt="Almohadón Draco Malfoy" class="img-fluid">
           <h5 class="mt-3" data-nombre="Almohadón Draco Malfoy">🐍 Almohadón Draco Malfoy – Edición Príncipe de Slytherin</h5>
           <p data-descripcion="Almohadón Draco Malfoy.">Almohadón decorativo con diseño inspirado en Draco Malfoy.</p>
           <small style="color: #aaa;">Confeccionado en tela tropical mecánico y relleno de vellón suave.</small>
@@ -1017,7 +775,7 @@ html, body {
       <!-- Cajita Musical -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="61">
-          <img src="img/mas productos/Cajita Musical.jpg" alt="Cajita Musical" class="img-fluid">
+          <img src="../img/mas productos/Cajita Musical.jpg" alt="Cajita Musical" class="img-fluid">
           <h5 class="mt-3" data-nombre="Cajita Musical">🕯️ Cajita Musical</h5>
           <p data-descripcion="Cajita Musical.">Caja musical de madera con mecanismo a manivela.</p>
           <small style="color: #aaa;">Al girarla, reproduce la melodía de Hedwig’s Theme, evocando el momento más icónico de Snape: “After all this time?” “Always.”</small>
@@ -1029,7 +787,7 @@ html, body {
       <!-- Llavero Rana de Chocolate -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="62">
-          <img src="img/mas productos/Llavero rana de chocolate.jpg" alt="Llavero Rana de Chocolate" class="img-fluid">
+          <img src="../img/mas productos/Llavero rana de chocolate.jpg" alt="Llavero Rana de Chocolate" class="img-fluid">
           <h5 class="mt-3" data-nombre="Llavero Rana de Chocolate">🍫 Llavero Rana de Chocolate – Edición Honeydukes</h5>
           <p data-descripcion="Llavero Rana de Chocolate.">Dulce del mundo mágico.</p>
           <small style="color: #aaa;">El llavero incluye una rana en 3D con acabado en goma y detalles metálicos.</small>
@@ -1041,7 +799,7 @@ html, body {
       <!-- Botella Hogwarts -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="63">
-          <img src="img/mas productos/botella hogwarts.jpg" alt="Botella Hogwarts" class="img-fluid">
+          <img src="../img/mas productos/botella hogwarts.jpg" alt="Botella Hogwarts" class="img-fluid">
           <h5 class="mt-3" data-nombre="Botella Hogwarts">🏰 Botella Metálica Hogwarts – Producto Oficial</h5>
           <p data-descripcion="Botella Hogwarts.">Botella tipo cantimplora.</p>
           <small style="color: #aaa;">Fabricada en aluminio resistente, incluye dos tapones intercambiables.</small>
@@ -1053,7 +811,7 @@ html, body {
       <!-- Paper clips -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="64">
-          <img src="img/mas productos/Paper clips.jpg" alt="Paper clips" class="img-fluid">
+          <img src="../img/mas productos/Paper clips.jpg" alt="Paper clips" class="img-fluid">
           <h5 class="mt-3" data-nombre="Paper clips">📎 Paper Clips de las Casas – Mooving Licencia Oficial</h5>
           <p data-descripcion="Paper clips.">Set de clips metálicos con diseños de las cuatro casas de Hogwarts.</p>
           <small style="color: #aaa;">Blíster con 4 unidades.</small>
@@ -1065,7 +823,7 @@ html, body {
       <!-- Separadores -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="65">
-          <img src="img/mas productos/Separadores.jpg" alt="Separadores" class="img-fluid">
+          <img src="../img/mas productos/Separadores.jpg" alt="Separadores" class="img-fluid">
           <h5 class="mt-3" data-nombre="Separadores">📚 Separadores N3 Mod. 2 – Mooving Harry Potter</h5>
           <p data-descripcion="Separadores.">Set de 6 separadores tamaño N°3 con diseños del universo de Harry Potter.</p>
           <small style="color: #aaa;">Cada hoja tiene ilustraciones únicas y colores vibrantes.</small>
@@ -1077,7 +835,7 @@ html, body {
       <!-- Set de vasos -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="66">
-          <img src="img/mas productos/Set de vasos.jpg" alt="Set de vasos" class="img-fluid">
+          <img src="../img/mas productos/Set de vasos.jpg" alt="Set de vasos" class="img-fluid">
           <h5 class="mt-3" data-nombre="Set de vasos">🏰 Set de Vasos de las Casas – Licencia Oficial Harry Potter</h5>
           <p data-descripcion="Set de vasos.">Pack de 4 vasos plásticos, uno por cada casa.</p>
           <small style="color: #aaa;">Cada vaso tiene su escudo y colores característicos.</small>
@@ -1089,7 +847,7 @@ html, body {
        <!-- Paper binder clips -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="67">
-          <img src="img/mas productos/Paper binder clips.jpg" alt="Paper binder clips" class="img-fluid">
+          <img src="../img/mas productos/Paper binder clips.jpg" alt="Paper binder clips" class="img-fluid">
           <h5 class="mt-3" data-nombre="Paper binder clips">📎 Paper Binder Clips Harry Potter – Mooving</h5>
           <p data-descripcion="Paper binder clips.">Set de clips metálicos estilo “manito” con diseños del universo de Harry Potter.</p>
           <small style="color: #aaa;">Metal resistente con acabado plateado.</small>
@@ -1101,7 +859,7 @@ html, body {
       <!-- Collar marca tenebrosa -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="68">
-          <img src="img/mas productos/Collar marca tenebrosa.jpg" alt="Collar marca tenebrosa" class="img-fluid">
+          <img src="../img/mas productos/Collar marca tenebrosa.jpg" alt="Collar marca tenebrosa" class="img-fluid">
           <h5 class="mt-3" data-nombre="Collar marca tenebrosa">🐍 Collar Marca Tenebrosa – Licencia Oficial</h5>
           <p data-descripcion="Collar marca tenebrosa.">Colgante metálico con el símbolo de la Marca Tenebrosa.</p>
           <small style="color: #aaa;">Como lo usan los Mortífagos.</small>
@@ -1113,7 +871,7 @@ html, body {
       <!-- Carta de admision -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="69">
-          <img src="img/mas productos/Carta de admision.jpg" alt="Carta de admisión" class="img-fluid">
+          <img src="../img/mas productos/Carta de admision.jpg" alt="Carta de admisión" class="img-fluid">
           <h5 class="mt-3" data-nombre="Carta de admisión">✉️ Carta de Admisión a Hogwarts – Edición Oficial</h5>
           <p data-descripcion="Carta de admisión.">Carta que confirma tu ingreso al Colegio Hogwarts de Magia y Hechicería.</p>
           <small style="color: #aaa;">Papel pergamino con tinta verde esmeralda.</small>
@@ -1125,7 +883,7 @@ html, body {
       <!-- Juego vista veloz -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="70">
-          <img src="img/mas productos/Juego vista veloz.jpg" alt="Juego vista veloz" class="img-fluid">
+          <img src="../img/mas productos/Juego vista veloz.jpg" alt="Juego vista veloz" class="img-fluid">
           <h5 class="mt-3" data-nombre="Juego vista veloz">🎴 Juego Vista Veloz – Harry Potter (Licencia Oficial ToyCo)</h5>
           <p data-descripcion="Juego vista veloz.">Juego de cartas de destreza visual.</p>
           <small style="color: #aaa;">Cartas ilustradas con íconos del mundo mágico.</small>
@@ -1137,7 +895,7 @@ html, body {
       <!-- Vaso Hedwig -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="71">
-          <img src="img/mas productos/Vaso Hedwig.jpg" alt="Vaso Hedwig" class="img-fluid">
+          <img src="../img/mas productos/Vaso Hedwig.jpg" alt="Vaso Hedwig" class="img-fluid">
           <h5 class="mt-3" data-nombre="Vaso Hedwig">🦉 Vaso Hedwig Maxi – Producto Oficial</h5>
           <p data-descripcion="Vaso Hedwig.">Vaso plástico con tapa a presión, decorado con la imagen de Hedwig en vuelo sobre fondo blanco.</p>
           <small style="color: #aaa;">Ideal para Llevar tu café mágico.</small>
@@ -1149,7 +907,7 @@ html, body {
        <!-- Tazón Grim -->
       <div class="col-md-4 producto" data-casa="mas productos">
         <div class="card-product text-center" data-id="72">
-          <img src="img/mas productos/Tazón Grim.jpg" alt="Tazón Grim" class="img-fluid">
+          <img src="../img/mas productos/Tazón Grim.jpg" alt="Tazón Grim" class="img-fluid">
           <h5 class="mt-3" data-nombre="Tazón Grim">☕ Tazón Grim – Harry Potter</h5>
           <p data-descripcion="Tazón Grim.">Taza de cerámica con diseño de clase de Adivinación.</p>
           <small style="color: #aaa;">El interior muestra la figura del Grim, el presagio más temido en la lectura de posos de té.</small>
@@ -1163,62 +921,18 @@ html, body {
   </div>
 
 
-  <script>
-    // Filtro por casa
-    document.querySelectorAll('.filtro-casa').forEach(boton => {
-      boton.addEventListener('click', () => {
-        const casa = boton.dataset.casa;
-        document.querySelectorAll('.producto').forEach(prod => {
-          prod.style.display = (casa === 'todos' || prod.dataset.casa === casa) ? 'block' : 'none';
-        });
-      });
-    });
 
-    // Añadir al caldero
-    document.querySelectorAll('.add-to-cart').forEach(boton => {
-      boton.addEventListener('click', () => {
-        const nombre = boton.closest('.card-product').querySelector('[data-nombre]').dataset.nombre;
-        alert(`🪄 ${nombre} fue añadido al caldero con éxito`);
-      });
-    });
-  </script>
-
-<div class="botones-flotantes">
-  <button id="btn-arriba">🔝</button>
-  <button id="btn-atras">↩️</button>
-
-</div>
-
-  <script>
-  document.getElementById('btn-arriba').addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  document.getElementById('btn-atras').addEventListener('click', () => {
-    window.history.back();
-  });
-</script>
-
-<script>
-  document.getElementById('btn-inicio').addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
+  <div class="botones-flotantes">
+    <button id="btn-arriba">🔝</button>
+    <button id="btn-atras">↩️</button>
+  </div>
 
 
-<script>
-  document.getElementById('buscador').addEventListener('input', function () {
-    const termino = this.value.toLowerCase();
-    const productos = document.querySelectorAll('.producto');
-
-    productos.forEach(producto => {
-      const texto = producto.textContent.toLowerCase();
-      producto.style.display = texto.includes(termino) ? 'block' : 'none';
-    });
-  });
-</script>
-
-
-
+  <script src="../js/components/filtrarProductos.js"></script>
+  <script src="../js/utils/botonesNavegacion.js"></script>
+  <script src="../js/utils/buscadorProductos.js"></script>
+  <script src="../js/utils/scrollInicio.js"></script>
+  <script src="../js/helpers/quees.js"></script>
+  <script src="../js/helpers/carrito.js"></script>
 </body>
 </html>

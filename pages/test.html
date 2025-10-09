@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Test de Selección</title>
+  <link rel="stylesheet" href="../css/estilo.css"/>
+  <link rel="stylesheet" href="../css/test.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+<a href="../index.html" class="btn-volver">← Volver</a>
+     <div class="fondo-hogwarts">
+    <div class="contenedor-marco">
+  <h1 class="text-center mt-4">Test de Selección de Casa</h1>
+
+<form id="hogwarts-test" class="container">
+  <div class="pregunta">
+    <label>1. ¿Qué valoras más?</label><br />
+    <input type="radio" name="valor" value="Gryffindor" /> Valentía<br />
+    <input type="radio" name="valor" value="Hufflepuff" /> Lealtad<br />
+    <input type="radio" name="valor" value="Ravenclaw" /> Sabiduría<br />
+    <input type="radio" name="valor" value="Slytherin" /> Ambición<br />
+  </div>
+
+  <div class="pregunta">
+    <label>2. ¿Qué criatura te atrae más?</label><br />
+    <input type="radio" name="criatura" value="Ravenclaw" /> Águila<br />
+    <input type="radio" name="criatura" value="Slytherin" /> Serpiente<br />
+    <input type="radio" name="criatura" value="Gryffindor" /> León<br />
+    <input type="radio" name="criatura" value="Hufflepuff" /> Tejón<br />
+  </div>
+
+  <div class="pregunta">
+    <label>3. ¿Qué te molesta más?</label><br />
+    <input type="radio" name="cualidad" value="Hufflepuff" /> La indiferencia<br />
+    <input type="radio" name="cualidad" value="Ravenclaw" /> La ignorancia<br />
+    <input type="radio" name="cualidad" value="Gryffindor" /> La injusticia<br />
+    <input type="radio" name="cualidad" value="Slytherin" /> La mediocridad<br />
+  </div>
+
+  <div class="pregunta">
+    <label>4. ¿Qué ambiente preferís?</label><br />
+    <input type="radio" name="ambiente" value="Ravenclaw" /> Biblioteca silenciosa<br />
+    <input type="radio" name="ambiente" value="Gryffindor" /> Sala común bulliciosa<br />
+    <input type="radio" name="ambiente" value="Slytherin" /> Mazmorras misteriosas<br />
+    <input type="radio" name="ambiente" value="Hufflepuff" /> Jardines soleados<br />
+  </div>
+
+  <div class="pregunta">
+    <label>5. ¿Qué tipo de magia te atrae más?</label><br />
+    <input type="radio" name="magia" value="Slytherin" /> Hechizos poderosos<br />
+    <input type="radio" name="magia" value="Ravenclaw" /> Encantamientos complejos<br />
+    <input type="radio" name="magia" value="Gryffindor" /> Duelos mágicos<br />
+    <input type="radio" name="magia" value="Hufflepuff" /> Magia curativa<br />
+  </div>
+
+  <button type="submit" class="btn btn-warning mt-3">Descubrir mi casa</button>
+</form>
+
+<div id="resultado" class="text-center mt-5 hidden">
+  <h2>Tu casa es: <span id="casa-seleccionada"></span></h2>
+  <div id="card-casa"></div>
+</div>
+</div>
+  </div>
+
+
+  <script src="../js/components/testSombrero.js"></script>
+</body>
+</html>

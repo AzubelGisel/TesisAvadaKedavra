@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Datos de Envío - Avada Kedavra</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="/css/estilo.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="aparicion-hogwarts">
@@ -53,51 +53,6 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const campos = ["nombre", "direccion", "ciudad", "codigoPostal", "email", "telefono"];
-
-      const btn = document.getElementById("confirmarEnvio");
-
-      // Restaurar datos si existen
-      campos.forEach(id => {
-        const campo = document.getElementById(id);
-        const guardado = localStorage.getItem("envio_" + id);
-        if (guardado) campo.value = guardado;
-      });
-
-      // Guardar en tiempo real
-      campos.forEach(id => {
-        const campo = document.getElementById(id);
-        campo.addEventListener("input", () => {
-          localStorage.setItem("envio_" + id, campo.value);
-        });
-      });
-
-      // Validación y avance
-      btn.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        let valido = true;
-        campos.forEach(id => {
-          const campo = document.getElementById(id);
-          if (!campo.value.trim()) {
-            campo.classList.add("is-invalid");
-            valido = false;
-          } else {
-            campo.classList.remove("is-invalid");
-          }
-        });
-
-        if (!valido) return;
-
-        btn.classList.add("animado");
-        setTimeout(() => btn.classList.remove("animado"), 600);
-
-        alert("¡Datos confirmados! Avanzando al pago...");
-        window.location.href = "pago.html";
-      });
-    });
-  </script>
+  <script src="/js/utils/envio.js"></script>
 </body>
 </html>

@@ -1,0 +1,191 @@
+
+  .fondo-hogwarts {
+  background-image: url('../img/castillohogwarts.jpg'); /* Asegurate de tener esta imagen */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedor-marco {
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo traslúcido */
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 800px;
+  color: #ffd700;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+/* Centrado general del contenido */
+.contenedor-marco {
+  text-align: center;
+}
+
+/* Estilo para cada bloque de pregunta */
+.pregunta {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+/* Estilo para los labels y opciones */
+.pregunta label {
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #ffd700;
+}
+
+.pregunta input[type="radio"] {
+  margin: 0.5rem;
+}
+
+/* Botón centrado */
+#hogwarts-test button {
+  margin-top: 2rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.1rem;
+  background-color: #ffd700;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Resultado centrado */
+#resultado {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+#casa-seleccionada {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+.pregunta input[type="radio"] {
+  margin: 0.5rem;
+  accent-color: #ffd700; /* color del círculo */
+}
+
+.pregunta input[type="radio"] + label,
+.pregunta input[type="radio"]::after {
+  color: white;
+}
+
+/* Si estás usando texto plano sin <label>, aplicá esto: */
+.pregunta {
+  color: white;
+}
+.btn-outline-light {
+  border: 2px solid #ffd700;
+  color: #ffd700;
+  background-color: transparent;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+  background-color: #ffd700;
+  color: #1a1a1a;
+}
+.btn-outline-light {
+  border: 2px solid #ffd700;
+  color: #ffd700;
+  background-color: transparent;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+  background-color: #ffd700;
+  color: #1a1a1a;
+}
+
+.contenedor-marco {
+  position: relative;
+  padding-top: 60px; /* espacio para el botón */
+}
+
+.btn-volver {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  font-size: 0.85rem;
+  padding: 0.4rem 1rem;
+  background-color: #ffd700; /* fondo dorado visible siempre */
+  color: #1a1a1a;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-volver:hover {
+  background-color: #ffcc00;
+  transform: scale(1.05);
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  color: #f5f5f5;
+  background-color: #0b0b0b;
+}
+
+h1, h2, h3 {
+  font-family: 'Cinzel', serif;
+  color: #d4af37;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.pregunta {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.pregunta label {
+  display: block;
+  margin: 0.5rem 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.pregunta label:hover {
+  color: #d4af37;
+}
+#boton-descubrir {
+  background-color: #d4af37;
+  color: #0b0b0b;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 2rem auto;
+}
+
+#boton-descubrir:hover {
+  background-color: #bfa32f;
+}
+#resultado {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  color: #d4af37;
+  font-family: 'Cinzel', serif;
+}

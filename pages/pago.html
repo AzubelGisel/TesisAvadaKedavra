@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pago - Avada Kedavra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/estilo.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="aparicion-hogwarts">
+
+  <div class="container">
+    <div class="carrito-marco">
+      <h2 class="mb-4">💰 Método de Pago</h2>
+
+      <form id="formPago">
+        <div class="mb-3">
+          <label for="metodo" class="form-label">Seleccioná un método</label>
+          <select class="form-select" id="metodo" required>
+            <option value="">-- Elegí una opción --</option>
+            <option value="tarjeta">Tarjeta de crédito</option>
+            <option value="mercadopago">MercadoPago</option>
+            <option value="transferencia">Transferencia bancaria</option>
+            <option value="qr">Pago QR</option>
+          </select>
+        </div>
+
+        <div id="formularioEspecifico"></div>
+
+        <div class="mb-3 mt-4">
+          <label class="form-label">Tipo de entrega</label>
+          <div>
+            <input type="radio" name="envio" value="domicilio" id="envioDomicilio" required>
+            <label for="envioDomicilio">Envío a domicilio (+$15.000)</label>
+          </div>
+          <div>
+            <input type="radio" name="envio" value="sucursal" id="envioSucursal">
+            <label for="envioSucursal" style="color: #007bff;">Retiro en sucursal (Gratis)</label>
+          </div>
+        </div>
+
+        <!-- Checkbox visual para activar o desactivar el modo debug -->
+        <div class="form-check mb-4">
+           <input class="form-check-input" type="checkbox" id="modoDebugToggle" checked>
+            <!-- El checkbox está marcado por defecto (modo debug activado) -->
+            <label class="form-check-label" for="modoDebugToggle">
+             Activar modo debug (no abrir WhatsApp)
+          </label>
+        </div>
+
+
+        <div class="text-end mt-4">
+          <button id="confirmarPago" class="btn btn-success">Finalizar Compra</button>
+        </div>
+      </form>
+
+      <div id="resumenCompra" class="mt-5" style="display:none;">
+        <h4>🧾 Resumen de la compra</h4>
+        <p id="detalleProductos"></p>
+        <p id="detalleEnvio"></p>
+        <p id="totalFinal" class="fw-bold"></p>
+        <hr>
+        <h5>📍 Datos del comprador</h5>
+        <p id="datosComprador"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/utils/pago.js"></script>
+</body>
+</html>
