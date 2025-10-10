@@ -84,76 +84,87 @@
   <!-- MAIN CONTENT -->
   <main class="container my-5" id="main-content">
 
-    <section id="productos-destacados" class="carrusel-section">
-      <h2 class="section-title text-center mb-4">PRODUCTOS DESTACADOS</h2>
-      <p class="section-sub text-center mb-4">Artículos mágicos seleccionados especialmente para ti</p>
+    <section id="productos-destacados">
+      <h2>PRODUCTOS DESTACADOS</h2>
+      <a href="pages/productos magicos.html" class="ver-todos">VER TODOS</a>
+      <div class="carrusel-wrapper">
 
       <div class="carrusel-container">
         <button class="carrusel-btn prev">←</button>
         <div class="carrusel-track">
 
-          <div class="carrusel-item">
-            <div class="card-product">
-              <div class="emoji">👕</div>
-              <h5>Túnica de Gryffindor</h5>
-              <p class="muted">Túnica oficial con los colores de la casa Gryffindor.</p>
-              <div class="price">$49.99</div>
-              <button onclick="agregarAlCarrito(1)">Añadir</button>
-            </div>
-          </div>
+          <div class="col-md-4 producto" data-casa="gryffindor">
+        <div class="card-product text-center" data-id="1">
+          <img src="img/gryffindor/tunica gryffindor.jpg" alt="Túnica de Gryffindor" class="img-fluid">
+          <h5 class="mt-3" data-nombre="Túnica Gryffindor">Túnica Gryffindor - Licencia Oficial</h5>
+          <p data-descripcion="Túnica oficial con escudo bordado y forro dorado.">Túnica oficial con escudo bordado y forro dorado.</p>
+          <small style="color: #aaa;">Con capucha y bolsillo interno para varita que te permite llevar tu varita de manera segura.</small>
+          <p class="price" data-precio="85.000">$85.000</p>
+          <button class="btn-caldero add-to-cart" data-id="1">Añadir al caldero</button>
+        </div> 
+      </div>
 
-          <div class="carrusel-item">
-            <div class="card-product">
-              <div class="emoji">🧣</div>
-              <h5>Bufanda de Slytherin</h5>
-              <p class="muted">Elegante bufanda en verde y plata.</p>
-              <div class="price">$29.99</div>
-              <button onclick="agregarAlCarrito(2)">Añadir</button>
-            </div>
-          </div>
-
-          <div class="carrusel-item">
-        <div class="card-product">
-          <div class="emoji">👕</div>
-          <h5>Túnica de Gryffindor</h5>
-          <p class="muted">Túnica oficial con los colores de la casa Gryffindor.</p>
-          <div class="price">$49.99</div>
-          <button onclick="agregarAlCarrito(3)">Añadir</button>
+         <div class="col-md-4 producto" data-casa="ravenclaw">
+        <div class="card-product text-center" data-id="11">
+          <img src="img/ravenclaw/chaqueta ravenclaw.jpg" alt="Chaqueta Ravenclaw" class="img-fluid">
+          <h5 class="mt-3" data-nombre="Chaqueta Ravenclaw">Chaqueta Ravenclaw – Licencia Oficial</h5>
+          <p data-descripcion="Chaqueta Ravenclaw.">Chaqueta Ravenclaw con escudo bordado, diseño varsity y detalles mágicos para fanáticos valientes.</p>
+          <small style="color: #aaa;">Bolsillo interno para varita y acabado premium.</small>
+          <p class="price" data-precio="65.000">$65.000</p>
+          <button class="btn-caldero add-to-cart" data-id="11">Añadir al caldero</button>
         </div>
       </div>
 
-      <div class="carrusel-item">
-        <div class="card-product">
-          <div class="emoji">🧣</div>
-          <h5>Bufanda de Slytherin</h5>
-          <p class="muted">Elegante bufanda en verde y plata.</p>
-          <div class="price">$29.99</div>
-          <button onclick="agregarAlCarrito(4)">Añadir</button>
+         <!-- Cordones -->
+      <div class="col-md-4 producto" data-casa="slytherin">
+        <div class="card-product text-center" data-id="20">
+          <img src="img/slytherin/cordones slytherin.jpg" alt="Cordones de Slytherin" class="img-fluid">
+          <h5 class="mt-3" data-nombre="Cordones Slytherin">Cordones Slytherin - Licencia oficial</h5>
+          <p data-descripcion="Cordones mágicos con los colores de la casa.">Cordones mágicos verde serpiente con patrones sigilosos.</p>
+          <small style="color: #aaa;">Hechos para quienes avanzan con ambición y estilo.</small>
+          <p class="price" data-precio="10.500">$10.500</p>
+          <button class="btn-caldero add-to-cart" data-id="20">Añadir al caldero</button>
         </div>
       </div>
 
-      <div class="carrusel-item">
-        <div class="card-product">
-          <div class="emoji">🪄</div>
-          <h5>Varita de Ravenclaw</h5>
-          <p class="muted">Réplica inspirada en diseños de Ravenclaw.</p>
-          <div class="price">$34.99</div>
-          <button onclick="agregarAlCarrito(5)">Añadir</button>
+      <!-- Llavero -->
+      <div class="col-md-4 producto" data-casa="hufflepuff">
+        <div class="card-product text-center" data-id="22">
+          <img src="img/hufflepuff/llavero escudo hufflepuff.jpg" alt="Llavero Hufflepuff" class="img-fluid">
+          <h5 class="mt-3" data-nombre="Llavero Hufflepuff">Llavero Hufflepuff - Licencia Oficial</h5>
+          <p data-descripcion="Llavero metálico con emblema de tejón.">Llavero con emblema del tejón en amarillo y negro, con acabado metálico.</p>
+          <small style="color: #aaa;">Perfecto para quienes valoran la lealtad y el trabajo en equipo.</small>
+          <p class="price" data-precio="7.000">$7.000</p>
+          <button class="btn-caldero add-to-cart" data-id="22">Añadir al caldero</button>
         </div>
       </div>
 
-      <div class="carrusel-item">
-        <div class="card-product">
-          <div class="emoji">📌</div>
-          <h5>Pin de Hufflepuff</h5>
-          <p class="muted">Pin metálico con emblema de Hufflepuff.</p>
-          <div class="price">$12.99</div>
-          <button onclick="agregarAlCarrito(6)">Añadir</button>
+       <!-- Funko dumbledore -->
+      <div class="col-md-4 producto" data-casa="mas productos">
+        <div class="card-product text-center" data-id="38">
+          <img src="img/mas productos/funko dumbledore.jpg" alt="Funko dumbledore" class="img-fluid">
+          <h5 class="mt-3" data-nombre="Funko dumbledore">🧙‍♂️ Funko Pop! Albus Dumbledore – Producto Oficial #15</h5>
+          <p data-descripcion="Funko dumbledore.">Incluye detalles en su túnica púrpura, sombrero decorado y emblemática barba..</p>
+          <small style="color: #aaa;">Presentación en caja original.</small>
+          <p class="price" data-precio="65.500">$65.500</p>
+          <button class="btn-caldero add-to-cart" data-id="38">Añadir al caldero</button>
         </div>
       </div>
-    </div>
-        <button class="carrusel-btn next">→</button>
+
+      <!-- Cuaderno Hogwarts Rojo -->
+      <div class="col-md-4 producto" data-casa="mas productos">
+        <div class="card-product text-center" data-id="35">
+          <img src="img/mas productos/cuaderno hogwarts rojo.jpg" alt="Cuaderno hogwarts rojo" class="img-fluid">
+          <h5 class="mt-3" data-nombre="Cuaderno hogwarts rojo">🦁 Cuaderno Hogwarts Rojo – Gryffindor Oficial</h5>
+          <p data-descripcion="Cuaderno hogwarts rojo.">Cuaderno espiralado con tapa dura y escudo de Hogwarts.</p>
+          <small style="color: #aaa;">Diseño con patrón de coronas.</small>
+          <p class="price" data-precio="30.000">$30.000</p>
+          <button class="btn-caldero add-to-cart" data-id="35">Añadir al caldero</button>
+        </div>
       </div>
+        
+      </div>
+      <button class="carrusel-btn next">→</button>
     </section>
 
 
