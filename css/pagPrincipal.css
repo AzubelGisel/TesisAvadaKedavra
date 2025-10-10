@@ -474,3 +474,59 @@ html {
 .hero-textos {
     margin-bottom: 14rem;
 }
+
+.trivia-banner {
+  background: linear-gradient(135deg, #1c1c1c, #2e1a1a);
+  border: 2px solid #a00c0c;
+  border-radius: 16px;
+  padding: 50px;
+  margin: 60px auto;
+  box-shadow: 0 0 30px rgba(160, 12, 12, 0.5);
+  max-width: 1000px;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  color: #f5f5f5;
+}
+
+.trivia-banner h2 {
+  font-size: 2.6em;
+  margin-bottom: 20px;
+  color: #ffc107;
+}
+
+.trivia-banner p {
+  font-size: 1.4em;
+  margin-bottom: 30px;
+  color: #ddd;
+}
+
+.trivia-btn {
+  background-color: #ffc107;
+  color: #000;
+  padding: 14px 28px;
+  font-size: 1.1em;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trivia-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px #ffc107;
+}
+
+.trivia-banner {
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

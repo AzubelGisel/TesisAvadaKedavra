@@ -1,0 +1,169 @@
+.trivia-banner {
+  background: linear-gradient(135deg, #7f0909, #000);
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 10px;
+  margin: 40px auto;
+  box-shadow: 0 0 20px rgba(127, 9, 9, 0.6);
+  font-family: 'Cinzel', serif;
+}
+
+.trivia-banner h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.trivia-banner p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.trivia-btn {
+  background-color: #ffc107;
+  color: #000;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.trivia-btn:hover {
+  transform: scale(1.1);
+}
+
+.quiz-container {
+  background: url('../img/pergamino.png') no-repeat center center;
+  background-size: cover;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(127, 9, 9, 0.6);
+  font-family: 'Cinzel', serif;
+  color: #3b1f0b;
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+.quiz-question {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: rgba(255, 248, 220, 0.9);
+  border-left: 5px solid #7f0909;
+  border-radius: 10px;
+}
+
+.quiz-options label {
+  display: block;
+  margin: 8px 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.quiz-options input[type="radio"]:checked + span {
+  font-weight: bold;
+  color: #7f0909;
+}
+
+#submit-quiz {
+  background-color: #ffc107;
+  color: #000;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#submit-quiz:hover {
+  background-color: #ffda44;
+}
+
+#quiz-result {
+  margin-top: 30px;
+  font-size: 1.2em;
+  text-align: center;
+  color: #7f0909;
+}
+
+.quiz-options input[type="radio"]:checked + label {
+  transform: scale(1.05);
+  color: #7f0909;
+}
+
+body {
+  background-image: url('../img/.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.option-btn {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 12px;
+  background-color: #ffc107;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.option-btn:hover {
+  background-color: #ffda44;
+}
+
+.restart-btn {
+  margin-top: 20px;
+  background-color: #7f0909;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.restart-btn:hover {
+  background-color: #a00c0c;
+}
+
+.home-btn {
+  margin-top: 10px;
+  background-color: #ffc107;
+  color: #000;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.home-btn:hover {
+  background-color: #ffda44;
+}
+
+.home-top-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #7f0909;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(127, 9, 9, 0.5);
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+.home-top-btn:hover {
+  background-color: #a00c0c;
+}
